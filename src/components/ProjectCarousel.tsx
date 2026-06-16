@@ -10,7 +10,7 @@ export default function ProjectCarousel() {
   const scrollLeft = useRef(0)
 
   const scroll = (dir: 'left' | 'right') => {
-    if (scrollRef.current) scrollRef.current.scrollBy({ left: dir === 'right' ? 440 : -440, behavior: 'smooth' })
+    if (scrollRef.current) scrollRef.current.scrollBy({ left: dir === 'right' ? 460 : -460, behavior: 'smooth' })
   }
 
   const onMouseDown = useCallback((e: React.MouseEvent) => {
@@ -28,51 +28,58 @@ export default function ProjectCarousel() {
   const stopDrag = useCallback(() => setIsDown(false), [])
 
   return (
-    <section className="bg-[#f2ede4] pt-24 pb-0">
-      <div className="max-w-7xl mx-auto px-10 pb-12 flex justify-between items-end max-lg:px-6 max-lg:flex-col max-lg:gap-4 max-lg:items-start">
+    <section style={{ background: '#f2ede4', paddingTop: '100px', paddingBottom: 0 }}>
+      <div className="wrap" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingBottom: '48px', flexWrap: 'wrap', gap: '20px' }}>
         <div>
           <div className="eyebrow rv">Our Portfolio</div>
-          <h2 className="font-serif text-[clamp(2.4rem,4vw,3.8rem)] font-light text-[#2d4a26] leading-[1.1] rv">
-            Real Projects. <em className="text-[#b8832a]">Real Craftsmanship.</em>
+          <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1 }}>
+            Real Projects. <em style={{ color: '#b8832a' }}>Real Craftsmanship.</em>
           </h2>
         </div>
-        <Link to="/showcase" className="text-[.72rem] font-medium tracking-[.12em] uppercase text-[#6b6258] no-underline flex items-center gap-2 hover:gap-4 hover:text-[#2d4a26] transition-all rv">
-          Full Showcase &rarr;
-        </Link>
+        <Link to="/showcase" className="rv" style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6b6258', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.3s' }}
+          onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#2d4a26' }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#6b6258' }}
+        >Full Showcase &rarr;</Link>
       </div>
       <div
         ref={scrollRef}
-        className={`flex gap-1 overflow-x-auto pb-1 ${isDown ? 'cursor-grabbing' : 'cursor-grab'}`}
-        style={{ scrollbarWidth: 'none' }}
+        style={{ display: 'flex', gap: '4px', overflowX: 'auto', scrollbarWidth: 'none', paddingBottom: '4px', cursor: isDown ? 'grabbing' : 'grab' }}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={stopDrag}
         onMouseLeave={stopDrag}
       >
         {projects.map((p, i) => (
-          <div key={p.id} className="flex-none h-[560px] relative overflow-hidden bg-[#e8e0d4] group" style={{ width: i === 0 ? '620px' : '420px' }}>
-            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.05]" style={{ backgroundImage: `url('${p.image}')` }} />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#2a2520]/90 via-[#2a2520]/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-              <div className="text-[.6rem] font-semibold tracking-[.2em] uppercase text-[#f5e8cc] mb-2">{p.location}</div>
-              <div className="font-serif text-[1.85rem] font-light text-white leading-[1.15] mb-3">{p.name}</div>
-              <div className="flex flex-wrap gap-1.5 mb-4 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                {p.tags.map(t => <span key={t} className="text-[.54rem] font-semibold tracking-[.12em] uppercase text-white/65 border border-white/20 px-2.5 py-1 rounded-sm">{t}</span>)}
+          <div key={p.id} style={{ flexShrink: 0, width: i === 0 ? '640px' : '420px', height: '580px', position: 'relative', overflow: 'hidden', background: '#e8e0d4' }}
+            className="group"
+          >
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${p.image}')`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'transform 0.7s ease' }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = 'scale(1)'}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,12,8,0.92) 0%, rgba(10,12,8,0.22) 55%, transparent 100%)' }} />
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '40px 36px' }}>
+              <div style={{ fontSize: '0.6rem', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#f5e8cc', marginBottom: '10px' }}>{p.location}</div>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.9rem', fontWeight: 300, color: '#ffffff', lineHeight: 1.15, marginBottom: '14px' }}>{p.name}</div>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
+                {p.tags.map(t => <span key={t} style={{ fontSize: '0.54rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.65)', border: '1px solid rgba(255,255,255,0.2)', padding: '4px 10px', borderRadius: '2px' }}>{t}</span>)}
               </div>
-              <div className="text-[.62rem] font-semibold tracking-[.16em] uppercase text-[#f5e8cc] opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                View Project &rarr;
-              </div>
+              <div style={{ fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#f5e8cc' }}>View Project &rarr;</div>
             </div>
           </div>
         ))}
       </div>
-      <div className="max-w-7xl mx-auto px-10 py-6 flex items-center justify-between bg-white max-lg:px-6">
-        <span className="font-serif text-[1.1rem] font-light text-[#6b6258]">
-          Showing <span className="text-[#2d4a26]">{projects.length}</span> featured projects
+      <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '24px 0', background: '#ffffff', marginTop: '4px' }}>
+        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 300, color: '#6b6258' }}>
+          Showing <span style={{ color: '#2d4a26' }}>{projects.length}</span> featured projects
         </span>
-        <div className="flex gap-1">
-          <button onClick={() => scroll('left')} className="w-11 h-11 border-[1.5px] border-[#e8e0d4] bg-transparent text-[#2d4a26] flex items-center justify-center rounded-sm cursor-pointer transition-all hover:bg-[#2d4a26] hover:text-white hover:border-[#2d4a26]"><ChevronLeft size={18} /></button>
-          <button onClick={() => scroll('right')} className="w-11 h-11 border-[1.5px] border-[#e8e0d4] bg-transparent text-[#2d4a26] flex items-center justify-center rounded-sm cursor-pointer transition-all hover:bg-[#2d4a26] hover:text-white hover:border-[#2d4a26]"><ChevronRight size={18} /></button>
+        <div style={{ display: 'flex', gap: '4px' }}>
+          {[['left','←'],['right','→']].map(([dir, arrow]) => (
+            <button key={dir} onClick={() => scroll(dir as 'left'|'right')} style={{ width: '44px', height: '44px', border: '1.5px solid #e8e0d4', background: 'transparent', color: '#2d4a26', fontSize: '1rem', cursor: 'pointer', borderRadius: '2px', transition: 'all 0.3s', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#2d4a26'; (e.currentTarget as HTMLElement).style.color = '#ffffff'; (e.currentTarget as HTMLElement).style.borderColor = '#2d4a26' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = 'transparent'; (e.currentTarget as HTMLElement).style.color = '#2d4a26'; (e.currentTarget as HTMLElement).style.borderColor = '#e8e0d4' }}
+            >{arrow}</button>
+          ))}
         </div>
       </div>
     </section>

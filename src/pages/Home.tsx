@@ -7,6 +7,8 @@ import Reviews from '../components/Reviews'
 
 const BASE = 'https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/'
 
+const HERO = BASE + 'IMG_5259.jpg'
+
 const stats = [
   { n: '15+', l: 'Years Serving Cincinnati' },
   { n: '500+', l: 'Projects Completed' },
@@ -15,10 +17,10 @@ const stats = [
 ]
 
 const photoGrid = [
-  { img: BASE + 'IMG_5259.jpg', label: 'Montgomery Pavilion' },
+  { img: BASE + 'dae8cfc5-81e7-4f0e-8e8e-bd36f03722e5/thumbnail_IMG_4752.jpg', label: 'Montgomery Pavilion' },
   { img: BASE + 'd8294968-4581-42bf-bae3-26aaa1bcc2d8/thumbnail_IMG_4272.jpg', label: 'Mariemont Porch' },
-  { img: BASE + '6b7b2c23-ee42-4a82-928d-ff5ef169b647/IMG_1319.JPG', label: 'Anderson Township Patio' },
-  { img: BASE + '0ef20324-954c-4704-94df-52f466a3f375/IMG_2869.jpg', label: 'Hyde Park Grand Entrance' },
+  { img: BASE + '6b7b2c23-ee42-4a82-928d-ff5ef169b647/IMG_1319.JPG', label: 'Anderson Township' },
+  { img: BASE + '0ef20324-954c-4704-94df-52f466a3f375/IMG_2869.jpg', label: 'Hyde Park Entrance' },
   { img: BASE + 'fce6abdd-c9a0-476a-b4d6-fa01dfdfe149/thumbnail_IMG_1333.jpg', label: 'Landscape Lighting' },
 ]
 
@@ -27,86 +29,93 @@ const nkyAreas = ['Covington KY','Florence KY','Fort Thomas KY','Newport KY','Hi
 
 export default function Home() {
   useEffect(() => {
-    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on') }), { threshold: 0.1 })
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on') }), { threshold: 0.08 })
     document.querySelectorAll('.rv').forEach(el => obs.observe(el))
     return () => obs.disconnect()
   }, [])
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative h-screen min-h-[760px] flex flex-col justify-end overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center hero-zoom" style={{ backgroundImage: `url('${BASE}dae8cfc5-81e7-4f0e-8e8e-bd36f03722e5/thumbnail_IMG_4752.jpg')` }} />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/5 to-black/90" />
-        <div className="relative z-10 max-w-7xl mx-auto w-full px-10 pb-28 max-lg:px-6 max-lg:pb-20">
-          <div className="fade-up-1 flex items-center gap-3 text-[.65rem] font-semibold tracking-[.25em] uppercase text-[#f5e8cc] mb-8">
-            <span className="w-8 h-[1.5px] bg-[#f5e8cc] inline-block" />
+      {/* ── HERO ── */}
+      <section style={{ position: 'relative', height: '100vh', minHeight: '760px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', overflow: 'hidden' }}>
+        <div className="hero-zoom" style={{ position: 'absolute', inset: 0, backgroundImage: `url('${HERO}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,12,8,0.25) 0%, rgba(10,12,8,0.08) 35%, rgba(10,12,8,0.62) 70%, rgba(10,12,8,0.94) 100%)' }} />
+        <div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '0 48px 96px' }}>
+          <div className="fade-up-1" style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#f5e8cc', marginBottom: '28px' }}>
+            <span style={{ width: '32px', height: '1.5px', background: '#f5e8cc', display: 'inline-block', flexShrink: 0 }} />
             Cincinnati's Premier Landscape Company
           </div>
-          <h1 className="fade-up-2 font-serif text-[clamp(3.8rem,8vw,8rem)] font-light leading-[.95] text-white mb-8 max-w-3xl">
-            Design.<br /><em className="text-[#f5e8cc]">Build.</em><br />Maintain.
+          <h1 className="fade-up-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(4rem, 8.5vw, 9rem)', fontWeight: 300, lineHeight: 0.92, color: '#ffffff', marginBottom: '36px', letterSpacing: '-0.01em' }}>
+            Design.<br /><em style={{ color: '#f5e8cc' }}>Build.</em><br />Maintain.
           </h1>
-          <p className="fade-up-3 text-[1rem] font-light leading-[1.85] text-white/80 max-w-[520px] mb-12">
+          <p className="fade-up-3" style={{ fontSize: '1.05rem', fontWeight: 300, lineHeight: 1.85, color: 'rgba(255,255,255,0.78)', maxWidth: '500px', marginBottom: '52px' }}>
             Custom landscape design, hardscaping and outdoor living crafted as art for residential and commercial properties across Greater Cincinnati and Northern Kentucky since 2010.
           </p>
-          <div className="fade-up-4 flex items-center gap-6 max-sm:flex-col max-sm:items-start">
-            <Link to="/contact" className="relative overflow-hidden text-[.75rem] font-semibold tracking-[.15em] uppercase text-[#2d4a26] bg-white px-10 py-4 no-underline rounded-sm group">
-              <span className="absolute inset-0 bg-[#f5e8cc] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
-              <span className="relative z-10">Get a Free Quote</span>
-            </Link>
-            <Link to="/showcase" className="text-[.75rem] font-medium tracking-[.15em] uppercase text-white/90 no-underline flex items-center gap-2 border border-white/30 px-8 py-4 rounded-sm hover:border-white/70 hover:gap-4 transition-all">
-              View Our Work &rarr;
-            </Link>
+          <div className="fade-up-4" style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
+            <Link to="/contact" style={{ position: 'relative', overflow: 'hidden', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#2d4a26', background: '#ffffff', padding: '18px 48px', textDecoration: 'none', borderRadius: '2px', transition: 'background 0.3s' }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#f5e8cc'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#ffffff'}
+            >Get a Free Quote</Link>
+            <Link to="/showcase" style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.88)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px', border: '1px solid rgba(255,255,255,0.35)', padding: '18px 32px', borderRadius: '2px', transition: 'all 0.3s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.7)'; (e.currentTarget as HTMLElement).style.color = '#ffffff' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.35)'; (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.88)' }}
+            >View Our Work &rarr;</Link>
           </div>
         </div>
       </section>
 
-      {/* Marquee */}
-      <div className="bg-[#2d4a26] py-4 overflow-hidden whitespace-nowrap">
+      {/* ── MARQUEE ── */}
+      <div style={{ background: '#2d4a26', padding: '18px 0', overflow: 'hidden', whiteSpace: 'nowrap' }}>
         <div className="marquee-track">
-          {['Paver Patios','Retaining Walls','Outdoor Kitchens','Landscape Design','Hardscaping','Pergolas & Decks','Outdoor Lighting','Lawn Care Cincinnati','French Drains','Fire Pits','Pool Decks','Northern Kentucky',
-            'Paver Patios','Retaining Walls','Outdoor Kitchens','Landscape Design','Hardscaping','Pergolas & Decks','Outdoor Lighting','Lawn Care Cincinnati','French Drains','Fire Pits','Pool Decks','Northern Kentucky'].map((item, i) => (
-            <span key={i} className="text-[.65rem] font-semibold tracking-[.2em] uppercase text-white/85 px-8">
-              {item} <span className="text-white/25 mx-1">&#x2726;</span>
+          {['Paver Patios','Retaining Walls','Outdoor Kitchens','Landscape Design','Hardscaping','Pergolas & Decks','Landscape Lighting','Lawn Care Cincinnati','French Drains','Fire Pits & Fireplaces','Pool Decks','Northern Kentucky',
+            'Paver Patios','Retaining Walls','Outdoor Kitchens','Landscape Design','Hardscaping','Pergolas & Decks','Landscape Lighting','Lawn Care Cincinnati','French Drains','Fire Pits & Fireplaces','Pool Decks','Northern Kentucky'].map((item, i) => (
+            <span key={i} style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.82)', padding: '0 36px' }}>
+              {item} <span style={{ color: 'rgba(255,255,255,0.25)', marginLeft: '36px', fontSize: '0.42rem' }}>&#x2726;</span>
             </span>
           ))}
         </div>
       </div>
 
-      {/* Stats */}
-      <div className="bg-white border-b-2 border-[#e8e0d4]">
-        <div className="max-w-7xl mx-auto grid grid-cols-4 max-sm:grid-cols-2">
+      {/* ── STATS ── */}
+      <div style={{ background: '#ffffff', borderBottom: '2px solid #e8e0d4' }}>
+        <div className="wrap" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}>
           {stats.map((s, i) => (
-            <div key={s.n} className={`py-12 px-10 border-r border-[#e8e0d4] last:border-r-0 transition-colors hover:bg-[#e8f0e4] rv ${i > 0 ? `d${i}` : ''} max-lg:px-6`}>
-              <div className="font-serif text-[3.2rem] font-light text-[#2d4a26] leading-none mb-2">{s.n}</div>
-              <div className="text-[.65rem] font-medium tracking-[.16em] uppercase text-[#6b6258]">{s.l}</div>
+            <div key={s.n} className={`rv ${i > 0 ? `d${i}` : ''}`} style={{ padding: '52px 0', borderRight: i < 3 ? '1px solid #e8e0d4' : 'none', paddingLeft: i === 0 ? 0 : '40px', transition: 'background 0.3s', cursor: 'default' }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#e8f0e4'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = 'transparent'}
+            >
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3.5rem', fontWeight: 300, color: '#2d4a26', lineHeight: 1, marginBottom: '10px' }}>{s.n}</div>
+              <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#6b6258' }}>{s.l}</div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* About */}
-      <div className="grid grid-cols-2 min-h-[660px] max-lg:grid-cols-1">
-        <div className="relative overflow-hidden max-lg:h-72 group">
-          <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.04]" style={{ backgroundImage: `url('${BASE}403b6a5a-d4e3-4d88-935f-07d7ea87f68e/IMG_1455.JPG')` }} />
-          <div className="absolute bottom-0 right-0 bg-[#2d4a26] p-8 text-center">
-            <div className="font-serif text-[2.8rem] font-light text-white leading-none">2010</div>
-            <div className="text-[.56rem] font-semibold tracking-[.18em] uppercase text-white/60 mt-1">Est. Cincinnati</div>
+      {/* ── ABOUT ── */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '680px' }} className="max-lg:!grid-cols-1">
+        <div style={{ position: 'relative', overflow: 'hidden' }} className="max-lg:h-72 group">
+          <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${BASE}403b6a5a-d4e3-4d88-935f-07d7ea87f68e/IMG_1455.JPG')`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'transform 0.8s ease' }}
+            onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = 'scale(1.04)'}
+            onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = 'scale(1)'}
+          />
+          <div style={{ position: 'absolute', bottom: 0, right: 0, background: '#2d4a26', padding: '32px 36px', textAlign: 'center' }}>
+            <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3rem', fontWeight: 300, color: '#ffffff', lineHeight: 1 }}>2010</div>
+            <div style={{ fontSize: '0.54rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginTop: '6px' }}>Est. Cincinnati</div>
           </div>
         </div>
-        <div className="bg-[#faf8f4] flex flex-col justify-center">
-          <div className="max-w-lg mx-auto px-16 py-20 max-lg:px-8 max-lg:py-14">
+        <div style={{ background: '#faf8f4', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ maxWidth: '520px', padding: '80px 80px 80px 72px' }} className="max-lg:!p-8">
             <div className="eyebrow rv">Our Story</div>
-            <h2 className="font-serif text-[clamp(2.2rem,4vw,3.4rem)] font-light text-[#2d4a26] leading-[1.15] mb-7 rv">
-              If you can <em className="text-[#b8832a]">dream it,</em> we can build it
+            <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem,3.8vw,3.4rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.15, marginBottom: '28px' }}>
+              If you can <em style={{ color: '#b8832a' }}>dream it,</em> we can build it
             </h2>
-            <p className="text-[.92rem] font-light leading-[1.92] text-[#6b6258] mb-5 rv">
+            <p className="rv" style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#6b6258', marginBottom: '20px' }}>
               Since 2010, Young Entrepreneur Landscaping has been the premier choice for residential and commercial clients across Greater Cincinnati and Northern Kentucky seeking elevated landscape design and construction.
             </p>
-            <p className="text-[.92rem] font-light leading-[1.92] text-[#6b6258] mb-7 rv">
+            <p className="rv" style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#6b6258', marginBottom: '32px' }}>
               Each project is a work of art tailored entirely to your vision, with Barrett or Nathan personally overseeing every build from start to finish.
             </p>
-            <div className="inline-flex items-center gap-3 border-[1.5px] border-[#b8832a]/30 bg-[#f5e8cc] px-5 py-3.5 text-[.67rem] tracking-[.1em] uppercase text-[#b8832a] rounded-sm rv">
+            <div className="rv" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', border: '1.5px solid rgba(184,131,42,0.3)', background: '#f5e8cc', padding: '14px 20px', fontSize: '0.67rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#b8832a', borderRadius: '2px' }}>
               Every photo on this site is a real project. Our work. Our art. No AI. No stock imagery.
             </div>
           </div>
@@ -117,99 +126,116 @@ export default function Home() {
       <ServicesGrid />
       <AuthStrip />
 
-      {/* Feature */}
-      <div className="relative h-[78vh] min-h-[580px] overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: `url('${BASE}bdd88e9d-fe9e-4762-b36f-7cf4395ddcc7/IMG_4909.jpg')` }} />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#2a2520]/90 via-[#2a2520]/50 to-transparent" />
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto w-full px-10 max-lg:px-6">
-            <div className="max-w-[560px]">
-              <div className="flex items-center gap-3 text-[.62rem] font-semibold tracking-[.24em] uppercase text-[#f5e8cc] mb-5">
-                <span className="w-6 h-[1.5px] bg-[#f5e8cc] inline-block" />Featured Project
+      {/* ── FEATURE ── */}
+      <div style={{ position: 'relative', height: '80vh', minHeight: '600px', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${BASE}bdd88e9d-fe9e-4762-b36f-7cf4395ddcc7/IMG_4909.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(10,12,8,0.92) 0%, rgba(10,12,8,0.55) 50%, rgba(10,12,8,0.12) 100%)' }} />
+        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center' }}>
+          <div className="wrap" style={{ width: '100%' }}>
+            <div style={{ maxWidth: '580px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.26em', textTransform: 'uppercase', color: '#f5e8cc', marginBottom: '20px' }}>
+                <span style={{ width: '24px', height: '1.5px', background: '#f5e8cc', display: 'inline-block' }} />Featured Project
               </div>
-              <h2 className="font-serif text-[clamp(2.4rem,4.8vw,4rem)] font-light text-white leading-[1.1] mb-5">
-                Montgomery<br /><em className="text-[#f5e8cc]">Entertainment Pavilion</em>
+              <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4.8vw,4.2rem)', fontWeight: 300, color: '#ffffff', lineHeight: 1.08, marginBottom: '20px' }}>
+                Montgomery<br /><em style={{ color: '#f5e8cc' }}>Entertainment Pavilion</em>
               </h2>
-              <p className="text-[.9rem] font-light leading-[1.9] text-white/75 mb-8">
+              <p style={{ fontSize: '0.95rem', fontWeight: 300, lineHeight: 1.9, color: 'rgba(255,255,255,0.72)', marginBottom: '32px' }}>
                 A blank-slate backyard transformed into an epic outdoor entertainment space. Custom paver patio, natural stone seating wall, outdoor kitchen with gas grill and pellet smoker, granite counters, custom cedar pavilion, fire pit, and accent lighting throughout.
               </p>
-              <div className="flex gap-10 mb-8 max-sm:flex-col max-sm:gap-4">
+              <div style={{ display: 'flex', gap: '40px', marginBottom: '36px', flexWrap: 'wrap' }}>
                 {[['Location','Montgomery, OH'],['Services','Hardscape, Carpentry, Lighting'],['Materials','Paver, Stone, Cedar, Granite']].map(([l,v]) => (
-                  <div key={l} className="flex flex-col gap-1.5">
-                    <span className="text-[.56rem] font-semibold tracking-[.16em] uppercase text-[#f5e8cc]">{l}</span>
-                    <span className="text-[.85rem] font-light text-white">{v}</span>
+                  <div key={l}>
+                    <div style={{ fontSize: '0.56rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#f5e8cc', marginBottom: '6px' }}>{l}</div>
+                    <div style={{ fontSize: '0.88rem', fontWeight: 300, color: '#ffffff' }}>{v}</div>
                   </div>
                 ))}
               </div>
-              <Link to="/showcase" className="relative overflow-hidden inline-block text-[.72rem] font-semibold tracking-[.15em] uppercase text-[#2d4a26] bg-white px-10 py-4 no-underline rounded-sm group">
-                <span className="absolute inset-0 bg-[#f5e8cc] translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300" />
-                <span className="relative z-10">View Full Project</span>
-              </Link>
+              <Link to="/showcase" style={{ display: 'inline-block', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#2d4a26', background: '#ffffff', padding: '18px 44px', textDecoration: 'none', borderRadius: '2px', transition: 'background 0.3s' }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#f5e8cc'}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#ffffff'}
+              >View Full Project</Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Process */}
-      <section className="bg-[#faf8f4] py-28">
-        <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
+      {/* ── PROCESS ── */}
+      <section className="sec" style={{ background: '#faf8f4' }}>
+        <div className="wrap">
           <div className="eyebrow rv">How It Works</div>
-          <h2 className="font-serif text-[clamp(2.4rem,4vw,3.8rem)] font-light text-[#2d4a26] leading-[1.1] mb-20 rv">
-            Our <em className="text-[#b8832a]">Design and Build Process</em>
+          <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1, marginBottom: '80px' }}>
+            Our <em style={{ color: '#b8832a' }}>Design and Build Process</em>
           </h2>
-          <div className="grid grid-cols-4 gap-8 relative max-lg:grid-cols-2 max-lg:gap-12">
-            <div className="absolute top-6 left-[12%] right-[12%] h-[1.5px] bg-[#e8e0d4] max-lg:hidden" />
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '48px', position: 'relative' }} className="max-lg:!grid-cols-2">
+            <div style={{ position: 'absolute', top: '24px', left: '12.5%', right: '12.5%', height: '1.5px', background: '#e8e0d4' }} className="max-lg:hidden" />
             {[
-              ['01','Consultation','On-site meeting at your Cincinnati or Northern Kentucky property to define goals, explore options, and understand your vision.'],
-              ['02','Design','Scaled 2-D CAD plans with 3-D elevations, detailed estimates, and reference photos revised until your vision is perfectly captured.'],
-              ['03','Schedule','After design approval we schedule your project and secure a deposit with a clear timeline and regular updates.'],
+              ['01','Consultation','On-site meeting at your property to define goals, explore design options, and understand your vision before a single line is drawn.'],
+              ['02','Design','Scaled 2-D CAD plans with 3-D elevations, detailed estimates, and reference photos — revised until your vision is perfectly captured.'],
+              ['03','Schedule','After design approval we schedule your project and secure a deposit with a clear timeline and regular progress updates.'],
               ['04','Build','Barrett or Nathan personally oversees every project. All work performed in-house with minimal disruption, on time and within budget.'],
             ].map(([num, title, desc], i) => (
               <div key={num} className={`rv ${i > 0 ? `d${i}` : ''}`}>
-                <div className="w-12 h-12 border-2 border-[#e8e0d4] rounded-full flex items-center justify-center mb-8 bg-[#faf8f4] hover:border-[#2d4a26] transition-colors">
-                  <span className="font-serif text-[1.05rem] font-light text-[#2d4a26]">{num}</span>
+                <div style={{ width: '52px', height: '52px', border: '2px solid #e8e0d4', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '28px', background: '#faf8f4', transition: 'border-color 0.3s' }}
+                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.borderColor = '#2d4a26'}
+                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.borderColor = '#e8e0d4'}
+                >
+                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 300, color: '#2d4a26' }}>{num}</span>
                 </div>
-                <h3 className="font-serif text-[1.35rem] font-light text-[#2d4a26] mb-3">{title}</h3>
-                <p className="text-[.84rem] font-light leading-[1.82] text-[#6b6258]">{desc}</p>
+                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 300, color: '#2d4a26', marginBottom: '14px' }}>{title}</h3>
+                <p style={{ fontSize: '0.9rem', fontWeight: 300, lineHeight: 1.88, color: '#6b6258' }}>{desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Photo grid */}
-      <div className="grid gap-1 max-lg:grid-cols-2" style={{ gridTemplateColumns: 'repeat(4,1fr)', gridTemplateRows: '280px 280px' }}>
+      {/* ── PHOTO GRID ── */}
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gridTemplateRows: '300px 300px', gap: '4px', background: '#e8e0d4' }} className="max-lg:!grid-cols-2">
         {photoGrid.map((p, i) => (
-          <div key={i} className="relative overflow-hidden bg-[#e8e0d4] group" style={{ gridColumn: i === 0 ? 'span 2' : i === 3 ? 'span 2' : 'span 1', gridRow: i === 0 ? 'span 2' : 'span 1' }}>
-            <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-[1.06]" style={{ backgroundImage: `url('${p.img}')` }} />
-            <div className="absolute inset-0 bg-[#2a2520]/0 group-hover:bg-[#2a2520]/35 transition-all duration-400" />
-            <div className="absolute bottom-5 left-5 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-400">
-              <span className="text-[.62rem] font-semibold tracking-[.14em] uppercase text-white bg-[#2a2520]/65 px-3 py-1.5 rounded-sm">{p.label}</span>
+          <div key={i} style={{ position: 'relative', overflow: 'hidden', gridColumn: i === 0 ? 'span 2' : i === 3 ? 'span 2' : 'span 1', gridRow: i === 0 ? 'span 2' : 'span 1' }}>
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${p.img}')`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'transform 0.7s ease' }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = 'scale(1.06)'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = 'scale(1)'}
+            />
+            <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,12,8,0)', transition: 'background 0.4s' }}
+              onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = 'rgba(10,12,8,0.38)'}
+              onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = 'rgba(10,12,8,0)'}
+            />
+            <div style={{ position: 'absolute', bottom: '20px', left: '20px', opacity: 0, transform: 'translateY(8px)', transition: 'all 0.4s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.opacity = '1'; (e.currentTarget as HTMLElement).style.transform = 'translateY(0)' }}
+            >
+              <span style={{ fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#ffffff', background: 'rgba(10,12,8,0.65)', padding: '6px 14px', borderRadius: '2px' }}>{p.label}</span>
             </div>
           </div>
         ))}
       </div>
 
-      {/* Areas */}
-      <section className="bg-white py-28">
-        <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
+      {/* ── AREAS ── */}
+      <section className="sec" style={{ background: '#ffffff' }}>
+        <div className="wrap">
           <div className="eyebrow rv">Where We Work</div>
-          <h2 className="font-serif text-[clamp(2.4rem,4vw,3.8rem)] font-light text-[#2d4a26] leading-[1.1] mb-14 rv">
-            Proudly Serving <em className="text-[#b8832a]">Cincinnati and Northern Kentucky</em>
+          <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1, marginBottom: '56px' }}>
+            Proudly Serving <em style={{ color: '#b8832a' }}>Cincinnati and Northern Kentucky</em>
           </h2>
-          <div className="grid grid-cols-2 gap-6 max-lg:grid-cols-1">
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }} className="max-lg:!grid-cols-1">
             {[
               { region: 'Greater Cincinnati, Ohio', title: 'Cincinnati and Surrounding Communities', areas: cincyAreas },
               { region: 'Northern Kentucky', title: 'Across the River and Beyond', areas: nkyAreas },
             ].map((panel, i) => (
-              <div key={panel.region} className={`bg-[#faf8f4] p-12 border-[1.5px] border-[#e8e0d4] rounded-sm transition-all hover:border-[#2d4a26] hover:bg-[#e8f0e4] rv ${i > 0 ? 'd1' : ''} max-lg:p-8`}>
-                <div className="flex items-center gap-3 text-[.62rem] font-semibold tracking-[.22em] uppercase text-[#b8832a] mb-4">
-                  <span className="w-5 h-[1.5px] bg-[#b8832a] inline-block" />{panel.region}
+              <div key={panel.region} className={`rv ${i > 0 ? 'd1' : ''}`} style={{ background: '#faf8f4', padding: '52px 48px', border: '1.5px solid #e8e0d4', borderRadius: '3px', transition: 'border-color 0.3s, background 0.3s' }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = '#2d4a26'; (e.currentTarget as HTMLElement).style.background = '#e8f0e4' }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = '#e8e0d4'; (e.currentTarget as HTMLElement).style.background = '#faf8f4' }}
+              >
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: '#b8832a', marginBottom: '16px' }}>
+                  <span style={{ width: '20px', height: '1.5px', background: '#b8832a', display: 'inline-block' }} />{panel.region}
                 </div>
-                <h3 className="font-serif text-[1.9rem] font-light text-[#2d4a26] mb-6 leading-[1.2]">{panel.title}</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: 300, color: '#2d4a26', marginBottom: '24px', lineHeight: 1.2 }}>{panel.title}</h3>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                   {panel.areas.map(a => (
-                    <span key={a} className="text-[.7rem] text-[#6b6258] bg-white px-4 py-1.5 border-[1.5px] border-[#e8e0d4] rounded-full transition-all hover:border-[#2d4a26] hover:text-[#2d4a26] hover:bg-[#e8f0e4] cursor-default">{a}</span>
+                    <span key={a} style={{ fontSize: '0.72rem', color: '#6b6258', background: '#ffffff', padding: '8px 16px', border: '1.5px solid #e8e0d4', borderRadius: '20px', transition: 'all 0.3s', cursor: 'default' }}
+                      onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = '#2d4a26'; (e.currentTarget as HTMLElement).style.color = '#2d4a26'; (e.currentTarget as HTMLElement).style.background = '#e8f0e4' }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = '#e8e0d4'; (e.currentTarget as HTMLElement).style.color = '#6b6258'; (e.currentTarget as HTMLElement).style.background = '#ffffff' }}
+                    >{a}</span>
                   ))}
                 </div>
               </div>
@@ -220,53 +246,73 @@ export default function Home() {
 
       <Reviews />
 
-      {/* Testimonial */}
-      <div className="bg-[#2d4a26] py-32 relative overflow-hidden">
-        <div className="max-w-4xl mx-auto px-10 text-center max-lg:px-6">
-          <p className="font-serif text-[clamp(1.8rem,3.2vw,2.9rem)] font-light italic leading-[1.62] text-white mb-10 rv">
+      {/* ── TESTIMONIAL ── */}
+      <div style={{ background: '#2d4a26', padding: '140px 0' }}>
+        <div className="wrap" style={{ maxWidth: '900px', textAlign: 'center' }}>
+          <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '8rem', fontWeight: 300, color: 'rgba(255,255,255,0.06)', lineHeight: 0.6, marginBottom: '16px' }}>"</div>
+          <p className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.8rem,3.2vw,3rem)', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.62, color: '#ffffff', marginBottom: '40px' }}>
             Every outdoor space we create is a reflection of our client's vision, built with enduring craftsmanship and the kind of attention to detail that turns a backyard into a legacy.
           </p>
-          <div className="text-[.68rem] font-semibold tracking-[.22em] uppercase text-white/50 rv d1">
+          <div className="rv d1" style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)' }}>
             Barrett Weckel, Founder, Young Entrepreneur Landscaping LLC
           </div>
         </div>
       </div>
 
-      {/* CTA */}
-      <div className="grid grid-cols-2 max-lg:grid-cols-1">
-        <div className="bg-[#f2ede4] flex flex-col justify-center">
-          <div className="max-w-lg mx-auto px-16 py-28 max-lg:px-8 max-lg:py-16">
+      {/* ── CTA ── */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }} className="max-lg:!grid-cols-1">
+        <div style={{ background: '#f2ede4', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ maxWidth: '520px', padding: '100px 80px' }} className="max-lg:!p-8">
             <div className="eyebrow">Get In Touch</div>
-            <h2 className="font-serif text-[clamp(2.2rem,4vw,3.4rem)] font-light text-[#2d4a26] leading-[1.15] mb-6">
-              Let's Build <em className="text-[#b8832a]">Something Beautiful</em>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem,3.8vw,3.4rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.15, marginBottom: '20px' }}>
+              Let's Build <em style={{ color: '#b8832a' }}>Something Beautiful</em>
             </h2>
-            <p className="text-[.92rem] font-light leading-[1.92] text-[#6b6258] mb-10">
+            <p style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#6b6258', marginBottom: '40px' }}>
               Ready to transform your outdoor space? Contact us for a free on-site consultation, no obligation, just great ideas for your property.
             </p>
             {[['Phone','(513) 498-6879','tel:5134986879'],['Email','bweckel@yelandscaping.com','mailto:bweckel@yelandscaping.com'],['Instagram','@youngentrepreneur_landscaping','https://www.instagram.com/youngentrepreneur_landscaping/']].map(([l,v,href]) => (
-              <div key={l} className="flex items-center gap-5 mb-5">
-                <span className="text-[.58rem] font-semibold tracking-[.16em] uppercase text-[#2d4a26] min-w-[72px]">{l}</span>
-                <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="text-[.84rem] text-[#2a2520] no-underline hover:text-[#2d4a26] transition-colors">{v}</a>
+              <div key={l} style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '18px' }}>
+                <span style={{ fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2d4a26', minWidth: '72px' }}>{l}</span>
+                <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" style={{ fontSize: '0.88rem', color: '#2a2520', textDecoration: 'none', transition: 'color 0.3s' }}
+                  onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#2d4a26'}
+                  onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = '#2a2520'}
+                >{v}</a>
               </div>
             ))}
           </div>
         </div>
-        <div className="bg-[#2d4a26] flex flex-col justify-center">
-          <div className="max-w-lg mx-auto px-16 py-28 max-lg:px-8 max-lg:py-16">
-            <h2 className="font-serif text-[2.9rem] font-light text-white leading-[1.12] mb-4">
-              Free <em className="text-[#f5e8cc]">Consultation</em>
+        <div style={{ background: '#2d4a26', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ maxWidth: '520px', padding: '100px 80px' }} className="max-lg:!p-8">
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3rem', fontWeight: 300, color: '#ffffff', lineHeight: 1.12, marginBottom: '16px' }}>
+              Free <em style={{ color: '#f5e8cc' }}>Consultation</em>
             </h2>
-            <p className="text-[.9rem] font-light leading-[1.88] text-white/65 mb-8">
+            <p style={{ fontSize: '0.95rem', fontWeight: 300, lineHeight: 1.88, color: 'rgba(255,255,255,0.6)', marginBottom: '32px' }}>
               Tell us about your project and we will schedule a free on-site visit. Serving Greater Cincinnati and Northern Kentucky since 2010.
             </p>
-            <div className="flex flex-col gap-4">
-              <input type="text" placeholder="Your Name" className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-4 text-[.85rem] rounded-sm focus:outline-none focus:border-[#f5e8cc] transition-colors" />
-              <input type="email" placeholder="Email Address" className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-4 text-[.85rem] rounded-sm focus:outline-none focus:border-[#f5e8cc] transition-colors" />
-              <input type="tel" placeholder="Phone Number" className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-4 text-[.85rem] rounded-sm focus:outline-none focus:border-[#f5e8cc] transition-colors" />
-              <textarea placeholder="Tell us about your project..." rows={4} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-4 text-[.85rem] rounded-sm focus:outline-none focus:border-[#f5e8cc] transition-colors resize-none" />
-              <button className="w-full text-[.72rem] font-semibold tracking-[.15em] uppercase text-[#2d4a26] bg-white py-4 rounded-sm transition-all hover:bg-[#f5e8cc] mt-2 cursor-pointer">
-                Request a Free Quote
-              </button>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+              {['Your Name','Email Address','Phone Number'].map(ph => (
+                <input key={ph} type="text" placeholder={ph} style={{ width: '100%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.18)', color: '#ffffff', padding: '16px 20px', fontSize: '0.9rem', borderRadius: '2px', outline: 'none', transition: 'border-color 0.3s' }}
+                  onFocus={e => (e.currentTarget as HTMLElement).style.borderColor = '#f5e8cc'}
+                  onBlur={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.18)'}
+                />
+              ))}
+              <select style={{ width: '100%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.18)', color: 'rgba(255,255,255,0.55)', padding: '16px 20px', fontSize: '0.9rem', borderRadius: '2px', outline: 'none' }}>
+                <option value="">Select a Service</option>
+                <option>Design | Build</option>
+                <option>Hardscape &amp; Masonry</option>
+                <option>Lawn &amp; Landscape</option>
+                <option>Carpentry &amp; Lighting</option>
+                <option>Water Management</option>
+                <option>Landscape Maintenance</option>
+              </select>
+              <textarea placeholder="Tell us about your project..." rows={4} style={{ width: '100%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.18)', color: '#ffffff', padding: '16px 20px', fontSize: '0.9rem', borderRadius: '2px', outline: 'none', resize: 'none', transition: 'border-color 0.3s', fontFamily: "'DM Sans', sans-serif" }}
+                onFocus={e => (e.currentTarget as HTMLElement).style.borderColor = '#f5e8cc'}
+                onBlur={e => (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.18)'}
+              />
+              <button style={{ width: '100%', fontSize: '0.74rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#2d4a26', background: '#ffffff', padding: '18px', borderRadius: '2px', border: 'none', cursor: 'pointer', marginTop: '8px', transition: 'background 0.3s' }}
+                onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#f5e8cc'}
+                onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#ffffff'}
+              >Request a Free Quote</button>
             </div>
           </div>
         </div>

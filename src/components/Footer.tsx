@@ -2,46 +2,39 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2d4a26] pt-20 pb-10">
-      <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
-        <div className="grid grid-cols-4 gap-16 mb-16 max-lg:grid-cols-2 max-lg:gap-10 max-sm:grid-cols-1">
+    <footer style={{ background: '#2d4a26', paddingTop: '80px', paddingBottom: '40px' }}>
+      <div className="wrap">
+        <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '64px', marginBottom: '64px' }} className="max-lg:!grid-cols-2 max-sm:!grid-cols-1">
           <div>
-            <img src="/YellLogo.png" alt="Young Entrepreneur Landscaping" className="h-16 w-auto mb-6 brightness-0 invert opacity-90" />
-            <p className="text-[.82rem] font-light leading-[1.85] text-white/55 mb-5">
+            <img src="/YellLogo.png" alt="Young Entrepreneur Landscaping" style={{ height: '64px', width: 'auto', marginBottom: '24px', filter: 'brightness(0) invert(1)', opacity: 0.88 }} />
+            <p style={{ fontSize: '0.82rem', fontWeight: 300, lineHeight: 1.85, color: 'rgba(255,255,255,0.5)', marginBottom: '20px' }}>
               Cincinnati's premier custom landscaping, hardscaping, and outdoor living company since 2010. Serving Greater Cincinnati and Northern Kentucky.
             </p>
-            <p className="text-[.78rem] text-white/55 mb-1">(513) 498-6879</p>
-            <p className="text-[.78rem] text-white/55 mb-1">bweckel@yelandscaping.com</p>
-            <p className="text-[.78rem] text-white/55">4178 Round Bottom Rd, Newtown OH 45244</p>
+            {['(513) 498-6879','bweckel@yelandscaping.com','4178 Round Bottom Rd, Newtown OH 45244'].map(t => (
+              <p key={t} style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', marginBottom: '6px' }}>{t}</p>
+            ))}
           </div>
-          <div>
-            <h4 className="text-[.62rem] font-semibold tracking-[.2em] uppercase text-[#f5e8cc] mb-6">Services</h4>
-            <ul className="list-none flex flex-col gap-3.5">
-              {[['Design | Build','/services/design-build'],['Hardscape & Masonry','/services/hardscape-masonry'],['Lawn & Landscape','/services/lawn-landscape'],['Carpentry & Lighting','/services/carpentry-lighting'],['Water Management','/services/water-management'],['Landscape Maintenance','/services/landscape-maintenance']].map(([l,h]) => (
-                <li key={h}><Link to={h} className="text-[.8rem] font-light text-white/55 no-underline hover:text-white transition-colors">{l}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-[.62rem] font-semibold tracking-[.2em] uppercase text-[#f5e8cc] mb-6">Company</h4>
-            <ul className="list-none flex flex-col gap-3.5">
-              {[['About Us','/about'],['Showcase','/showcase'],['FAQ','/faq'],['Contact','/contact']].map(([l,h]) => (
-                <li key={h}><Link to={h} className="text-[.8rem] font-light text-white/55 no-underline hover:text-white transition-colors">{l}</Link></li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h4 className="text-[.62rem] font-semibold tracking-[.2em] uppercase text-[#f5e8cc] mb-6">Service Areas</h4>
-            <ul className="list-none flex flex-col gap-3.5">
-              {['Cincinnati, OH','Hyde Park & Mariemont','Indian Hill','Northern Kentucky','Covington KY','Fort Thomas KY'].map(a => (
-                <li key={a}><span className="text-[.8rem] font-light text-white/55">{a}</span></li>
-              ))}
-            </ul>
-          </div>
+          {[
+            { h: 'Services', links: [['Design | Build','/services/design-build'],['Hardscape & Masonry','/services/hardscape-masonry'],['Lawn & Landscape','/services/lawn-landscape'],['Carpentry & Lighting','/services/carpentry-lighting'],['Water Management','/services/water-management'],['Landscape Maintenance','/services/landscape-maintenance']] },
+            { h: 'Company', links: [['About Us','/about'],['Showcase','/showcase'],['FAQ','/faq'],['Contact','/contact']] },
+            { h: 'Service Areas', links: [['Cincinnati, OH','/'],['Hyde Park & Mariemont','/'],['Indian Hill','/'],['Northern Kentucky','/'],['Covington KY','/'],['Fort Thomas KY','/']] },
+          ].map(col => (
+            <div key={col.h}>
+              <h4 style={{ fontSize: '0.6rem', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#f5e8cc', marginBottom: '24px' }}>{col.h}</h4>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                {col.links.map(([l,h]) => (
+                  <li key={l}><Link to={h} style={{ fontSize: '0.82rem', fontWeight: 300, color: 'rgba(255,255,255,0.48)', textDecoration: 'none', transition: 'color 0.3s' }}
+                    onMouseEnter={e => (e.currentTarget as HTMLElement).style.color = '#ffffff'}
+                    onMouseLeave={e => (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.48)'}
+                  >{l}</Link></li>
+                ))}
+              </ul>
+            </div>
+          ))}
         </div>
-        <div className="flex justify-between items-center pt-8 border-t border-white/10 max-sm:flex-col max-sm:gap-3">
-          <span className="text-[.68rem] text-white/35">2026 Young Entrepreneur Landscaping LLC · Cincinnati OH · (513) 498-6879</span>
-          <span className="text-[.68rem] text-white/35">Built by <a href="https://www.bestwebsites.tech/" target="_blank" rel="noreferrer" className="text-[#f5e8cc] no-underline">BestWebsites</a></span>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: '28px', borderTop: '1px solid rgba(255,255,255,0.08)' }} className="max-sm:!flex-col max-sm:!gap-3">
+          <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.32)' }}>2026 Young Entrepreneur Landscaping LLC &middot; Cincinnati OH &middot; (513) 498-6879</span>
+          <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.32)' }}>Built by <a href="https://www.bestwebsites.tech/" target="_blank" rel="noreferrer" style={{ color: '#f5e8cc', textDecoration: 'none' }}>BestWebsites</a></span>
         </div>
       </div>
     </footer>

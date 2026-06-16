@@ -3,30 +3,33 @@ import { services } from '../data/services'
 
 export default function ServicesGrid() {
   return (
-    <section className="bg-white py-28">
-      <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
-        <div className="flex justify-between items-end mb-16 max-lg:flex-col max-lg:gap-4 max-lg:items-start">
+    <section className="sec" style={{ background: '#ffffff' }}>
+      <div className="wrap">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '64px', flexWrap: 'wrap', gap: '24px' }}>
           <div>
             <div className="eyebrow rv">What We Do</div>
-            <h2 className="font-serif text-[clamp(2.4rem,4vw,3.8rem)] font-light text-[#2d4a26] leading-[1.1] rv">
-              Our <em className="text-[#b8832a]">Services</em>
+            <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1 }}>
+              Our <em style={{ color: '#b8832a' }}>Services</em>
             </h2>
           </div>
-          <Link to="/contact" className="text-[.72rem] font-medium tracking-[.12em] uppercase text-[#6b6258] no-underline flex items-center gap-2 hover:gap-4 hover:text-[#2d4a26] transition-all rv">
-            Get a Quote &rarr;
-          </Link>
+          <Link to="/contact" className="rv" style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6b6258', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.3s' }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#2d4a26'; (e.currentTarget as HTMLElement).style.gap = '16px' }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#6b6258'; (e.currentTarget as HTMLElement).style.gap = '8px' }}
+          >Get a Quote &rarr;</Link>
         </div>
-        <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-1">
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }} className="max-lg:!grid-cols-1">
           {services.map((s, i) => (
-            <Link key={s.slug} to={`/services/${s.slug}`} className={`p-10 bg-[#faf8f4] relative overflow-hidden no-underline block transition-all duration-300 group hover:bg-[#e8f0e4] rounded-sm rv ${i > 0 ? `d${Math.min(i, 4)}` : ''}`}>
-              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#2d4a26] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-b-sm" />
-              <div className="font-serif text-[3.5rem] font-light text-[#2d4a26]/10 leading-none mb-5 transition-colors group-hover:text-[#2d4a26]/20">{s.number}</div>
-              <h3 className="font-serif text-[1.5rem] font-light text-[#2d4a26] mb-3 leading-[1.25]">{s.name}</h3>
-              <div className="flex flex-wrap gap-1.5 mb-4">
-                {s.keywords.map(k => <span key={k} className="text-[.56rem] font-semibold tracking-[.1em] uppercase text-[#7a9468] border border-[#7a9468]/25 px-2.5 py-1 rounded-sm">{k}</span>)}
+            <Link key={s.slug} to={`/services/${s.slug}`} className={`rv ${i > 0 ? `d${Math.min(i,4)}` : ''}`} style={{ padding: '48px 44px', background: '#faf8f4', textDecoration: 'none', display: 'block', borderRadius: '3px', position: 'relative', overflow: 'hidden', transition: 'background 0.35s', border: '1.5px solid transparent' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#e8f0e4'; (e.currentTarget as HTMLElement).style.borderColor = '#2d4a26' }}
+              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#faf8f4'; (e.currentTarget as HTMLElement).style.borderColor = 'transparent' }}
+            >
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '4rem', fontWeight: 300, color: 'rgba(45,74,38,0.08)', lineHeight: 1, marginBottom: '20px' }}>{s.number}</div>
+              <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.55rem', fontWeight: 300, color: '#2d4a26', marginBottom: '14px', lineHeight: 1.25 }}>{s.name}</h3>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
+                {s.keywords.map(k => <span key={k} style={{ fontSize: '0.56rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7a9468', border: '1px solid rgba(122,148,104,0.3)', padding: '4px 10px', borderRadius: '2px' }}>{k}</span>)}
               </div>
-              <p className="text-[.84rem] font-light leading-[1.82] text-[#6b6258] mb-5">{s.description}</p>
-              <div className="text-[.62rem] font-semibold tracking-[.16em] uppercase text-[#b8832a] flex items-center gap-2 group-hover:gap-4 transition-all">
+              <p style={{ fontSize: '0.88rem', fontWeight: 300, lineHeight: 1.85, color: '#6b6258', marginBottom: '22px' }}>{s.description}</p>
+              <div style={{ fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#b8832a', display: 'flex', alignItems: 'center', gap: '8px', transition: 'gap 0.3s' }}>
                 Explore Service &rarr;
               </div>
             </Link>
