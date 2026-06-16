@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="wrap">
         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '64px', marginBottom: '64px' }} className="max-lg:!grid-cols-2 max-sm:!grid-cols-1">
           <div>
-            <img src="/YellLogo.png" alt="Young Entrepreneur Landscaping" style={{ height: '64px', width: 'auto', marginBottom: '24px', filter: 'brightness(0) invert(1)', opacity: 0.88 }} />
+            <img src={`${import.meta.env.BASE_URL}YellLogo.png`} alt="Young Entrepreneur Landscaping" style={{ height: '64px', width: 'auto', marginBottom: '24px', filter: 'brightness(0) invert(1)', opacity: 0.88 }} />
             <p style={{ fontSize: '0.82rem', fontWeight: 300, lineHeight: 1.85, color: 'rgba(255,255,255,0.5)', marginBottom: '20px' }}>
               Cincinnati's premier custom landscaping, hardscaping, and outdoor living company since 2010. Serving Greater Cincinnati and Northern Kentucky.
             </p>

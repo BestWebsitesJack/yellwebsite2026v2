@@ -30,7 +30,7 @@ export default function Nav() {
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '88px' }}>
         <Link to="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
           <img
-            src="/YellLogo.png"
+            src={`${import.meta.env.BASE_URL}YellLogo.png`}
             alt="Young Entrepreneur Landscaping"
             style={{ height: '64px', width: 'auto', filter: light ? 'brightness(0) invert(1)' : 'none', transition: 'all 0.4s ease' }}
           />

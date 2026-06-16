@@ -7,7 +7,7 @@ import Reviews from '../components/Reviews'
 
 const BASE = 'https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/'
 
-const HERO = BASE + 'IMG_5259.jpg'
+const HERO = BASE + 'dae8cfc5-81e7-4f0e-8e8e-bd36f03722e5/thumbnail_IMG_4752.jpg'
 
 const stats = [
   { n: '15+', l: 'Years Serving Cincinnati' },
