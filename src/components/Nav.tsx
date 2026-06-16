@@ -26,44 +26,38 @@ export default function Nav() {
   const light = !scrolled && isHome
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-400 ${!light ? 'bg-[#faf8f4]/97 backdrop-blur-md border-b border-[#e8e0d4] shadow-sm' : 'bg-transparent'}`}>
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-10 py-4 max-lg:px-6">
-        <Link to="/" className="no-underline flex-shrink-0">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${!light ? 'bg-[#faf8f4]/98 backdrop-blur-lg border-b border-[#e8e0d4] shadow-sm' : 'bg-gradient-to-b from-black/40 to-transparent'}`}>
+      <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '88px' }}>
+        <Link to="/" style={{ textDecoration: 'none', flexShrink: 0 }}>
           <img
             src="/YellLogo.png"
             alt="Young Entrepreneur Landscaping"
-            className={`h-16 w-auto transition-all duration-400 ${light ? 'brightness-0 invert' : 'brightness-100'}`}
+            style={{ height: '64px', width: 'auto', filter: light ? 'brightness(0) invert(1)' : 'none', transition: 'all 0.4s ease' }}
           />
         </Link>
-        <ul className="flex gap-12 list-none max-lg:hidden">
+        <ul style={{ display: 'flex', gap: '48px', listStyle: 'none', margin: 0, padding: 0 }} className="max-lg:hidden">
           {links.map(l => (
             <li key={l.href}>
-              <Link
-                to={l.href}
-                className={`text-[.78rem] font-medium tracking-[.12em] uppercase no-underline transition-colors relative group ${light ? 'text-white/85 hover:text-white' : 'text-[#6b6258] hover:text-[#2d4a26]'}`}
-              >
-                {l.label}
-                <span className={`absolute -bottom-1 left-0 right-0 h-[1.5px] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left ${light ? 'bg-white' : 'bg-[#2d4a26]'}`} />
-              </Link>
+              <Link to={l.href} style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', textDecoration: 'none', color: light ? 'rgba(255,255,255,0.88)' : '#6b6258', transition: 'color 0.3s' }}
+                onMouseEnter={e => (e.target as HTMLElement).style.color = light ? '#ffffff' : '#2d4a26'}
+                onMouseLeave={e => (e.target as HTMLElement).style.color = light ? 'rgba(255,255,255,0.88)' : '#6b6258'}
+              >{l.label}</Link>
             </li>
           ))}
         </ul>
-        <Link
-          to="/contact"
-          className={`text-[.75rem] font-semibold tracking-[.12em] uppercase px-8 py-3.5 no-underline rounded-sm transition-all max-lg:hidden ${light ? 'text-[#2d4a26] bg-white hover:bg-[#f5e8cc]' : 'text-white bg-[#2d4a26] hover:bg-[#3d6334]'}`}
-        >
+        <Link to="/contact" style={{ fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', textDecoration: 'none', color: light ? '#2d4a26' : '#ffffff', background: light ? '#ffffff' : '#2d4a26', padding: '14px 32px', borderRadius: '2px', transition: 'all 0.3s', whiteSpace: 'nowrap' }} className="max-lg:hidden">
           Free Quote
         </Link>
-        <button className={`hidden max-lg:flex ${light ? 'text-white' : 'text-[#2d4a26]'}`} onClick={() => setOpen(!open)}>
+        <button style={{ display: 'none', background: 'none', border: 'none', cursor: 'pointer', color: light ? '#ffffff' : '#2d4a26' }} className="max-lg:!flex" onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
       {open && (
-        <div className="hidden max-lg:flex flex-col bg-[#faf8f4] border-t border-[#e8e0d4] px-6 py-6 gap-5">
+        <div style={{ background: '#faf8f4', borderTop: '1px solid #e8e0d4', padding: '24px' }} className="max-lg:flex flex-col gap-5 hidden">
           {links.map(l => (
-            <Link key={l.href} to={l.href} className="text-[.85rem] font-medium tracking-[.1em] uppercase text-[#2d4a26] no-underline">{l.label}</Link>
+            <Link key={l.href} to={l.href} style={{ fontSize: '0.85rem', fontWeight: 500, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#2d4a26', textDecoration: 'none' }}>{l.label}</Link>
           ))}
-          <Link to="/contact" className="text-[.78rem] font-semibold tracking-[.1em] uppercase text-white bg-[#2d4a26] px-6 py-3.5 text-center no-underline rounded-sm">Free Quote</Link>
+          <Link to="/contact" style={{ fontSize: '0.78rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#ffffff', background: '#2d4a26', padding: '14px 24px', textAlign: 'center', textDecoration: 'none', borderRadius: '2px' }}>Free Quote</Link>
         </div>
       )}
     </nav>
