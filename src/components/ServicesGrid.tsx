@@ -12,9 +12,9 @@ export default function ServicesGrid() {
               Our <em style={{ color: '#b8832a' }}>Services</em>
             </h2>
           </div>
-          <Link to="/contact" className="rv" style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6b6258', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.3s' }}
+          <Link to="/contact" className="rv" style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3d362e', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.3s' }}
             onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#2d4a26'; (e.currentTarget as HTMLElement).style.gap = '16px' }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#6b6258'; (e.currentTarget as HTMLElement).style.gap = '8px' }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#3d362e'; (e.currentTarget as HTMLElement).style.gap = '8px' }}
           >Get a Quote &rarr;</Link>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }} className="max-lg:!grid-cols-1">
@@ -28,7 +28,7 @@ export default function ServicesGrid() {
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
                 {s.keywords.map(k => <span key={k} style={{ fontSize: '0.56rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7a9468', border: '1px solid rgba(122,148,104,0.3)', padding: '4px 10px', borderRadius: '2px' }}>{k}</span>)}
               </div>
-              <p style={{ fontSize: '0.88rem', fontWeight: 300, lineHeight: 1.85, color: '#6b6258', marginBottom: '22px' }}>{s.description}</p>
+              <p style={{ fontSize: '0.88rem', fontWeight: 300, lineHeight: 1.85, color: '#3d362e', marginBottom: '22px' }}>{s.description}</p>
               <div style={{ fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#b8832a', display: 'flex', alignItems: 'center', gap: '8px', transition: 'gap 0.3s' }}>
                 Explore Service &rarr;
               </div>

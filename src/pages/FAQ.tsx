@@ -42,7 +42,7 @@ export default function FAQ() {
                   <span><span className="text-[.6rem] font-semibold tracking-[.14em] uppercase text-[#b8832a] mr-4">{faq.cat}</span>{faq.q}</span>
                   <span className="text-[#b8832a] text-xl ml-4 flex-shrink-0 group-open:rotate-45 transition-transform">+</span>
                 </summary>
-                <div className="px-8 pb-6 pt-2 text-[.87rem] font-light leading-[1.88] text-[#6b6258]">{faq.a}</div>
+                <div className="px-8 pb-6 pt-2 text-[.87rem] font-light leading-[1.88] text-[#3d362e]">{faq.a}</div>
               </details>
             ))}
           </div>

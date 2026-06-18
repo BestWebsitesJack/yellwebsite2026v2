@@ -94,17 +94,17 @@ export default function ServicePage() {
             </h2>
             <div className="grid grid-cols-2 gap-14 max-lg:grid-cols-1">
               <div>
-                <p className="text-[.92rem] font-light leading-[1.92] text-[#6b6258] mb-6 rv">
+                <p className="text-[.92rem] font-light leading-[1.92] text-[#3d362e] mb-6 rv">
                   Young Entrepreneur Landscaping has been providing professional {service.name.toLowerCase()} services across Greater Cincinnati and Northern Kentucky since 2010. Every project is handled in-house with Barrett or Nathan personally overseeing the work from start to finish.
                 </p>
-                <p className="text-[.92rem] font-light leading-[1.92] text-[#6b6258] rv">
+                <p className="text-[.92rem] font-light leading-[1.92] text-[#3d362e] rv">
                   We serve residential and commercial clients throughout Hyde Park, Mariemont, Indian Hill, Anderson Township, Montgomery, Blue Ash, Mason, Covington KY, Florence KY, Fort Thomas KY, and all surrounding communities.
                 </p>
               </div>
               <div className="bg-[#e8f0e4] p-10 rounded-sm rv d1">
                 <h3 className="font-serif text-[1.5rem] font-light text-[#2d4a26] mb-6">Why Choose YEL</h3>
                 {['Serving Cincinnati since 2010','All work performed in-house','Barrett or Nathan on every project','Residential and commercial','Serving Cincinnati and Northern KY','Free on-site consultation'].map(item => (
-                  <div key={item} className="flex items-center gap-3 mb-4 text-[.85rem] text-[#6b6258]">
+                  <div key={item} className="flex items-center gap-3 mb-4 text-[.85rem] text-[#3d362e]">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#2d4a26] flex-shrink-0" />{item}
                   </div>
                 ))}
@@ -129,7 +129,7 @@ export default function ServicePage() {
                       {faq.q}
                       <span className="text-[#b8832a] text-xl ml-4 group-open:rotate-45 transition-transform flex-shrink-0">+</span>
                     </summary>
-                    <div className="px-8 pb-6 pt-2 text-[.87rem] font-light leading-[1.88] text-[#6b6258]">{faq.a}</div>
+                    <div className="px-8 pb-6 pt-2 text-[.87rem] font-light leading-[1.88] text-[#3d362e]">{faq.a}</div>
                   </details>
                 ))}
               </div>
@@ -161,7 +161,7 @@ export default function ServicePage() {
               <Link key={s.slug} to={`/services/${s.slug}`} className={`p-10 bg-white no-underline block group hover:bg-[#e8f0e4] transition-colors rounded-sm rv ${i > 0 ? `d${i}` : ''}`}>
                 <div className="font-serif text-[2.5rem] font-light text-[#2d4a26]/10 mb-4 group-hover:text-[#2d4a26]/20 transition-colors">{s.number}</div>
                 <h3 className="font-serif text-[1.35rem] font-light text-[#2d4a26] mb-3">{s.name}</h3>
-                <p className="text-[.82rem] font-light text-[#6b6258] leading-[1.78] mb-4">{s.description.slice(0, 100)}...</p>
+                <p className="text-[.82rem] font-light text-[#3d362e] leading-[1.78] mb-4">{s.description.slice(0, 100)}...</p>
                 <span className="text-[.62rem] font-semibold tracking-[.14em] uppercase text-[#b8832a] flex items-center gap-2 group-hover:gap-4 transition-all">Learn More &rarr;</span>
               </Link>
             ))}

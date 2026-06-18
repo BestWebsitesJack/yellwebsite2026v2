@@ -33,9 +33,9 @@ export default function About() {
           <div className="max-w-lg mx-auto px-16 py-20 max-lg:px-8 max-lg:py-14">
             <div className="eyebrow rv">Who We Are</div>
             <h2 className="font-serif text-[clamp(2.2rem,4vw,3.2rem)] font-light text-[#2d4a26] mb-7 rv">If you can <em className="text-[#b8832a]">dream it,</em> we can build it</h2>
-            <p className="text-[.92rem] font-light leading-[1.92] text-[#6b6258] mb-5 rv">Since 2010, Young Entrepreneur Landscaping has been the premier choice for discerning homeowners and commercial clients across Greater Cincinnati and Northern Kentucky seeking elevated landscape design and construction.</p>
-            <p className="text-[.92rem] font-light leading-[1.92] text-[#6b6258] mb-5 rv">Our team specializes in custom landscaping, hardscaping, and outdoor living solutions that seamlessly blend architectural sophistication with the natural beauty of your surroundings.</p>
-            <p className="text-[.92rem] font-light leading-[1.92] text-[#6b6258] rv">Each project is a work of art approached with meticulous attention to detail. Barrett or Nathan personally oversees every single build from start to finish.</p>
+            <p className="text-[.92rem] font-light leading-[1.92] text-[#3d362e] mb-5 rv">Since 2010, Young Entrepreneur Landscaping has been the premier choice for discerning homeowners and commercial clients across Greater Cincinnati and Northern Kentucky seeking elevated landscape design and construction.</p>
+            <p className="text-[.92rem] font-light leading-[1.92] text-[#3d362e] mb-5 rv">Our team specializes in custom landscaping, hardscaping, and outdoor living solutions that seamlessly blend architectural sophistication with the natural beauty of your surroundings.</p>
+            <p className="text-[.92rem] font-light leading-[1.92] text-[#3d362e] rv">Each project is a work of art approached with meticulous attention to detail. Barrett or Nathan personally oversees every single build from start to finish.</p>
           </div>
         </div>
       </div>
@@ -50,7 +50,7 @@ export default function About() {
               <div key={s.n} className={`bg-[#faf8f4] p-12 rounded-sm rv ${i > 0 ? `d${i}` : ''}`}>
                 <div className="font-serif text-[3.5rem] font-light text-[#2d4a26] leading-none mb-3">{s.n}</div>
                 <div className="text-[.68rem] font-semibold tracking-[.16em] uppercase text-[#b8832a] mb-4">{s.l}</div>
-                <p className="text-[.85rem] font-light leading-[1.82] text-[#6b6258]">{s.d}</p>
+                <p className="text-[.85rem] font-light leading-[1.82] text-[#3d362e]">{s.d}</p>
               </div>
             ))}
           </div>

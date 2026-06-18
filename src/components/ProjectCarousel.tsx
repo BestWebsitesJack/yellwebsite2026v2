@@ -36,9 +36,9 @@ export default function ProjectCarousel() {
             Real Projects. <em style={{ color: '#b8832a' }}>Real Craftsmanship.</em>
           </h2>
         </div>
-        <Link to="/showcase" className="rv" style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6b6258', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.3s' }}
+        <Link to="/showcase" className="rv" style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3d362e', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.3s' }}
           onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#2d4a26' }}
-          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#6b6258' }}
+          onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#3d362e' }}
         >Full Showcase &rarr;</Link>
       </div>
       <div
@@ -70,7 +70,7 @@ export default function ProjectCarousel() {
         ))}
       </div>
       <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '24px 0', background: '#ffffff', marginTop: '4px' }}>
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 300, color: '#6b6258' }}>
+        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 300, color: '#3d362e' }}>
           Showing <span style={{ color: '#2d4a26' }}>{projects.length}</span> featured projects
         </span>
         <div style={{ display: 'flex', gap: '4px' }}>

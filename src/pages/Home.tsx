@@ -85,7 +85,7 @@ export default function Home() {
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = 'transparent'}
             >
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3.5rem', fontWeight: 300, color: '#2d4a26', lineHeight: 1, marginBottom: '10px' }}>{s.n}</div>
-              <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#6b6258' }}>{s.l}</div>
+              <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#3d362e' }}>{s.l}</div>
             </div>
           ))}
         </div>
@@ -109,10 +109,10 @@ export default function Home() {
             <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem,3.8vw,3.4rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.15, marginBottom: '28px' }}>
               If you can <em style={{ color: '#b8832a' }}>dream it,</em> we can build it
             </h2>
-            <p className="rv" style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#6b6258', marginBottom: '20px' }}>
+            <p className="rv" style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#3d362e', marginBottom: '20px' }}>
               Since 2010, Young Entrepreneur Landscaping has been the premier choice for residential and commercial clients across Greater Cincinnati and Northern Kentucky seeking elevated landscape design and construction.
             </p>
-            <p className="rv" style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#6b6258', marginBottom: '32px' }}>
+            <p className="rv" style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#3d362e', marginBottom: '32px' }}>
               Each project is a work of art tailored entirely to your vision, with Barrett or Nathan personally overseeing every build from start to finish.
             </p>
             <div className="rv" style={{ display: 'inline-flex', alignItems: 'center', gap: '12px', border: '1.5px solid rgba(184,131,42,0.3)', background: '#f5e8cc', padding: '14px 20px', fontSize: '0.67rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#b8832a', borderRadius: '2px' }}>
@@ -182,7 +182,7 @@ export default function Home() {
                   <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 300, color: '#2d4a26' }}>{num}</span>
                 </div>
                 <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.4rem', fontWeight: 300, color: '#2d4a26', marginBottom: '14px' }}>{title}</h3>
-                <p style={{ fontSize: '0.9rem', fontWeight: 300, lineHeight: 1.88, color: '#6b6258' }}>{desc}</p>
+                <p style={{ fontSize: '0.9rem', fontWeight: 300, lineHeight: 1.88, color: '#3d362e' }}>{desc}</p>
               </div>
             ))}
           </div>
@@ -232,9 +232,9 @@ export default function Home() {
                 <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2rem', fontWeight: 300, color: '#2d4a26', marginBottom: '24px', lineHeight: 1.2 }}>{panel.title}</h3>
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
                   {panel.areas.map(a => (
-                    <span key={a} style={{ fontSize: '0.72rem', color: '#6b6258', background: '#ffffff', padding: '8px 16px', border: '1.5px solid #e8e0d4', borderRadius: '20px', transition: 'all 0.3s', cursor: 'default' }}
+                    <span key={a} style={{ fontSize: '0.72rem', color: '#3d362e', background: '#ffffff', padding: '8px 16px', border: '1.5px solid #e8e0d4', borderRadius: '20px', transition: 'all 0.3s', cursor: 'default' }}
                       onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = '#2d4a26'; (e.currentTarget as HTMLElement).style.color = '#2d4a26'; (e.currentTarget as HTMLElement).style.background = '#e8f0e4' }}
-                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = '#e8e0d4'; (e.currentTarget as HTMLElement).style.color = '#6b6258'; (e.currentTarget as HTMLElement).style.background = '#ffffff' }}
+                      onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = '#e8e0d4'; (e.currentTarget as HTMLElement).style.color = '#3d362e'; (e.currentTarget as HTMLElement).style.background = '#ffffff' }}
                     >{a}</span>
                   ))}
                 </div>
@@ -267,7 +267,7 @@ export default function Home() {
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem,3.8vw,3.4rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.15, marginBottom: '20px' }}>
               Let's Build <em style={{ color: '#b8832a' }}>Something Beautiful</em>
             </h2>
-            <p style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#6b6258', marginBottom: '40px' }}>
+            <p style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#3d362e', marginBottom: '40px' }}>
               Ready to transform your outdoor space? Contact us for a free on-site consultation, no obligation, just great ideas for your property.
             </p>
             {[['Phone','(513) 498-6879','tel:5134986879'],['Email','bweckel@yelandscaping.com','mailto:bweckel@yelandscaping.com'],['Instagram','@youngentrepreneur_landscaping','https://www.instagram.com/youngentrepreneur_landscaping/']].map(([l,v,href]) => (

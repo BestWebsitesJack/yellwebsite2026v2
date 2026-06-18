@@ -38,9 +38,9 @@ export default function Nav() {
         <ul style={{ display: 'flex', gap: '48px', listStyle: 'none', margin: 0, padding: 0 }} className="max-lg:hidden">
           {links.map(l => (
             <li key={l.href}>
-              <Link to={l.href} style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', textDecoration: 'none', color: light ? 'rgba(255,255,255,0.88)' : '#6b6258', transition: 'color 0.3s' }}
+              <Link to={l.href} style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', textDecoration: 'none', color: light ? 'rgba(255,255,255,0.88)' : '#3d362e', transition: 'color 0.3s' }}
                 onMouseEnter={e => (e.target as HTMLElement).style.color = light ? '#ffffff' : '#2d4a26'}
-                onMouseLeave={e => (e.target as HTMLElement).style.color = light ? 'rgba(255,255,255,0.88)' : '#6b6258'}
+                onMouseLeave={e => (e.target as HTMLElement).style.color = light ? 'rgba(255,255,255,0.88)' : '#3d362e'}
               >{l.label}</Link>
             </li>
           ))}

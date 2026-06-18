@@ -35,7 +35,7 @@ export default function Services() {
                 <div className="flex flex-wrap gap-1.5 mb-4">
                   {s.keywords.map(k => <span key={k} className="text-[.56rem] font-semibold tracking-[.1em] uppercase text-[#7a9468] border border-[#7a9468]/25 px-2.5 py-1 rounded-sm">{k}</span>)}
                 </div>
-                <p className="text-[.84rem] font-light leading-[1.82] text-[#6b6258] mb-5">{s.description}</p>
+                <p className="text-[.84rem] font-light leading-[1.82] text-[#3d362e] mb-5">{s.description}</p>
                 <div className="text-[.62rem] font-semibold tracking-[.16em] uppercase text-[#b8832a] flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service &rarr;</div>
               </Link>
             ))}
