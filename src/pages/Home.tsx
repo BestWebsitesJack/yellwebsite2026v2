@@ -7,7 +7,7 @@ import Reviews from '../components/Reviews'
 
 const BASE = 'https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/'
 
-const HERO = BASE + 'dae8cfc5-81e7-4f0e-8e8e-bd36f03722e5/thumbnail_IMG_4752.jpg'
+const HERO = '/Home Photo.JPG'
 
 const stats = [
   { n: '15+', l: 'Years Serving Cincinnati' },
@@ -39,7 +39,6 @@ export default function Home() {
       {/* ── HERO ── */}
       <section style={{ position: 'relative', height: '100vh', minHeight: '760px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', overflow: 'hidden' }}>
         <div className="hero-zoom" style={{ position: 'absolute', inset: 0, backgroundImage: `url('${HERO}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,12,8,0.25) 0%, rgba(10,12,8,0.08) 35%, rgba(10,12,8,0.62) 70%, rgba(10,12,8,0.94) 100%)' }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '0 48px 96px' }}>
           <div className="fade-up-1" style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#f5e8cc', marginBottom: '28px' }}>
             <span style={{ width: '32px', height: '1.5px', background: '#f5e8cc', display: 'inline-block', flexShrink: 0 }} />
