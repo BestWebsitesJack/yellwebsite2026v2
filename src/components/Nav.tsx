@@ -22,9 +22,9 @@ export default function Nav() {
       borderBottom: "1px solid #e8e0d4",
       boxShadow: "0 2px 24px rgba(42,37,32,0.05)"
     }}>
-      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 48px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "100px" }}>
+      <div style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 48px", display: "flex", alignItems: "center", justifyContent: "space-between", height: "112px" }}>
         <Link to="/" style={{ textDecoration: "none", flexShrink: 0 }}>
-          <img src="/YellLogo.png" alt="Young Entrepreneur Landscaping" style={{ height: "72px", width: "auto" }} />
+          <img src="/YellLogo.png" alt="Young Entrepreneur Landscaping" style={{ height: "88px", width: "auto" }} />
         </Link>
         <ul style={{ display: "flex", gap: "48px", listStyle: "none", margin: 0, padding: 0, flex: 1, justifyContent: "center" }}>
           {links.map(l => (
