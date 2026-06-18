@@ -41,13 +41,13 @@ export default function Home() {
         <div className="hero-zoom" style={{ position: 'absolute', inset: 0, backgroundImage: `url('${HERO}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div style={{ position: 'relative', zIndex: 2, maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '0 48px 96px' }}>
           <div className="fade-up-1" style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#f5e8cc', marginBottom: '28px' }}>
-            <span style={{ width: '32px', height: '1.5px', background: '#f5e8cc', display: 'inline-block', flexShrink: 0 }} />
+            <span style={{ width: '32px', height: '1.5px', background: '#2d4a26', display: 'inline-block', flexShrink: 0 }} />
             Cincinnati's Premier Landscape Company
           </div>
-          <h1 className="fade-up-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(4rem, 8.5vw, 9rem)', fontWeight: 300, lineHeight: 0.92, color: '#ffffff', marginBottom: '36px', letterSpacing: '-0.01em' }}>
-            Design.<br /><em style={{ color: '#f5e8cc' }}>Build.</em><br />Maintain.
+          <h1 className="fade-up-2" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(4rem, 8.5vw, 9rem)', fontWeight: 300, lineHeight: 0.92, color: '#2a2520', marginBottom: '36px', letterSpacing: '-0.01em' }}>
+            Design.<br /><em style={{ color: '#b8832a' }}>Build.</em><br />Maintain.
           </h1>
-          <p className="fade-up-3" style={{ fontSize: '1.05rem', fontWeight: 300, lineHeight: 1.85, color: 'rgba(255,255,255,0.78)', maxWidth: '500px', marginBottom: '52px' }}>
+          <p className="fade-up-3" style={{ fontSize: '1.05rem', fontWeight: 300, lineHeight: 1.85, color: '#3d362e', maxWidth: '500px', marginBottom: '52px' }}>
             Custom landscape design, hardscaping and outdoor living crafted as art for residential and commercial properties across Greater Cincinnati and Northern Kentucky since 2010.
           </p>
           <div className="fade-up-4" style={{ display: 'flex', alignItems: 'center', gap: '24px', flexWrap: 'wrap' }}>
@@ -55,8 +55,8 @@ export default function Home() {
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#f5e8cc'}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#ffffff'}
             >Get a Free Quote</Link>
-            <Link to="/showcase" style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.88)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px', border: '1px solid rgba(255,255,255,0.35)', padding: '18px 32px', borderRadius: '2px', transition: 'all 0.3s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.7)'; (e.currentTarget as HTMLElement).style.color = '#ffffff' }}
+            <Link to="/showcase" style={{ fontSize: '0.75rem', fontWeight: 500, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#2a2520', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '10px', border: '1px solid rgba(42,37,32,0.3)', padding: '18px 32px', borderRadius: '2px', transition: 'all 0.3s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.borderColor = '#2a2520'; (e.currentTarget as HTMLElement).style.color = '#2a2520' }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.borderColor = 'rgba(255,255,255,0.35)'; (e.currentTarget as HTMLElement).style.color = 'rgba(255,255,255,0.88)' }}
             >View Our Work &rarr;</Link>
           </div>
