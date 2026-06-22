@@ -118,7 +118,7 @@ export default function Nav() {
                 background: "#ffffff", border: "1px solid #e8e0d4", borderRadius: "3px",
                 boxShadow: "0 16px 48px rgba(42,37,32,0.12)", padding: "12px", minWidth: "220px", zIndex: 60
               }}>
-                {[["About Us","/about"],["Showcase","/showcase"],["FAQ","/faq"],["Contact","/contact"]].map(([label, href]) => (
+                {[["About Us","/about"],["Showcase","/showcase"],["FAQ","/faq"],["Careers","/careers"]].map(([label, href]) => (
                   <Link key={href} to={href} style={{
                     display: "block", padding: "14px 18px", textDecoration: "none",
                     fontSize: "0.85rem", fontWeight: 500, color: "#2a2520",

@@ -1,40 +1,46 @@
-import { useEffect } from 'react'
-import { projects } from '../data/projects'
+import { useEffect } from "react"
+import { projects } from "../data/projects"
 
 export default function Showcase() {
   useEffect(() => {
-    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on') }), { threshold: 0.1 })
-    document.querySelectorAll('.rv').forEach(el => obs.observe(el))
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("on") }), { threshold: 0.08 })
+    document.querySelectorAll(".rv").forEach(el => obs.observe(el))
     return () => obs.disconnect()
   }, [])
 
   return (
     <>
-      <section className="bg-[#2d4a26] pt-44 pb-28 max-lg:pt-36 max-lg:pb-20">
-        <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
-          <div className="flex items-center gap-3 text-[.62rem] font-semibold tracking-[.25em] uppercase text-[#f5e8cc] mb-6">
-            <span className="w-6 h-[1.5px] bg-[#f5e8cc] inline-block" />Our Portfolio
+      {/* HERO */}
+      <section style={{ background: "#2d4a26", paddingTop: "168px", paddingBottom: "112px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
+            <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
+            Our Portfolio
           </div>
-          <h1 className="font-serif text-[clamp(3rem,6vw,5.5rem)] font-light text-white leading-[1.0] mb-6">
-            Real Projects.<br /><em className="text-[#f5e8cc]">Real Craftsmanship.</em>
+          <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.6rem,5.5vw,5rem)", fontWeight: 300, color: "#ffffff", lineHeight: 1.05, marginBottom: "24px" }}>
+            Real Projects.<br /><em style={{ color: "#f5e8cc" }}>Real Craftsmanship.</em>
           </h1>
-          <p className="text-[1rem] font-light leading-[1.88] text-white/70 max-w-2xl">
+          <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.88, color: "rgba(255,255,255,0.72)", maxWidth: "640px" }}>
             Every project below was designed and built by our team. No AI-generated images. No stock photography. This is our work, our art.
           </p>
         </div>
       </section>
-      <section className="bg-[#faf8f4] py-6">
-        <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
-          <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-1">
+
+      {/* PROJECTS GRID */}
+      <section style={{ background: "#faf8f4", padding: "80px 0 120px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
             {projects.map((p, i) => (
-              <div key={p.id} className={`relative h-[420px] overflow-hidden group rounded-sm rv ${i > 0 ? `d${Math.min(i,4)}` : ''}`}>
-                <div className="absolute inset-0 bg-cover bg-center bg-[#e8e0d4] transition-transform duration-700 group-hover:scale-[1.05]" style={{ backgroundImage: `url('${p.image}')` }} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#2a2520]/88 via-[#2a2520]/20 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-400">
-                  <div className="text-[.6rem] font-semibold tracking-[.2em] uppercase text-[#f5e8cc] mb-2">{p.location}</div>
-                  <div className="font-serif text-[1.7rem] font-light text-white leading-[1.15] mb-3">{p.name}</div>
-                  <div className="flex flex-wrap gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity duration-400">
-                    {p.tags.map(t => <span key={t} className="text-[.54rem] font-semibold tracking-[.1em] uppercase text-white/65 border border-white/20 px-2.5 py-1 rounded-sm">{t}</span>)}
+              <div key={p.id} className={"rv " + (i > 0 ? ("d" + Math.min(i, 4)) : "")} style={{ position: "relative", height: "420px", overflow: "hidden", borderRadius: "3px", background: "#e8e0d4" }}>
+                <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + p.image + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(42,37,32,0.88) 0%, rgba(42,37,32,0.2) 50%, transparent 100%)" }} />
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "36px" }}>
+                  <div style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "8px" }}>{p.location}</div>
+                  <div style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.7rem", fontWeight: 300, color: "#ffffff", lineHeight: 1.15, marginBottom: "12px" }}>{p.name}</div>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
+                    {p.tags.map(t => (
+                      <span key={t} style={{ fontSize: "0.54rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "rgba(255,255,255,0.7)", border: "1px solid rgba(255,255,255,0.25)", padding: "4px 10px", borderRadius: "2px" }}>{t}</span>
+                    ))}
                   </div>
                 </div>
               </div>
