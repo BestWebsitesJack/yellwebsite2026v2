@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { Link } from "react-router-dom"
 import { projects } from "../data/projects"
 
 export default function Showcase() {
@@ -31,7 +32,7 @@ export default function Showcase() {
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
             {projects.map((p, i) => (
-              <div key={p.id} className={"rv " + (i > 0 ? ("d" + Math.min(i, 4)) : "")} style={{ position: "relative", height: "420px", overflow: "hidden", borderRadius: "3px", background: "#e8e0d4" }}>
+              <Link key={p.id} to={p.url} className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ position: "relative", height: "420px", overflow: "hidden", borderRadius: "3px", background: "#e8e0d4", textDecoration: "none", display: "block" }}>
                 <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + p.image + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(42,37,32,0.88) 0%, rgba(42,37,32,0.2) 50%, transparent 100%)" }} />
                 <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "36px" }}>
@@ -43,7 +44,7 @@ export default function Showcase() {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
