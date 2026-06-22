@@ -6,10 +6,12 @@ import { services } from '../data/services'
 export default function Nav() {
   const [open, setOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [aboutOpen, setAboutOpen] = useState(false)
   const location = useLocation()
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const aboutTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
-  useEffect(() => { setOpen(false); setServicesOpen(false) }, [location])
+  useEffect(() => { setOpen(false); setServicesOpen(false); setAboutOpen(false) }, [location])
 
   const handleEnter = () => {
     if (timeoutRef.current) clearTimeout(timeoutRef.current)
@@ -17,6 +19,14 @@ export default function Nav() {
   }
   const handleLeave = () => {
     timeoutRef.current = setTimeout(() => setServicesOpen(false), 150)
+  }
+
+  const handleAboutEnter = () => {
+    if (aboutTimeoutRef.current) clearTimeout(aboutTimeoutRef.current)
+    setAboutOpen(true)
+  }
+  const handleAboutLeave = () => {
+    aboutTimeoutRef.current = setTimeout(() => setAboutOpen(false), 150)
   }
 
   return (
@@ -84,17 +94,42 @@ export default function Nav() {
             )}
           </li>
 
-          <li>
+          <li
+            style={{ position: "relative" }}
+            onMouseEnter={handleAboutEnter}
+            onMouseLeave={handleAboutLeave}
+          >
             <Link to="/about" style={{
               fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em",
               textTransform: "uppercase", textDecoration: "none",
               color: "#3d362e", transition: "color 0.3s",
               padding: "4px 0", borderBottom: "1.5px solid transparent",
-              display: "inline-block"
+              display: "inline-flex", alignItems: "center", gap: "5px"
             }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#2d4a26"; (e.currentTarget as HTMLElement).style.borderBottomColor = "#2d4a26" }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "#3d362e"; (e.currentTarget as HTMLElement).style.borderBottomColor = "transparent" }}
-            >About</Link>
+            >
+              About <ChevronDown size={14} style={{ transition: "transform 0.2s", transform: aboutOpen ? "rotate(180deg)" : "rotate(0deg)" }} />
+            </Link>
+
+            {aboutOpen && (
+              <div style={{
+                position: "absolute", top: "calc(100% + 16px)", left: "50%", transform: "translateX(-50%)",
+                background: "#ffffff", border: "1px solid #e8e0d4", borderRadius: "3px",
+                boxShadow: "0 16px 48px rgba(42,37,32,0.12)", padding: "12px", minWidth: "220px", zIndex: 60
+              }}>
+                {[["About Us","/about"],["Showcase","/showcase"],["FAQ","/faq"],["Contact","/contact"]].map(([label, href]) => (
+                  <Link key={href} to={href} style={{
+                    display: "block", padding: "14px 18px", textDecoration: "none",
+                    fontSize: "0.85rem", fontWeight: 500, color: "#2a2520",
+                    borderRadius: "2px", transition: "background 0.2s, color 0.2s"
+                  }}
+                    onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#e8f0e4"; (e.currentTarget as HTMLElement).style.color = "#2d4a26" }}
+                    onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "transparent"; (e.currentTarget as HTMLElement).style.color = "#2a2520" }}
+                  >{label}</Link>
+                ))}
+              </div>
+            )}
           </li>
           <li>
             <Link to="/contact" style={{
