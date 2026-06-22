@@ -92,6 +92,9 @@ export default function Home() {
         </div>
       </div>
 
+
+      <Reviews />
+
       {/* ── ABOUT ── */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '680px' }} className="max-lg:!grid-cols-1">
         <div style={{ position: 'relative', overflow: 'hidden' }} className="max-lg:h-72 group">
@@ -102,7 +105,6 @@ export default function Home() {
           <div style={{ position: 'absolute', bottom: 0, right: 0, background: '#2d4a26', padding: '32px 36px', textAlign: 'center' }}>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3rem', fontWeight: 300, color: '#ffffff', lineHeight: 1 }}>2010</div>
             <div style={{ fontSize: '0.54rem', fontWeight: 600, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.55)', marginTop: '6px' }}>Est. Cincinnati</div>
-          </div>
         </div>
         <div style={{ background: '#faf8f4', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <div style={{ maxWidth: '520px', padding: '80px 80px 80px 72px' }} className="max-lg:!p-8">
@@ -245,8 +247,6 @@ export default function Home() {
         </div>
       </section>
 
-      <Reviews />
-      </div>
 
       {/* ── CTA ── */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }} className="max-lg:!grid-cols-1">
