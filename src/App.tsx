@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import Cursor from './components/Cursor'
+import BackToTop from './components/BackToTop'
 import Home from './pages/Home'
 import Services from './pages/Services'
 import ServicePage from './pages/ServicePage'
@@ -36,6 +37,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <BackToTop />
     </>
   )
 }

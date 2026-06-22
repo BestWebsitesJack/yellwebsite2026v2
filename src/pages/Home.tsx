@@ -246,18 +246,6 @@ export default function Home() {
       </section>
 
       <Reviews />
-
-      {/* ── TESTIMONIAL ── */}
-      <div style={{ background: '#2d4a26', padding: '140px 0' }}>
-        <div className="wrap" style={{ maxWidth: '900px', textAlign: 'center' }}>
-          <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '8rem', fontWeight: 300, color: 'rgba(255,255,255,0.06)', lineHeight: 0.6, marginBottom: '16px' }}>"</div>
-          <p className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(1.8rem,3.2vw,3rem)', fontWeight: 300, fontStyle: 'italic', lineHeight: 1.62, color: '#ffffff', marginBottom: '40px' }}>
-            Every outdoor space we create is a reflection of our client's vision, built with enduring craftsmanship and the kind of attention to detail that turns a backyard into a legacy.
-          </p>
-          <div className="rv d1" style={{ fontSize: '0.68rem', fontWeight: 600, letterSpacing: '0.25em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.45)' }}>
-            Barrett Weckel, Founder, Young Entrepreneur Landscaping LLC
-          </div>
-        </div>
       </div>
 
       {/* ── CTA ── */}
