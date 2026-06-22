@@ -1,63 +1,129 @@
-import { useEffect } from 'react'
+import { useEffect } from "react"
+
+const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
+
+const hours = [
+  ["Monday \u2013 Friday", "8am \u2013 6pm"],
+  ["Saturday", "9am \u2013 3pm"],
+  ["Sunday", "9am \u2013 4pm"],
+]
 
 export default function Contact() {
   useEffect(() => {
-    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on') }), { threshold: 0.1 })
-    document.querySelectorAll('.rv').forEach(el => obs.observe(el))
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("on") }), { threshold: 0.08 })
+    document.querySelectorAll(".rv").forEach(el => obs.observe(el))
     return () => obs.disconnect()
   }, [])
 
   return (
     <>
-      <section className="bg-[#2d4a26] pt-44 pb-28 max-lg:pt-36 max-lg:pb-20">
-        <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
-          <div className="flex items-center gap-3 text-[.62rem] font-semibold tracking-[.25em] uppercase text-[#f5e8cc] mb-6">
-            <span className="w-6 h-[1.5px] bg-[#f5e8cc] inline-block" />Get In Touch
+      {/* HERO */}
+      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
+        <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
+            <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
+            Get In Touch
           </div>
-          <h1 className="font-serif text-[clamp(3rem,6vw,5rem)] font-light text-white leading-[1.0] mb-4">
-            Let's Build Something<br /><em className="text-[#f5e8cc]">Extraordinary</em>
+          <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.4rem,4.5vw,4.2rem)", fontWeight: 300, color: "#ffffff", lineHeight: 1.1, marginBottom: "24px" }}>
+            Let's Work <em style={{ color: "#f5e8cc" }}>Together</em>
           </h1>
-          <p className="text-[1rem] font-light text-white/70 max-w-xl">Free on-site consultations for residential and commercial clients across Greater Cincinnati and Northern Kentucky.</p>
+          <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.88, color: "rgba(255,255,255,0.72)", marginBottom: "32px" }}>
+            Thank you for considering Young Entrepreneur Landscaping. As a locally owned and operated company based in Newtown, Ohio, we proudly offer landscape design, build, and maintenance services across Greater Cincinnati and Northern Kentucky. We would love to help you bring your vision to life.
+          </p>
+          <a href="tel:5134986879" style={{ display: "inline-block", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#2d4a26", background: "#ffffff", padding: "18px 44px", textDecoration: "none", borderRadius: "2px", width: "fit-content" }}>
+            Call (513) 498-6879
+          </a>
+        </div>
+        <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
+          <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "b4551ce8-5d6f-495f-aa7c-20b28df00bcf/IMG_1258.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
         </div>
       </section>
-      <div className="grid grid-cols-2 max-lg:grid-cols-1">
-        <div className="bg-[#f2ede4] flex flex-col justify-center">
-          <div className="max-w-md mx-auto px-16 py-20 max-lg:px-8 max-lg:py-14">
-            <div className="eyebrow rv">Contact Info</div>
-            <h2 className="font-serif text-[2.4rem] font-light text-[#2d4a26] mb-10 rv">Reach Out <em className="text-[#b8832a]">Directly</em></h2>
-            {[['Phone','(513) 498-6879','tel:5134986879'],['Email','bweckel@yelandscaping.com','mailto:bweckel@yelandscaping.com'],['Instagram','@youngentrepreneur_landscaping','https://www.instagram.com/youngentrepreneur_landscaping/'],['Address','4178 Round Bottom Rd, Newtown OH 45244','']].map(([l,v,href]) => (
-              <div key={l} className="flex items-start gap-5 mb-7 rv">
-                <span className="text-[.58rem] font-semibold tracking-[.16em] uppercase text-[#2d4a26] min-w-[64px] mt-1">{l}</span>
-                {href ? <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" className="text-[.9rem] font-light text-[#2a2520] no-underline hover:text-[#2d4a26] transition-colors">{v}</a> : <span className="text-[.9rem] font-light text-[#2a2520]">{v}</span>}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="bg-[#2d4a26] flex flex-col justify-center">
-          <div className="max-w-md mx-auto px-16 py-20 max-lg:px-8 max-lg:py-14">
-            <h2 className="font-serif text-[2.4rem] font-light text-white mb-2">Free <em className="text-[#f5e8cc]">Consultation</em></h2>
-            <p className="text-[.85rem] font-light text-white/60 mb-8">Tell us about your project and we will be in touch within 24 hours.</p>
-            <div className="flex flex-col gap-4">
-              <input type="text" placeholder="Your Name" className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-4 text-[.88rem] rounded-sm focus:outline-none focus:border-[#f5e8cc] transition-colors" />
-              <input type="email" placeholder="Email Address" className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-4 text-[.88rem] rounded-sm focus:outline-none focus:border-[#f5e8cc] transition-colors" />
-              <input type="tel" placeholder="Phone Number" className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-4 text-[.88rem] rounded-sm focus:outline-none focus:border-[#f5e8cc] transition-colors" />
-              <select className="w-full bg-white/10 border border-white/20 text-white/60 px-5 py-4 text-[.88rem] rounded-sm focus:outline-none focus:border-[#f5e8cc] transition-colors">
-                <option value="">Select a Service</option>
-                <option>Design | Build</option>
-                <option>Hardscape &amp; Masonry</option>
-                <option>Lawn &amp; Landscape</option>
-                <option>Carpentry &amp; Lighting</option>
-                <option>Water Management</option>
-                <option>Landscape Maintenance</option>
-              </select>
-              <textarea placeholder="Tell us about your project..." rows={5} className="w-full bg-white/10 border border-white/20 text-white placeholder-white/40 px-5 py-4 text-[.88rem] rounded-sm focus:outline-none focus:border-[#f5e8cc] transition-colors resize-none" />
-              <button className="w-full text-[.74rem] font-semibold tracking-[.14em] uppercase text-[#2d4a26] bg-white py-4 rounded-sm transition-all hover:bg-[#f5e8cc] mt-2 cursor-pointer">
-                Request a Free Quote
-              </button>
-            </div>
-          </div>
+
+      {/* AUTH STRIP */}
+      <div style={{ background: "#faf8f4", padding: "20px 0", borderBottom: "1px solid #e8e0d4", borderTop: "1px solid #e8e0d4" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center" }}>
+          <div style={{ width: "5px", height: "5px", background: "#b8832a", borderRadius: "50%", flexShrink: 0 }} />
+          <span style={{ fontSize: "0.7rem", fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: "#3d362e" }}>
+            Every image on this site is a <strong style={{ color: "#2d4a26", fontWeight: 700 }}>real project by our team.</strong> No AI-generated images. No stock photography.
+          </span>
+          <div style={{ width: "5px", height: "5px", background: "#b8832a", borderRadius: "50%", flexShrink: 0 }} />
         </div>
       </div>
+
+      {/* CONTACT INFO + FORM */}
+      <section style={{ background: "#ffffff", padding: "120px 0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "64px" }}>
+
+            {/* LEFT: Info */}
+            <div>
+              <div className="eyebrow rv">Get a Quick Estimate</div>
+              <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem,3.6vw,2.8rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "32px", lineHeight: 1.15 }}>
+                Reach Out <em style={{ color: "#b8832a" }}>Directly</em>
+              </h2>
+
+              <div className="rv" style={{ marginBottom: "36px" }}>
+                <div style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#b8832a", marginBottom: "10px" }}>Phone</div>
+                <a href="tel:5134986879" style={{ fontSize: "1.3rem", fontFamily: "Cormorant Garamond, serif", fontWeight: 400, color: "#2d4a26", textDecoration: "none" }}>(513) 498-6879</a>
+              </div>
+
+              <div className="rv d1" style={{ marginBottom: "36px" }}>
+                <div style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#b8832a", marginBottom: "10px" }}>Email</div>
+                <p style={{ fontSize: "0.95rem", color: "#3d362e", marginBottom: "4px" }}>
+                  Barrett \u2014 <a href="mailto:bweckel@yelandscaping.com?subject=Email from Website" style={{ color: "#2d4a26", textDecoration: "none" }}>bweckel@yelandscaping.com</a>
+                </p>
+                <p style={{ fontSize: "0.95rem", color: "#3d362e" }}>
+                  Nathan \u2014 <a href="mailto:nrecord@yelandscaping.com?subject=Email from Website" style={{ color: "#2d4a26", textDecoration: "none" }}>nrecord@yelandscaping.com</a>
+                </p>
+              </div>
+
+              <div className="rv d2" style={{ marginBottom: "36px" }}>
+                <div style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#b8832a", marginBottom: "10px" }}>Our Location</div>
+                <p style={{ fontSize: "0.95rem", color: "#3d362e", lineHeight: 1.7 }}>4178 Round Bottom Rd<br />Newtown, OH 45244</p>
+              </div>
+
+              <div className="rv d3" style={{ background: "#e8f0e4", padding: "32px", borderRadius: "3px" }}>
+                <div style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#b8832a", marginBottom: "16px" }}>Hours</div>
+                {hours.map(([day, time]) => (
+                  <div key={day} style={{ display: "flex", justifyContent: "space-between", marginBottom: "10px", fontSize: "0.9rem", color: "#3d362e" }}>
+                    <span>{day}</span>
+                    <span style={{ color: "#2d4a26", fontWeight: 600 }}>{time}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* RIGHT: Form */}
+            <div className="rv d2" style={{ background: "#2d4a26", padding: "56px", borderRadius: "3px" }}>
+              <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.8rem", fontWeight: 300, color: "#ffffff", marginBottom: "8px" }}>
+                Free <em style={{ color: "#f5e8cc" }}>Consultation</em>
+              </h3>
+              <p style={{ fontSize: "0.88rem", fontWeight: 300, color: "rgba(255,255,255,0.6)", marginBottom: "32px" }}>
+                Tell us about your project and we will be in touch within 24 hours.
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                {["Your Name","Email Address","Phone Number"].map(ph => (
+                  <input key={ph} type="text" placeholder={ph} style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }} />
+                ))}
+                <select style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.65)", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }}>
+                  <option value="">Select a Service</option>
+                  <option>Design | Build</option>
+                  <option>Hardscape &amp; Masonry</option>
+                  <option>Lawn &amp; Landscape</option>
+                  <option>Carpentry &amp; Lighting</option>
+                  <option>Water Management</option>
+                  <option>Landscape Maintenance</option>
+                </select>
+                <textarea placeholder="Tell us about your project..." rows={5} style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none", resize: "none", fontFamily: "DM Sans, sans-serif" }} />
+                <button style={{ width: "100%", fontSize: "0.76rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#2d4a26", background: "#ffffff", padding: "18px", borderRadius: "2px", border: "none", cursor: "pointer", marginTop: "8px" }}>
+                  Request a Free Quote
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
     </>
   )
 }
