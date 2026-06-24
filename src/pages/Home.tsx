@@ -123,6 +123,29 @@ export default function Home() {
       <ServicesGrid />
       <AuthStrip />
 
+
+      {/* ── COMMERCIAL BAND ── */}
+      <section style={{ background: "#faf8f4", padding: "80px 0" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: "48px", alignItems: "center" }} className="max-lg:!grid-cols-1">
+            <div>
+              <div className="eyebrow rv">Residential & Commercial</div>
+              <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(1.8rem,3.2vw,2.6rem)", fontWeight: 300, color: "#2d4a26", lineHeight: 1.2, marginBottom: "16px" }}>
+                Trusted by Homeowners, <em style={{ color: "#b8832a" }}>Businesses, and Municipalities</em>
+              </h2>
+              <p className="rv d1" style={{ fontSize: "0.92rem", fontWeight: 300, lineHeight: 1.85, color: "#3d362e" }}>
+                Beyond custom residential projects, we maintain commercial properties, HOA communities, and public green spaces throughout Greater Cincinnati and Northern Kentucky.
+              </p>
+            </div>
+            <div className="rv d2" style={{ textAlign: "right" }} >
+              <Link to="/commercial" style={{ display: "inline-block", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#2d4a26", border: "1.5px solid #2d4a26", padding: "16px 36px", textDecoration: "none", borderRadius: "2px" }}>
+                Learn More &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── FEATURE ── */}
       <div style={{ position: 'relative', height: '78vh', minHeight: '580px', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${BASE}bdd88e9d-fe9e-4762-b36f-7cf4395ddcc7/IMG_4909.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
