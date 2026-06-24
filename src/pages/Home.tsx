@@ -4,6 +4,7 @@ import ProjectCarousel from '../components/ProjectCarousel'
 import ServicesGrid from '../components/ServicesGrid'
 import AuthStrip from '../components/AuthStrip'
 import Reviews from '../components/Reviews'
+import InstagramFeed from '../components/InstagramFeed'
 
 const BASE = 'https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/'
 const HERO = '/Home2.png'
@@ -289,6 +290,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <InstagramFeed />
     </>
   )
 }
