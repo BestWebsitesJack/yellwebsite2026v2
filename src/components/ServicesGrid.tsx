@@ -3,19 +3,16 @@ import { services } from '../data/services'
 
 export default function ServicesGrid() {
   return (
-    <section className="sec" style={{ background: '#ffffff' }}>
+    <section className="sec" style={{ background: '#ffffff', borderTop: '1px solid #e8e0d4' }}>
       <div className="wrap">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '64px', flexWrap: 'wrap', gap: '24px' }}>
-          <div>
-            <div className="eyebrow rv">What We Do</div>
-            <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1 }}>
-              Our <em style={{ color: '#b8832a' }}>Services</em>
-            </h2>
-          </div>
-          <Link to="/contact" className="rv" style={{ fontSize: '0.72rem', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#3d362e', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', transition: 'all 0.3s' }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = '#2d4a26'; (e.currentTarget as HTMLElement).style.gap = '16px' }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = '#3d362e'; (e.currentTarget as HTMLElement).style.gap = '8px' }}
-          >Get a Quote &rarr;</Link>
+        <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 64px' }}>
+          <div className="eyebrow rv" style={{ justifyContent: 'center' }}>What We Do</div>
+          <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1, marginBottom: '20px' }}>
+            Six Ways We Bring <em style={{ color: '#b8832a' }}>Your Vision to Life</em>
+          </h2>
+          <p className="rv d1" style={{ fontSize: '0.95rem', fontWeight: 300, color: '#3d362e', lineHeight: 1.8 }}>
+            From first sketch to finished space, here is everything we handle in-house.
+          </p>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }} className="max-lg:!grid-cols-1">
           {services.map((s, i) => (
