@@ -1,5 +1,6 @@
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
+import SEO from "../components/SEO"
 
 const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
 
@@ -19,6 +20,7 @@ export default function Commercial() {
 
   return (
     <>
+      <SEO title="Commercial Landscape Maintenance Cincinnati OH | Young Entrepreneur Landscaping" description="Commercial, HOA, and government landscape maintenance throughout Greater Cincinnati and Northern Kentucky. Reliable, professional service for properties of every scale." path="/commercial" />
       {/* HERO */}
       <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>

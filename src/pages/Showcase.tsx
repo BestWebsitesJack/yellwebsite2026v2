@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { projects } from "../data/projects"
+import SEO from "../components/SEO"
 
 export default function Showcase() {
   useEffect(() => {
@@ -11,6 +12,7 @@ export default function Showcase() {
 
   return (
     <>
+      <SEO title="Real Project Showcase | Cincinnati Landscaping Portfolio | YEL" description="Browse real landscaping and hardscape projects completed by Young Entrepreneur Landscaping across Cincinnati and Northern Kentucky. No AI images, no stock photography." path="/showcase" />
       {/* HERO */}
       <section style={{ background: "#2d4a26", paddingTop: "168px", paddingBottom: "112px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>

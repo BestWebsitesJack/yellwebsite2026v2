@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import SEO from "../components/SEO"
 
 const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
 
@@ -12,6 +13,7 @@ export default function About() {
 
   return (
     <>
+      <SEO title="About Us | Barrett Weckel and Nathan Record | Young Entrepreneur Landscaping" description="Meet the team behind Young Entrepreneur Landscaping. Founded in Cincinnati, OH, serving Greater Cincinnati and Northern Kentucky since 2010 with custom landscape design and construction." path="/about" />
       {/* HERO — split, matching services pages */}
       <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>

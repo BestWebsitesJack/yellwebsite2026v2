@@ -74,6 +74,7 @@ export default function ServicePage() {
 
   return (
     <>
+      <SEO title={service.metaTitle} description={service.metaDescription} path={"/services/" + service.slug} />
       {/* HERO — split layout matching homepage */}
       <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>

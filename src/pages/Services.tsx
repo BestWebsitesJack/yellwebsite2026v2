@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { services } from '../data/services'
+import SEO from "../components/SEO"
 
 export default function Services() {
   useEffect(() => {
@@ -11,6 +12,7 @@ export default function Services() {
 
   return (
     <>
+      <SEO title="Landscaping Services Cincinnati OH | Young Entrepreneur Landscaping" description="Explore all six of our core landscaping services in Cincinnati and Northern Kentucky: design and build, hardscape, lawn care, carpentry, water management, and maintenance." path="/services" />
       <section className="bg-[#2d4a26] pt-44 pb-28 max-lg:pt-36 max-lg:pb-20">
         <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
           <div className="flex items-center gap-3 text-[.62rem] font-semibold tracking-[.25em] uppercase text-[#f5e8cc] mb-6">

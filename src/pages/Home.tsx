@@ -5,6 +5,7 @@ import ServicesGrid from '../components/ServicesGrid'
 import AuthStrip from '../components/AuthStrip'
 import Reviews from '../components/Reviews'
 import InstagramFeed from '../components/InstagramFeed'
+import SEO from "../components/SEO"
 
 const BASE = 'https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/'
 const HERO = '/Home2.png'
@@ -36,6 +37,7 @@ export default function Home() {
 
   return (
     <>
+      <SEO title="Young Entrepreneur Landscaping | Cincinnati Landscaping and Hardscaping" description="Cincinnati's premier custom landscaping company since 2010. Residential and commercial landscape design, hardscaping, paver patios, outdoor living and lawn care. Serving Greater Cincinnati and Northern KY." path="/" />
       {/* ── HERO (Option D split) ── */}
       <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 'calc(100vh - 112px)', marginTop: '112px' }}>
         <div style={{ position: 'relative', overflow: 'hidden', minHeight: '600px' }}>

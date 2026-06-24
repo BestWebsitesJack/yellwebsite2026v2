@@ -1,6 +1,7 @@
 import { useParams, Link } from "react-router-dom"
 import { useEffect } from "react"
 import { projectDetails } from "../data/projectDetails"
+import SEO from "../components/SEO"
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>()
@@ -25,6 +26,11 @@ export default function ProjectDetail() {
 
   return (
     <>
+      <SEO
+        title={project.title + " " + project.subtitle + " | Cincinnati Landscaping Project | YEL"}
+        description={project.intro.slice(0, 155)}
+        path={"/showcase/" + project.slug}
+      />
       {/* HERO */}
       <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>

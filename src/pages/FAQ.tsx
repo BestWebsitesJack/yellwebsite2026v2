@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import SEO from "../components/SEO"
 
 const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
 
@@ -25,6 +26,7 @@ export default function FAQ() {
 
   return (
     <>
+      <SEO title="Frequently Asked Questions | Young Entrepreneur Landscaping" description="Answers to common questions about landscape design, budgets, project timelines, and services offered by Young Entrepreneur Landscaping in Cincinnati and Northern Kentucky." path="/faq" />
       {/* HERO */}
       <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>

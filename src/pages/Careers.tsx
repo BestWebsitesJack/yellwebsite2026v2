@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import SEO from "../components/SEO"
 
 const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
 
@@ -11,6 +12,7 @@ export default function Careers() {
 
   return (
     <>
+      <SEO title="Careers | Join Young Entrepreneur Landscaping in Cincinnati" description="Build your career in the green industry with Young Entrepreneur Landscaping. We are a fast-growing landscaping company serving Cincinnati and Northern Kentucky." path="/careers" />
       {/* HERO */}
       <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>

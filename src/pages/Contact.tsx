@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import SEO from "../components/SEO"
 
 const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
 
@@ -17,6 +18,7 @@ export default function Contact() {
 
   return (
     <>
+      <SEO title="Contact Us | Young Entrepreneur Landscaping | Cincinnati OH" description="Get in touch with Young Entrepreneur Landscaping for a free landscape consultation. Serving Greater Cincinnati and Northern Kentucky since 2010. Call (513) 498-6879." path="/contact" />
       {/* HERO */}
       <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
