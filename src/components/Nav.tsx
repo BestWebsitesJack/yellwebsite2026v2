@@ -94,19 +94,6 @@ export default function Nav() {
             )}
           </li>
 
-          <li>
-            <Link to="/commercial" style={{
-              fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em",
-              textTransform: "uppercase", textDecoration: "none",
-              color: "#3d362e", transition: "color 0.3s",
-              padding: "4px 0", borderBottom: "1.5px solid transparent",
-              display: "inline-block"
-            }}
-              onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#2d4a26"; (e.currentTarget as HTMLElement).style.borderBottomColor = "#2d4a26" }}
-              onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "#3d362e"; (e.currentTarget as HTMLElement).style.borderBottomColor = "transparent" }}
-            >Commercial</Link>
-          </li>
-
           <li
             style={{ position: "relative" }}
             onMouseEnter={handleAboutEnter}
@@ -190,7 +177,7 @@ export default function Nav() {
       {open && (
         <div style={{ background: "#ffffff", borderTop: "1px solid #e8e0d4", padding: "24px 48px", display: "flex", flexDirection: "column", gap: "20px" }}>
           <Link to="/showcase" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>Work</Link>
-          <Link to="/services" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>Services</Link>\n          <Link to="/commercial" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>Commercial</Link>
+          <Link to="/services" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>Services</Link>
           {services.map(s => (
             <Link key={s.slug} to={"/services/" + s.slug} style={{ fontSize: "0.78rem", fontWeight: 500, color: "#3d362e", textDecoration: "none", paddingLeft: "16px" }}>{s.name}</Link>
           ))}
