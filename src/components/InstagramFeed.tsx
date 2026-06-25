@@ -26,8 +26,8 @@ export default function InstagramFeed() {
             See our latest projects and behind-the-scenes moments as they happen.
           </p>
         </div>
-        <div className="rv">
-          <div className="elfsight-app-6e6afb3a-3e41-466b-974a-265a91d61545" data-elfsight-app-lazy />
+        <div className="rv" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
+          <div className="elfsight-app-6e6afb3a-3e41-466b-974a-265a91d61545" data-elfsight-app-lazy style={{ width: "100%", maxWidth: "1100px" }} />
         </div>
       </div>
     </section>

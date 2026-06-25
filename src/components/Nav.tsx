@@ -52,7 +52,7 @@ export default function Nav() {
             }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.color = "#2d4a26"; (e.currentTarget as HTMLElement).style.borderBottomColor = "#2d4a26" }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.color = "#3d362e"; (e.currentTarget as HTMLElement).style.borderBottomColor = "transparent" }}
-            >Work</Link>
+            >Showcase</Link>
           </li>
 
           {/* SERVICES DROPDOWN */}
@@ -176,7 +176,7 @@ export default function Nav() {
 
       {open && (
         <div style={{ background: "#ffffff", borderTop: "1px solid #e8e0d4", padding: "24px 48px", display: "flex", flexDirection: "column", gap: "20px" }}>
-          <Link to="/showcase" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>Work</Link>
+          <Link to="/showcase" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>Showcase</Link>
           <Link to="/services" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>Services</Link>
           {services.map(s => (
             <Link key={s.slug} to={"/services/" + s.slug} style={{ fontSize: "0.78rem", fontWeight: 500, color: "#3d362e", textDecoration: "none", paddingLeft: "16px" }}>{s.name}</Link>

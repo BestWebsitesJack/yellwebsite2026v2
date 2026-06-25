@@ -18,7 +18,7 @@ const stats = [
 ]
 
 const photoGrid = [
-  { img: BASE + 'IMG_5259.jpg', label: 'Montgomery Pavilion' },
+  { img: BASE + 'dae8cfc5-81e7-4f0e-8e8e-bd36f03722e5/thumbnail_IMG_4752.jpg', label: 'Montgomery Pavilion' },
   { img: BASE + 'd8294968-4581-42bf-bae3-26aaa1bcc2d8/thumbnail_IMG_4272.jpg', label: 'Mariemont Porch' },
   { img: BASE + '6b7b2c23-ee42-4a82-928d-ff5ef169b647/IMG_1319.JPG', label: 'Anderson Township Patio' },
   { img: BASE + '0ef20324-954c-4704-94df-52f466a3f375/IMG_2869.jpg', label: 'Hyde Park Grand Entrance' },
