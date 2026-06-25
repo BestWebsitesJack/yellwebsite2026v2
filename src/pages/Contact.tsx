@@ -126,6 +126,28 @@ export default function Contact() {
           </div>
         </div>
       </section>
+
+      {/* MAP */}
+      <section style={{ background: "#faf8f4", padding: "0 0 120px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div className="eyebrow rv" style={{ justifyContent: "center" }}>Find Us</div>
+          <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem,3.6vw,2.8rem)", fontWeight: 300, color: "#2d4a26", lineHeight: 1.15, marginBottom: "32px", textAlign: "center" }}>
+            Visit Us in <em style={{ color: "#b8832a" }}>Newtown, Ohio</em>
+          </h2>
+          <div className="rv" style={{ width: "100%", height: "450px", borderRadius: "3px", overflow: "hidden", border: "1.5px solid #e8e0d4" }}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.4641727007715!2d-84.33016959999999!3d39.141422999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841ac74327fd425%3A0x8843d80145e7f0e6!2sYoung%20Entrepreneur%20Landscaping%20LLC!5e0!3m2!1sen!2sus!4v1782417636507!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              title="Young Entrepreneur Landscaping Location"
+            />
+          </div>
+        </div>
+      </section>
     </>
   )
 }
