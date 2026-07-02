@@ -1,6 +1,8 @@
 import { useParams, Link } from 'react-router-dom'
 import { useEffect } from 'react'
 import { services } from '../data/services'
+import AuthStrip from '../components/AuthStrip'
+import SEO from '../components/SEO'
 
 const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
 
