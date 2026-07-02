@@ -75,7 +75,10 @@ export default function Nav() {
             </Link>
 
             {servicesOpen && (
-              <div style={{
+              <div
+                onMouseEnter={handleEnter}
+                onMouseLeave={handleLeave}
+                style={{
                 position: "absolute", top: "calc(100% + 16px)", left: "50%", transform: "translateX(-50%)",
                 background: "#ffffff", border: "1px solid #e8e0d4", borderRadius: "3px",
                 boxShadow: "0 16px 48px rgba(42,37,32,0.12)", padding: "12px", minWidth: "280px", zIndex: 60
@@ -113,7 +116,10 @@ export default function Nav() {
             </Link>
 
             {aboutOpen && (
-              <div style={{
+              <div
+                onMouseEnter={handleAboutEnter}
+                onMouseLeave={handleAboutLeave}
+                style={{
                 position: "absolute", top: "calc(100% + 16px)", left: "50%", transform: "translateX(-50%)",
                 background: "#ffffff", border: "1px solid #e8e0d4", borderRadius: "3px",
                 boxShadow: "0 16px 48px rgba(42,37,32,0.12)", padding: "12px", minWidth: "220px", zIndex: 60
