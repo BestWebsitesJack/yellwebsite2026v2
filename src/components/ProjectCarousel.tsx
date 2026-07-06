@@ -50,7 +50,7 @@ export default function ProjectCarousel() {
         onMouseLeave={stopDrag}
       >
         {projects.map((p, i) => (
-          <div key={p.id} style={{ flexShrink: 0, width: i === 0 ? '640px' : '420px', height: '580px', position: 'relative', overflow: 'hidden', background: '#e8e0d4' }}
+          <Link key={p.id} to={p.url} style={{ flexShrink: 0, width: i === 0 ? '640px' : '420px', height: '580px', position: 'relative', overflow: 'hidden', background: '#e8e0d4', display: 'block', textDecoration: 'none' }}
             className="group"
           >
             <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${p.image}')`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'transform 0.7s ease' }}
@@ -66,7 +66,7 @@ export default function ProjectCarousel() {
               </div>
               <div style={{ fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#f5e8cc' }}>View Project &rarr;</div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
       <div className="wrap" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '24px 0', background: '#ffffff', marginTop: '4px' }}>
