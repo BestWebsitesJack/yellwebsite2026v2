@@ -1,49 +1,72 @@
-import { useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import { services } from '../data/services'
+import { useEffect } from "react"
+import { Link } from "react-router-dom"
+import { services } from "../data/services"
 import SEO from "../components/SEO"
 
 export default function Services() {
   useEffect(() => {
-    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on') }), { threshold: 0.1 })
-    document.querySelectorAll('.rv').forEach(el => obs.observe(el))
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("on") }), { threshold: 0.08 })
+    document.querySelectorAll(".rv").forEach(el => obs.observe(el))
     return () => obs.disconnect()
   }, [])
 
   return (
     <>
       <SEO title="Landscaping Services Cincinnati OH | Young Entrepreneur Landscaping" description="Explore all six of our core landscaping services in Cincinnati and Northern Kentucky: design and build, hardscape, lawn care, carpentry, water management, and maintenance." path="/services" />
-      <section className="bg-[#2d4a26] pt-44 pb-28 max-lg:pt-36 max-lg:pb-20">
-        <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
-          <div className="flex items-center gap-3 text-[.62rem] font-semibold tracking-[.25em] uppercase text-[#f5e8cc] mb-6">
-            <span className="w-6 h-[1.5px] bg-[#f5e8cc] inline-block" />Our Services
+
+      <section style={{ background: "#2d4a26", paddingTop: "168px", paddingBottom: "112px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
+            <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
+            What We Do
           </div>
-          <h1 className="font-serif text-[clamp(3rem,6vw,5.5rem)] font-light text-white leading-[1.0] mb-6">
-            Cincinnati Landscaping<br /><em className="text-[#f5e8cc]">Services</em>
+          <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.6rem,5.5vw,5rem)", fontWeight: 300, color: "#ffffff", lineHeight: 1.05, marginBottom: "24px" }}>
+            Cincinnati Landscaping<br /><em style={{ color: "#f5e8cc" }}>Services</em>
           </h1>
-          <p className="text-[1rem] font-light leading-[1.88] text-white/70 max-w-2xl">
-            From custom landscape design and hardscaping to lawn care and maintenance, six core services for residential and commercial clients across Greater Cincinnati and Northern Kentucky.
+          <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.88, color: "rgba(255,255,255,0.72)", maxWidth: "640px" }}>
+            From custom landscape design and hardscaping to lawn care and maintenance. Six core services for residential and commercial clients across Greater Cincinnati and Northern Kentucky.
           </p>
         </div>
       </section>
-      <section className="bg-[#faf8f4] py-6">
-        <div className="max-w-7xl mx-auto px-10 max-lg:px-6">
-          <div className="grid grid-cols-3 gap-4 max-lg:grid-cols-1">
+
+      <section style={{ background: "#faf8f4", padding: "80px 0 120px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
             {services.map((s, i) => (
-              <Link key={s.slug} to={`/services/${s.slug}`} className={`p-10 bg-white no-underline block group hover:bg-[#e8f0e4] transition-colors relative rounded-sm rv ${i > 0 ? `d${Math.min(i,4)}` : ''}`}>
-                <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-[#2d4a26] scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left rounded-b-sm" />
-                <div className="font-serif text-[3.5rem] font-light text-[#2d4a26]/10 leading-none mb-5 group-hover:text-[#2d4a26]/20 transition-colors">{s.number}</div>
-                <h2 className="font-serif text-[1.5rem] font-light text-[#2d4a26] mb-3 leading-[1.25]">{s.name}</h2>
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {s.keywords.map(k => <span key={k} className="text-[.56rem] font-semibold tracking-[.1em] uppercase text-[#7a9468] border border-[#7a9468]/25 px-2.5 py-1 rounded-sm">{k}</span>)}
+              <Link key={s.slug} to={"/services/" + s.slug} className={"rv " + (i > 0 ? ("d" + Math.min(i, 4)) : "")} style={{ padding: "48px 44px", background: "#ffffff", textDecoration: "none", display: "block", borderRadius: "3px", position: "relative", overflow: "hidden", transition: "background 0.3s", border: "1.5px solid transparent" }}
+                onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#e8f0e4"; (e.currentTarget as HTMLElement).style.borderColor = "#2d4a26" }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = "#ffffff"; (e.currentTarget as HTMLElement).style.borderColor = "transparent" }}
+              >
+                <div style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "4rem", fontWeight: 300, color: "rgba(45,74,38,0.08)", lineHeight: 1, marginBottom: "20px" }}>{s.number}</div>
+                <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.55rem", fontWeight: 300, color: "#2d4a26", marginBottom: "14px", lineHeight: 1.25 }}>{s.name}</h2>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "16px" }}>
+                  {s.keywords.map(k => (
+                    <span key={k} style={{ fontSize: "0.56rem", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "#7a9468", border: "1px solid rgba(122,148,104,0.3)", padding: "4px 10px", borderRadius: "2px" }}>{k}</span>
+                  ))}
                 </div>
-                <p className="text-[.84rem] font-light leading-[1.82] text-[#3d362e] mb-5">{s.description}</p>
-                <div className="text-[.62rem] font-semibold tracking-[.16em] uppercase text-[#b8832a] flex items-center gap-2 group-hover:gap-4 transition-all">Explore Service &rarr;</div>
+                <p style={{ fontSize: "0.88rem", fontWeight: 300, lineHeight: 1.85, color: "#3d362e", marginBottom: "22px" }}>{s.description}</p>
+                <div style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: "#b8832a" }}>
+                  Explore Service &rarr;
+                </div>
               </Link>
             ))}
           </div>
         </div>
       </section>
+
+      <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
+        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 48px" }}>
+          <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#ffffff", marginBottom: "20px" }}>
+            Ready to Start Your <em style={{ color: "#f5e8cc" }}>Project?</em>
+          </h2>
+          <p style={{ fontSize: "1rem", fontWeight: 300, color: "rgba(255,255,255,0.65)", marginBottom: "40px" }}>
+            Contact us for a free on-site consultation across Greater Cincinnati and Northern Kentucky.
+          </p>
+          <Link to="/contact" style={{ display: "inline-block", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#2d4a26", background: "#ffffff", padding: "18px 48px", textDecoration: "none", borderRadius: "2px" }}>
+            Get a Free Quote
+          </Link>
+        </div>
+      </div>
     </>
   )
 }
