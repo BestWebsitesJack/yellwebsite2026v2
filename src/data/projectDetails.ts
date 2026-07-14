@@ -118,6 +118,7 @@ export const projectDetails: ProjectDetail[] = [
     heroImage: BASE + "ef1344c9-f5ab-4f63-9a3b-f3778c5e3890/IMG_1325.jpg",
     sections: [
       { text: "In place of the garage, a classic brick shed was built. Rustic brick and limestone lintels were used to provide traditional charm.", image: BASE + "3e5bc6c1-653f-460d-bf2f-00ba115e186f/IMG_0701.jpg" },
+      { text: "The finished result — a beautifully restored outdoor space that seamlessly blends hardscape craftsmanship with lush natural plantings.", image: "/NorwoodGarden.jpeg" },
       { text: "The previously sloped back plot was terraced to create a hard-pack limestone gravel patio area surrounded by gardens. Large monolithic stone steps and a fieldstone seating wall with bluestone coping were built to create the terrace.", image: BASE + "339e3763-059a-4526-9f10-5893444077f1/IMG_1825.jpg" },
       { text: "A mix of building materials created a cohesive space. Plantings were chosen to provide different seasonal interest, with a custom cedar door and reclaimed traditional windows installed in the shed.", image: BASE + "3d0d6e28-4c9e-4e80-9606-4958f000abe2/IMG_1338.JPG" },
       { text: "The result intertwines a living space with the gardens, providing both a relaxing and functional space without sacrificing garden area.", image: BASE + "31fc671b-c393-4bc7-998f-befa78d322da/thumbnail_IMG_2965 - Copy - Copy.jpg" },
