@@ -70,8 +70,8 @@ export default function Home() {
       {/* ── MARQUEE ── */}
       <div style={{ background: '#2d4a26', padding: '18px 0', overflow: 'hidden', whiteSpace: 'nowrap' }}>
         <div className="marquee-track">
-          {['Paver Patios','Retaining Walls','Outdoor Kitchens','Landscape Design','Hardscaping','Pergolas & Decks','Landscape Lighting','Lawn Care Cincinnati','French Drains','Fire Pits & Fireplaces','Pool Decks','Northern Kentucky',
-            'Paver Patios','Retaining Walls','Outdoor Kitchens','Landscape Design','Hardscaping','Pergolas & Decks','Landscape Lighting','Lawn Care Cincinnati','French Drains','Fire Pits & Fireplaces','Pool Decks','Northern Kentucky'].map((item, i) => (
+          {['Paver Patios','Retaining Walls','Outdoor Kitchens','Landscape Design','Hardscaping','Pergolas & Decks','Landscape Lighting','Sod Installation','French Drains','Fire Pits & Fireplaces','Pool Decks','Outdoor Living',
+            'Paver Patios','Retaining Walls','Outdoor Kitchens','Landscape Design','Hardscaping','Pergolas & Decks','Landscape Lighting','Sod Installation','French Drains','Fire Pits & Fireplaces','Pool Decks','Outdoor Living'].map((item, i) => (
             <span key={i} style={{ fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.22em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.82)', padding: '0 36px' }}>
               {item} <span style={{ color: 'rgba(255,255,255,0.25)', marginLeft: '36px', fontSize: '0.42rem' }}>&#x2726;</span>
             </span>
