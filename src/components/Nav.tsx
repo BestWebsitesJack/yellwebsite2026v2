@@ -44,7 +44,7 @@ export default function Nav() {
         <ul style={{ display: "flex", gap: "48px", listStyle: "none", margin: 0, padding: 0, flex: 1, justifyContent: "center", alignItems: "center" }}>
           <li>
             <Link to="/showcase" style={{
-              fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em",
+              fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.12em",
               textTransform: "uppercase", textDecoration: "none",
               color: "#3d362e", transition: "color 0.3s",
               padding: "4px 0", borderBottom: "1.5px solid transparent",
@@ -62,7 +62,7 @@ export default function Nav() {
             onMouseLeave={handleLeave}
           >
             <Link to="/services" style={{
-              fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em",
+              fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.12em",
               textTransform: "uppercase", textDecoration: "none",
               color: "#3d362e", transition: "color 0.3s",
               padding: "4px 0", borderBottom: "1.5px solid transparent",
@@ -103,7 +103,7 @@ export default function Nav() {
             onMouseLeave={handleAboutLeave}
           >
             <Link to="/about" style={{
-              fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em",
+              fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.12em",
               textTransform: "uppercase", textDecoration: "none",
               color: "#3d362e", transition: "color 0.3s",
               padding: "4px 0", borderBottom: "1.5px solid transparent",
@@ -139,7 +139,7 @@ export default function Nav() {
           </li>
           <li>
             <Link to="/contact" style={{
-              fontSize: "0.78rem", fontWeight: 600, letterSpacing: "0.12em",
+              fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.12em",
               textTransform: "uppercase", textDecoration: "none",
               color: "#3d362e", transition: "color 0.3s",
               padding: "4px 0", borderBottom: "1.5px solid transparent",
@@ -164,7 +164,7 @@ export default function Nav() {
             <Instagram size={18} />
           </a>
           <Link to="/contact" style={{
-            fontSize: "0.78rem", fontWeight: 700, letterSpacing: "0.12em",
+            fontSize: "0.88rem", fontWeight: 700, letterSpacing: "0.12em",
             textTransform: "uppercase", textDecoration: "none",
             color: "#ffffff", background: "#2d4a26",
             padding: "16px 36px", borderRadius: "2px",
@@ -185,7 +185,7 @@ export default function Nav() {
           <Link to="/showcase" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>Showcase</Link>
           <Link to="/services" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>Services</Link>
           {services.map(s => (
-            <Link key={s.slug} to={"/services/" + s.slug} style={{ fontSize: "0.78rem", fontWeight: 500, color: "#3d362e", textDecoration: "none", paddingLeft: "16px" }}>{s.name}</Link>
+            <Link key={s.slug} to={"/services/" + s.slug} style={{ fontSize: "0.88rem", fontWeight: 500, color: "#3d362e", textDecoration: "none", paddingLeft: "16px" }}>{s.name}</Link>
           ))}
           <Link to="/about" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0" }}>About</Link>
           <a href="https://www.instagram.com/youngentrepreneur_landscaping/" target="_blank" rel="noreferrer" style={{ fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "#2d4a26", textDecoration: "none", padding: "8px 0", display: "flex", alignItems: "center", gap: "10px" }}>
