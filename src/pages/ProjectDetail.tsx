@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom"
 import { useEffect } from "react"
 import { projectDetails } from "../data/projectDetails"
 import SEO from "../components/SEO"
+import BeforeAfterSlider from "../components/BeforeAfterSlider"
 
 export default function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>()
@@ -103,8 +104,20 @@ export default function ProjectDetail() {
                   {section.text}
                 </p>
               </div>
-              <div className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ direction: "ltr", position: "relative", height: "440px", overflow: "hidden", borderRadius: "3px" }}>
-                <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + section.image + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+              <div className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ direction: "ltr" }}>
+                {section.beforeImage ? (
+                  <BeforeAfterSlider
+                    before={section.beforeImage}
+                    after={section.image}
+                    beforeLabel="Before"
+                    afterLabel="After"
+                  />
+                ) : (
+                  <div style={{ position: "relative", height: "440px", overflow: "hidden", borderRadius: "3px" }}>
+                    <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + section.image + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
+                  </div>
+                )}
+              </div>
               </div>
             </div>
           </div>
