@@ -45,8 +45,21 @@ export default function ProjectDetail() {
             Start Your Project
           </Link>
         </div>
-        <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
-          <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + project.heroImage + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+        <div style={{ position: "relative", overflow: "hidden", minHeight: "500px", background: "#000" }}>
+          {project.slug === "norwood-living-garden" ? (
+            <>
+              <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + project.heroImage + "')", backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
+              <iframe
+                src="https://www.youtube.com/embed/o7nktxTj7-s?autoplay=1&mute=1&loop=1&playlist=o7nktxTj7-s&controls=0&showinfo=0&rel=0&modestbranding=1"
+                style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "56.25%", height: "100%", border: "none", zIndex: 1 }}
+                allow="autoplay; encrypted-media"
+                allowFullScreen
+                title="Norwood Living Garden"
+              />
+            </>
+          ) : (
+            <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + project.heroImage + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
+          )}
         </div>
       </section>
 
