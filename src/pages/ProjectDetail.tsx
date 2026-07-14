@@ -32,36 +32,55 @@ export default function ProjectDetail() {
         path={"/showcase/" + project.slug}
       />
       {/* HERO */}
-      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
-        <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
-            <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
-            {project.location}
+      {project.slug === "norwood-living-garden" ? (
+        /* Norwood: full-width vertical video hero */
+        <section style={{ marginTop: "140px", background: "#2d4a26" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
+                <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
+                {project.location}
+              </div>
+              <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.4rem,4.5vw,4.2rem)", fontWeight: 300, color: "#ffffff", lineHeight: 1.1, marginBottom: "12px" }}>{project.title}</h1>
+              <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(1.4rem,2.4vw,1.9rem)", fontWeight: 300, fontStyle: "italic", color: "#f5e8cc", marginBottom: "28px" }}>{project.subtitle}</h2>
+              <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.88, color: "rgba(255,255,255,0.72)", marginBottom: "32px" }}>{project.intro}</p>
+              <Link to="/contact" style={{ display: "inline-block", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#2d4a26", background: "#ffffff", padding: "18px 44px", textDecoration: "none", borderRadius: "2px", width: "fit-content" }}>
+                Start Your Project
+              </Link>
+            </div>
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "center", padding: "48px", background: "#1e3319" }}>
+              <div style={{ position: "relative", width: "100%", maxWidth: "360px", aspectRatio: "9/16", borderRadius: "8px", overflow: "hidden", boxShadow: "0 24px 64px rgba(0,0,0,0.5)" }}>
+                <iframe
+                  src="https://www.youtube.com/embed/o7nktxTj7-s?autoplay=1&mute=1&loop=1&playlist=o7nktxTj7-s&controls=0&showinfo=0&rel=0&modestbranding=1"
+                  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }}
+                  allow="autoplay; encrypted-media"
+                  allowFullScreen
+                  title="Norwood Living Garden"
+                />
+              </div>
+            </div>
           </div>
-          <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.4rem,4.5vw,4.2rem)", fontWeight: 300, color: "#ffffff", lineHeight: 1.1, marginBottom: "12px" }}>{project.title}</h1>
-          <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(1.4rem,2.4vw,1.9rem)", fontWeight: 300, fontStyle: "italic", color: "#f5e8cc", marginBottom: "28px" }}>{project.subtitle}</h2>
-          <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.88, color: "rgba(255,255,255,0.72)", marginBottom: "32px" }}>{project.intro}</p>
-          <Link to="/contact" style={{ display: "inline-block", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#2d4a26", background: "#ffffff", padding: "18px 44px", textDecoration: "none", borderRadius: "2px", width: "fit-content" }}>
-            Start Your Project
-          </Link>
-        </div>
-        <div style={{ position: "relative", overflow: "hidden", minHeight: "500px", background: "#000" }}>
-          {project.slug === "norwood-living-garden" ? (
-            <>
-              <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + project.heroImage + "')", backgroundSize: "cover", backgroundPosition: "center", zIndex: 0 }} />
-              <iframe
-                src="https://www.youtube.com/embed/o7nktxTj7-s?autoplay=1&mute=1&loop=1&playlist=o7nktxTj7-s&controls=0&showinfo=0&rel=0&modestbranding=1"
-                style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "56.25%", height: "100%", border: "none", zIndex: 1 }}
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                title="Norwood Living Garden"
-              />
-            </>
-          ) : (
+        </section>
+      ) : (
+        /* Standard split hero for all other projects */
+        <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
+          <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
+            <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
+              <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
+              {project.location}
+            </div>
+            <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.4rem,4.5vw,4.2rem)", fontWeight: 300, color: "#ffffff", lineHeight: 1.1, marginBottom: "12px" }}>{project.title}</h1>
+            <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(1.4rem,2.4vw,1.9rem)", fontWeight: 300, fontStyle: "italic", color: "#f5e8cc", marginBottom: "28px" }}>{project.subtitle}</h2>
+            <p style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.88, color: "rgba(255,255,255,0.72)", marginBottom: "32px" }}>{project.intro}</p>
+            <Link to="/contact" style={{ display: "inline-block", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.15em", textTransform: "uppercase", color: "#2d4a26", background: "#ffffff", padding: "18px 44px", textDecoration: "none", borderRadius: "2px", width: "fit-content" }}>
+              Start Your Project
+            </Link>
+          </div>
+          <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
             <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + project.heroImage + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* AUTH STRIP */}
       <div style={{ background: "#faf8f4", padding: "20px 0", borderBottom: "1px solid #e8e0d4", borderTop: "1px solid #e8e0d4" }}>
