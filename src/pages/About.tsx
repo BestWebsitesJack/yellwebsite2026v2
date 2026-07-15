@@ -32,7 +32,7 @@ export default function About() {
           </Link>
         </div>
         <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
-          <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "5f6420ba-2ddb-4c58-be07-4b433cb5b869/Young_Barrett.jpg\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+          <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "4a9df538-dd8c-494e-98bb-43f1bd7ac573/IMG_1425.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
         </div>
       </section>
 
