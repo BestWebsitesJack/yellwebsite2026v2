@@ -16,8 +16,8 @@ export default function Footer() {
           </div>
           {[
             { h: "Services", links: [["Design | Build","/services/design-build"],["Hardscape & Masonry","/services/hardscape-masonry"],["Lawn & Landscape","/services/lawn-landscape"],["Carpentry & Lighting","/services/carpentry-lighting"],["Water Management","/services/water-management"],["Landscape Maintenance","/services/landscape-maintenance"]] },
-            { h: "Company", links: [["About Us","/about"],["Showcase","/showcase"],["FAQ","/faq"],["Contact","/contact"]] },
-            { h: "Service Areas", links: [["Cincinnati, OH","/"],["Hyde Park & Mariemont","/"],["Indian Hill","/"],["Northern Kentucky","/"],["Covington KY","/"],["Fort Thomas KY","/"]] },
+            { h: "Company", links: [["About Us","/about"],["Showcase","/showcase"],["FAQ","/faq"],["Careers","/careers"],["Contact","/contact"]] },
+            { h: "Service Areas", links: [["Cincinnati, OH","/services"],["Hyde Park & Mariemont","/showcase"],["Indian Hill","/services"],["Northern Kentucky","/services"],["Covington KY","/contact"],["Fort Thomas KY","/contact"]] },
           ].map(col => (
             <div key={col.h}>
               <h4 style={{ fontSize: "0.6rem", fontWeight: 700, letterSpacing: "0.22em", textTransform: "uppercase", color: "#2d4a26", marginBottom: "24px" }}>{col.h}</h4>
