@@ -118,7 +118,6 @@ export default function ProjectDetail() {
                   </div>
                 )}
               </div>
-              </div>
             </div>
           </div>
         </section>
