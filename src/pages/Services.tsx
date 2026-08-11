@@ -31,7 +31,7 @@ export default function Services() {
 
       <section style={{ background: "#faf8f4", padding: "80px 0 120px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
+          <div className="services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
             {services.map((s, i) => (
               <Link key={s.slug} to={"/services/" + s.slug} className={"rv " + (i > 0 ? ("d" + Math.min(i, 4)) : "")} style={{ padding: "48px 44px", background: "#ffffff", textDecoration: "none", display: "block", borderRadius: "3px", position: "relative", overflow: "hidden", transition: "background 0.3s", border: "1.5px solid transparent" }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = "#e8f0e4"; (e.currentTarget as HTMLElement).style.borderColor = "#2d4a26" }}

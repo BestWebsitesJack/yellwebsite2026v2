@@ -14,7 +14,7 @@ export default function ServicesGrid() {
             From first sketch to finished space, here is everything we handle in-house.
           </p>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }} className="max-lg:!grid-cols-1">
+        <div className="services-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px' }} className="max-lg:!grid-cols-1">
           {services.map((s, i) => (
             <Link key={s.slug} to={`/services/${s.slug}`} className={`rv ${i > 0 ? `d${Math.min(i,4)}` : ''}`} style={{ padding: '48px 44px', background: '#faf8f4', textDecoration: 'none', display: 'block', borderRadius: '3px', position: 'relative', overflow: 'hidden', transition: 'background 0.35s', border: '1.5px solid transparent' }}
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#e8f0e4'; (e.currentTarget as HTMLElement).style.borderColor = '#2d4a26' }}

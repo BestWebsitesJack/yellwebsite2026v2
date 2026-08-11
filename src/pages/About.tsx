@@ -54,7 +54,7 @@ export default function About() {
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,3.8vw,3.4rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "56px", lineHeight: 1.15, maxWidth: "800px" }}>
             Nathan Record <em style={{ color: "#b8832a" }}>and Barrett Weckel</em>
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px" }}>
+          <div className="bios-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px" }}>
             <div className="rv" style={{ background: "#faf8f4", padding: "44px", borderRadius: "3px" }}>
               <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.8rem", fontWeight: 400, color: "#2d4a26", marginBottom: "16px" }}>Nathan Record</h3>
               <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.9, color: "#3d362e", marginBottom: "20px" }}>

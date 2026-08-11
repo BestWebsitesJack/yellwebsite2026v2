@@ -64,7 +64,7 @@ export default function ProjectDetail() {
         </section>
       ) : (
         /* Standard split hero for all other projects */
-        <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
+        <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
           <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
               <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
@@ -98,7 +98,7 @@ export default function ProjectDetail() {
       {project.sections.map((section, i) => (
         <section key={i} style={{ background: i % 2 === 0 ? "#ffffff" : "#faf8f4", padding: "100px 0" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
-            <div style={{ display: "grid", gridTemplateColumns: i % 2 === 0 ? "1fr 1fr" : "1fr 1fr", gap: "64px", alignItems: "center", direction: i % 2 === 0 ? "ltr" : "rtl" }}>
+            <div className="story-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", direction: i % 2 === 0 ? "ltr" : "rtl" }}>
               <div style={{ direction: "ltr" }}>
                 <p className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.92, color: "#3d362e" }}>
                   {section.text}

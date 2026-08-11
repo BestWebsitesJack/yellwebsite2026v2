@@ -78,7 +78,7 @@ export default function ServicePage() {
     <>
       <SEO title={service.metaTitle} description={service.metaDescription} path={"/services/" + service.slug} />
       {/* HERO — split layout matching homepage */}
-      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
+      <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
             <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
@@ -118,7 +118,7 @@ export default function ServicePage() {
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,3.8vw,3.4rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "56px", lineHeight: 1.15, maxWidth: "800px" }}>
             {service.name} in <em style={{ color: "#b8832a" }}>Cincinnati and Northern Kentucky</em>
           </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: "64px" }}>
+          <div className="bios-grid" style={{ display: "grid", gridTemplateColumns: "1.3fr 1fr", gap: "64px" }}>
             <div>
               <p className="rv" style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.92, color: "#3d362e", marginBottom: "24px" }}>
                 Young Entrepreneur Landscaping has been providing professional {service.name.toLowerCase()} services across Greater Cincinnati and Northern Kentucky since 2010. Every project is handled in-house with Barrett or Nathan personally overseeing the work from start to finish.

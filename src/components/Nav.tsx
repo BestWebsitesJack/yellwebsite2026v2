@@ -41,7 +41,7 @@ export default function Nav() {
           <img src="/YellLogo.png" alt="Young Entrepreneur Landscaping" style={{ height: "114px", width: "auto" }} />
         </Link>
 
-        <ul style={{ display: "flex", gap: "48px", listStyle: "none", margin: 0, padding: 0, flex: 1, justifyContent: "center", alignItems: "center" }}>
+        <ul className="nav-desktop-links" style={{ display: "flex", gap: "48px", listStyle: "none", margin: 0, padding: 0, flex: 1, justifyContent: "center", alignItems: "center" }}>
           <li>
             <Link to="/showcase" style={{
               fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.12em",
@@ -175,7 +175,7 @@ export default function Nav() {
           >Free Quote</Link>
         </div>
 
-        <button style={{ display: "none", background: "none", border: "none", cursor: "pointer", color: "#2d4a26" }} onClick={() => setOpen(!open)}>
+        <button style={{ background: "none", border: "none", cursor: "pointer", color: "#2d4a26", display: "none" }} className="nav-mobile-btn" onClick={() => setOpen(!open)}>
           {open ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>

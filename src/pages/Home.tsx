@@ -39,11 +39,11 @@ export default function Home() {
     <>
       <SEO title="Young Entrepreneur Landscaping | Cincinnati Landscaping and Hardscaping" description="Cincinnati's premier custom landscaping company since 2010. Residential and commercial landscape design, hardscaping, paver patios, outdoor living and lawn care. Serving Greater Cincinnati and Northern KY." path="/" />
       {/* ── HERO (Option D split) ── */}
-      <section style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 'calc(100vh - 112px)', marginTop: '112px' }}>
-        <div style={{ position: 'relative', overflow: 'hidden', minHeight: '600px' }}>
+      <section className="hero-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 'calc(100vh - 112px)', marginTop: '112px' }}>
+        <div className="hero-photo" style={{ position: 'relative', overflow: 'hidden', minHeight: '600px' }}>
           <div className="hero-zoom" style={{ position: 'absolute', inset: 0, backgroundImage: `url('${HERO}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
         </div>
-        <div style={{ background: '#faf8f4', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '80px 72px' }}>
+        <div className="hero-text" style={{ background: '#faf8f4', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '80px 72px' }}>
           <div className="fade-up-1" style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#2d4a26', marginBottom: '28px' }}>
             <span style={{ width: '32px', height: '1.5px', background: '#2d4a26', display: 'inline-block', flexShrink: 0 }} />
             Cincinnati's Premier Landscape Company
@@ -54,7 +54,7 @@ export default function Home() {
           <p className="fade-up-3" style={{ fontSize: '1.05rem', fontWeight: 300, lineHeight: 1.88, color: '#3d362e', maxWidth: '460px', marginBottom: '52px' }}>
             Custom landscape design, hardscaping and outdoor living crafted as art for residential and commercial properties across Greater Cincinnati and Northern Kentucky since 2010.
           </p>
-          <div className="fade-up-4" style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="fade-up-4" className="hero-btns" style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <Link to="/contact" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#ffffff', background: '#2d4a26', padding: '18px 48px', textDecoration: 'none', borderRadius: '2px', transition: 'background 0.3s' }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#3d6334'}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#2d4a26'}
@@ -81,7 +81,7 @@ export default function Home() {
 
       {/* ── STATS ── */}
       <div style={{ background: '#ffffff', borderBottom: '2px solid #e8e0d4' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }} className="max-sm:!grid-cols-2">
+        <div className="stats-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }} className="max-sm:!grid-cols-2">
           {stats.map((s, i) => (
             <div key={s.n} className={`rv ${i > 0 ? `d${i}` : ''}`} style={{ padding: '52px 0', borderRight: i < 3 ? '1px solid #e8e0d4' : 'none', paddingLeft: i === 0 ? 0 : '40px' }}>
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3.2rem', fontWeight: 300, color: '#2d4a26', lineHeight: 1, marginBottom: '10px' }}>{s.n}</div>
@@ -164,7 +164,7 @@ export default function Home() {
           <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1, marginBottom: '80px' }}>
             Our <em style={{ color: '#b8832a' }}>Design and Build Process</em>
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '48px', position: 'relative' }} className="max-lg:!grid-cols-2">
+          <div className="process-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '48px', position: 'relative' }} className="max-lg:!grid-cols-2">
             <div style={{ position: 'absolute', top: '24px', left: '12.5%', right: '12.5%', height: '1.5px', background: '#e8e0d4' }} className="max-lg:hidden" />
             {[
               ['01','Consultation','On-site meeting at your property to define goals, explore design options, and understand your vision before a single line is drawn.'],
@@ -185,7 +185,7 @@ export default function Home() {
       </section>
 
       {/* ── PHOTO GRID ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gridTemplateRows: '280px 280px', gap: '4px' }} className="max-lg:!grid-cols-2">
+      <div className="photo-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gridTemplateRows: '280px 280px', gap: '4px' }} className="max-lg:!grid-cols-2">
         {photoGrid.map((p, i) => (
           <div key={i} style={{ position: 'relative', overflow: 'hidden', background: '#e8e0d4', gridColumn: i === 0 ? 'span 2' : i === 3 ? 'span 2' : 'span 1', gridRow: i === 0 ? 'span 2' : 'span 1' }}>
             <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${p.img}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
@@ -203,7 +203,7 @@ export default function Home() {
           <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1, marginBottom: '56px' }}>
             Proudly Serving <em style={{ color: '#b8832a' }}>Cincinnati and Northern Kentucky</em>
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }} className="max-lg:!grid-cols-1">
+          <div className="areas-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }} className="max-lg:!grid-cols-1">
             {[
               { region: 'Greater Cincinnati, Ohio', title: 'Cincinnati and Surrounding Communities', areas: cincyAreas },
               { region: 'Northern Kentucky', title: 'Across the River and Beyond', areas: nkyAreas },
@@ -225,7 +225,7 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }} className="max-lg:!grid-cols-1">
+      <div className="cta-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{ background: '#f2ede4', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
           <div style={{ maxWidth: '520px', padding: '100px 80px' }} className="max-lg:!p-8">
             <div className="eyebrow">Get In Touch</div>

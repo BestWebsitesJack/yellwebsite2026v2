@@ -32,7 +32,7 @@ export default function Showcase() {
       {/* PROJECTS GRID */}
       <section style={{ background: "#faf8f4", padding: "80px 0 120px" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
+          <div className="showcase-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
             {projects.map((p, i) => (
               <Link key={p.id} to={p.url} className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ position: "relative", height: "420px", overflow: "hidden", borderRadius: "3px", background: "#e8e0d4", textDecoration: "none", display: "block" }}>
                 <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + p.image + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
