@@ -11,6 +11,7 @@ export interface ProjectDetail {
   intro: string
   heroImage: string
   sections: { text: string; image: string; beforeImage?: string }[]
+  extraPhotos?: string[]
 }
 
 const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
@@ -28,7 +29,7 @@ export const projectDetails: ProjectDetail[] = [
       { text: "The outdoor kitchen includes a natural gas grill and pellet smoker, along with storage for all the kitchen needs. Granite counters were installed on the kitchen, columns, and fireplace.", image: BASE + "34b53f3f-e10b-441d-9a5e-0f778367df47/IMG_5259.jpg" },
       { text: "A custom exposed framing cedar hip and valley pavilion was built to finish the space, creating a truly beautiful and functional space.", image: BASE + "e1b39726-79c3-4e0f-9cad-668c8251e427/IMG_5290.jpg" },
       { text: "Accent lighting and lush plantings were added for the cherry on top.", image: BASE + "fce6abdd-c9a0-476a-b4d6-fa01dfdfe149/thumbnail_IMG_1333.jpg" },
-    ],
+    ], extraPhotos: [BASE + "2fa570d1-4678-4a16-bd0d-45d046c24b7b/IMG_5527.jpg", BASE + "acb3ac80-f244-4ab8-96b9-af8d9b673102/IMG_5528.jpg"],
   },
   {
     slug: "mariemont-porch-patio",
@@ -42,7 +43,7 @@ export const projectDetails: ProjectDetail[] = [
       { text: "Lush plantings were added to complete the space.", image: BASE + "403b6a5a-d4e3-4d88-935f-07d7ea87f68e/IMG_1455.JPG" },
       { text: "The front walk was re-done using full range pattern bluestone and new plantings. The finished product is a beautiful, private, relaxing place.", image: BASE + "a05d0460-a14f-47c7-bdad-2ba1b6a08eee/IMG_1444.JPG" },
       { text: "Every detail was considered, from the reclaimed brick border to the new plantings framing the space.", image: BASE + "0157bdcd-1627-47f1-871d-7e09c4106964/IMG_1456.JPG" },
-    ],
+    ], extraPhotos: [BASE + "e73fa29a-25b8-4b11-bf48-05507d330846/thumbnail_IMG_4158.jpg", BASE + "f0d0324e-64c0-4f23-a971-a09ee574c2fe/thumbnail_IMG_4087.jpg", BASE + "b23b8cc4-6d8c-46dd-a153-d1a607e3efbe/IMG_1448.JPG", BASE + "66626a57-95d7-4ace-8a24-ed74d247860d/IMG_1454.JPG", BASE + "5b4ac2df-ec84-4eec-9bd6-de37557a8335/thumbnail_IMG_4228.jpg"],
   },
   {
     slug: "hyde-park-outdoor-living",
@@ -56,7 +57,7 @@ export const projectDetails: ProjectDetail[] = [
       { text: "A prefabricated pavilion was installed to complete the space.", image: BASE + "45aa6700-a2d0-47b8-bedd-1a92709975e8/thumbnail_IMG_3796.jpg" },
       { text: "Front bluestone walk and steps, plantings, and retaining walls to accommodate the new drive.", image: BASE + "f0b124e3-5dc2-4bc3-966c-a2c866cc8a14/thumbnail_IMG_3657.jpg" },
       { text: "The completed transformation gave this Hyde Park home an entirely new outdoor living experience.", image: BASE + "457b83dc-3bc6-4e58-be39-a7759fc46dab/thumbnail_IMG_4263.jpg" },
-    ],
+    ], extraPhotos: [BASE + "1b189eb4-d52b-4f5a-bba2-a061046089c1/thumbnail_IMG_3499.jpg", BASE + "27a23b3b-e0f9-4d75-adbd-4cc9cf2459fc/thumbnail_IMG_3660.jpg", BASE + "ef2ce5fd-c12a-4200-8e2a-224e704d94f0/IMG_1426.JPG", BASE + "38bde7a5-c292-4cf4-a83f-0c396f0472db/thumbnail_IMG_3933.jpg", BASE + "c8939360-4831-4e87-8795-3bbd312e6bda/thumbnail_IMG_3819.jpg"],
   },
   {
     slug: "anderson-township-brick-pavilion",
@@ -69,7 +70,7 @@ export const projectDetails: ProjectDetail[] = [
       { text: "A brick patio in a herringbone pattern was built to maximize the hardscape space while allowing some usable lawn. A large French drain was installed to direct water from the back hill. A painted brick kitchenette and counter area was built.", image: BASE + "f1cf20a8-2dfb-48e8-87a7-ac51d48dc1bd/IMG_2337.jpg" },
       { text: "A custom pavilion was built with a vaulted tongue and groove stained wood ceiling. The kitchen includes a stainless steel storage area, inset granite open shelves, a glass door refrigerator, and granite countertops.", image: BASE + "6b7b2c23-ee42-4a82-928d-ff5ef169b647/IMG_1319.JPG" },
       { text: "The patio was built directly off the home's French doors, connecting it to the main living area and making the outdoor space much more accessible.", image: BASE + "0ad20731-9715-4d2d-baa0-5ba4d763ab28/IMG_1311.JPG" },
-    ],
+    ], extraPhotos: [BASE + "c62afefe-835b-4952-954c-f67f3aaeccb8/IMG_2278.jpg"],
   },
   {
     slug: "anderson-township-luxury-deck",
@@ -81,7 +82,7 @@ export const projectDetails: ProjectDetail[] = [
     sections: [
       { text: "A new two-tiered Timber Tech Composite deck was built. The grey decking color provided a coastal feel to the space. The white fascia boards provide excellent definition and contrast to the structure.", image: BASE + "e44ccf66-edc3-41b7-8c1c-84b999e3117b/thumbnail_IMG_4756.jpg" },
       { text: "Outdoor furniture and a TV were added to complete the space.", image: BASE + "a6c883e6-5516-4e47-9b8c-23c04d7364c6/thumbnail_IMG_4759.jpg" },
-    ],
+    ], extraPhotos: [BASE + "b18265b5-0b24-479f-8c12-8813ba53ab86/thumbnail_IMG_4758.jpg"],
   },
   {
     slug: "amberly-natural-landscape",
@@ -94,7 +95,7 @@ export const projectDetails: ProjectDetail[] = [
       { text: "The goal was to bring a more natural feel to the landscape and hardscape that aligned with mid-century architecture, while providing winter privacy and a beautiful view from the home's large windows.", image: BASE + "625028b2-9ad0-4fb3-84ee-037fc61d244a/landscpae+d_i+1.JPG" },
       { text: "The back patio was replaced with natural tumbled bluestone flagging set in an organic form. Large natural boulders and outcroppings were incorporated to create the feeling that they were there before the house.", image: BASE + "8c37420f-638f-4500-8ca5-5815d65880e6/41C5E171-113E-4132-9DEA-2F3D4D0468E1.jpg" },
       { text: "Natural plantings were added using a loose asymmetric structure and colorful palette. A mix of deciduous and evergreen trees provides privacy while maintaining variety and contrast.", image: BASE + "497ee6c2-831b-405c-8d40-ea63dec65a2c/portfolio11.JPG" },
-    ],
+    ], extraPhotos: [BASE + "9a37be5c-049c-4342-ac1f-4abeb7f8553a/thumbnail_IMG-0636.jpg", BASE + "f9f0b65c-4cb1-4988-a88f-84c52dcc3184/Background.JPEG", BASE + "b8813204-3d82-4d3b-acfa-4682f4a40b1f/masonry+7.jpg"],
   },
   {
     slug: "anderson-poolscape",
@@ -107,7 +108,7 @@ export const projectDetails: ProjectDetail[] = [
       { text: "We worked with the pool contractor to select pool size, layout, alignment and elevation. Close cooperation with other contractors ensures the project is done just how you dreamt it.", image: BASE + "f3470e1c-5bf3-4c74-b92c-6dc4b4fa10ed/IMG_1369.JPG" },
       { text: "Imported Italian travertine tile was used for the pool deck, with bullnose pool coping. A custom travertine riser was installed around the perimeter of the pool to connect it more closely to the patio.", image: BASE + "8205d08f-d995-43c2-b864-d2ee5f25b6d7/IMG_1366.JPG" },
       { text: "Grading, sod installation, lighting, and fencing were all completed to give the client a stress-free, top-to-bottom construction experience.", image: BASE + "a9510ebb-f0f0-44f8-81dd-9ad10a5392a9/IMG_3084.jpg" },
-    ],
+    ], extraPhotos: [BASE + "78ef8a38-7ab2-4373-b9af-51d313871893/IMG_3033.jpg"],
   },
   {
     slug: "norwood-living-garden",
@@ -121,7 +122,7 @@ export const projectDetails: ProjectDetail[] = [
       { text: "The previously sloped back plot was terraced to create a hard-pack limestone gravel patio area surrounded by gardens. Large monolithic stone steps and a fieldstone seating wall with bluestone coping were built to create the terrace.", image: BASE + "339e3763-059a-4526-9f10-5893444077f1/IMG_1825.jpg" },
       { text: "A mix of building materials created a cohesive space. Plantings were chosen to provide different seasonal interest, with a custom cedar door and reclaimed traditional windows installed in the shed.", image: BASE + "3d0d6e28-4c9e-4e80-9606-4958f000abe2/IMG_1338.JPG" },
       { text: "The result intertwines a living space with the gardens, providing both a relaxing and functional space without sacrificing garden area.", image: BASE + "31fc671b-c393-4bc7-998f-befa78d322da/thumbnail_IMG_2965 - Copy - Copy.jpg" },
-    ],
+    ], extraPhotos: [BASE + "2ca707b6-bfed-47c0-ab14-dde2ceca312e/thumbnail_IMG_4039.jpg"],
   },
   {
     slug: "hyde-park-grand-entrance",
@@ -135,6 +136,6 @@ export const projectDetails: ProjectDetail[] = [
       { text: "A new blacktop driveway circle was installed, lined with granite cobblestone edging. Strip lights were custom installed between the granite cobblestones to light the drive.", image: BASE + "de6f7e5c-f8f8-4b2b-97e3-2b81fd5d103b/IMG_1382 - Copy - Copy.JPG" },
       { text: "A limestone flagging area was built for easy passenger access. Monolithic stone steps and a custom fabricated steel railing were installed, along with a new stone walk and stoop.", image: BASE + "718e5b17-e32b-4706-b7f7-99607db59b0b/IMG_1375.JPG" },
       { text: "The front patio area was completed to serve as both a place to relax and a place to greet guests, giving this home a much-needed quality of life upgrade.", image: BASE + "30f27c87-37df-43c2-addc-55ed3eebf86b/IMG_1374.JPG" },
-    ],
+    ], extraPhotos: [BASE + "97d3175e-9497-4252-8c71-3a12ae002841/IMG_2970.jpg", BASE + "1705338029734-YOR3P7SCEI5YDKAMSXSF/IMG_1383.JPG", BASE + "1705338042789-7RJJ28HDHD35I9CBH1DS/IMG_1385.JPG", BASE + "1705338086846-8NEXOJO5D7IJJEV29D03/IMG_1389.JPG", BASE + "1705852638156-6X78JRHLYG9EQJPNITSI/IMG_1376.JPG"],
   },
 ]

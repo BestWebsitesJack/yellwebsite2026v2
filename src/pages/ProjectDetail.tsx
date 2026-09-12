@@ -123,6 +123,27 @@ export default function ProjectDetail() {
         </section>
       ))}
 
+      {/* EXTRA PHOTOS GALLERY */}
+      {project.extraPhotos && project.extraPhotos.length > 0 && (
+        <section style={{ background: "#faf8f4", padding: "80px 0 100px" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+            <div className="eyebrow rv" style={{ justifyContent: "center" }}>More From This Project</div>
+            <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem,3.6vw,3rem)", fontWeight: 300, color: "#2d4a26", lineHeight: 1.15, marginBottom: "48px", textAlign: "center" }}>
+              Additional <em style={{ color: "#b8832a" }}>Project Photos</em>
+            </h2>
+            <div style={{ columns: "3", columnGap: "16px" }} className="gallery-columns">
+              {project.extraPhotos.map((photo, i) => (
+                <div key={i} className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ breakInside: "avoid", marginBottom: "16px", overflow: "hidden", borderRadius: "3px" }}>
+                  <div style={{ width: "100%", paddingBottom: "75%", position: "relative", overflow: "hidden" }}>
+                    <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + photo + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 48px" }}>
