@@ -46,3 +46,15 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
 .fade-up-2 { opacity: 0; animation: fadeUp 1.2s ease 0.55s forwards; }
 .fade-up-3 { opacity: 0; animation: fadeUp 1s ease 0.85s forwards; }
 .fade-up-4 { opacity: 0; animation: fadeUp 1s ease 1.05s forwards; }
+
+/* ── SERVICE PAGE PHOTO GALLERY ── */
+@media (max-width: 768px) {
+  .gallery-columns {
+    columns: 2 !important;
+  }
+}
+@media (max-width: 480px) {
+  .gallery-columns {
+    columns: 1 !important;
+  }
+}
