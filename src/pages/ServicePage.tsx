@@ -136,7 +136,7 @@ export default function ServicePage() {
           </Link>
         </div>
         <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
-          <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + hero + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+          <div role="img" aria-label={service.h1 + " - Young Entrepreneur Landscaping Cincinnati OH"} style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + hero + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
         </div>
       </section>
 
@@ -191,7 +191,7 @@ export default function ServicePage() {
               {service.photos.map((photo, i) => (
                 <div key={i} className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ breakInside: "avoid", marginBottom: "16px", overflow: "hidden", borderRadius: "3px" }}>
                   <div style={{ width: "100%", paddingBottom: "75%", position: "relative", overflow: "hidden" }}>
-                    <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + photo + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+                    <div role="img" aria-label={service.name + " project photo - Young Entrepreneur Landscaping Cincinnati OH"} style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + photo + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
                   </div>
                 </div>
               ))}

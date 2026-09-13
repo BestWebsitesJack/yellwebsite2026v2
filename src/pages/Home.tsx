@@ -41,7 +41,7 @@ export default function Home() {
       {/* ── HERO (Option D split) ── */}
       <section className="hero-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 'calc(100vh - 112px)', marginTop: '112px' }}>
         <div className="hero-photo" style={{ position: 'relative', overflow: 'hidden', minHeight: '600px' }}>
-          <div className="hero-zoom" style={{ position: 'absolute', inset: 0, backgroundImage: `url('${HERO}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+          <div role="img" aria-label="Young Entrepreneur Landscaping Cincinnati OH - Custom landscape design, hardscaping and outdoor living since 2010" className="hero-zoom" style={{ position: 'absolute', inset: 0, backgroundImage: `url('${HERO}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
         </div>
         <div className="hero-text" style={{ background: '#faf8f4', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '80px 72px' }}>
           <div className="fade-up-1" style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#2d4a26', marginBottom: '28px' }}>
@@ -188,7 +188,7 @@ export default function Home() {
       <div className="photo-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gridTemplateRows: '280px 280px', gap: '4px' }} className="max-lg:!grid-cols-2">
         {photoGrid.map((p, i) => (
           <div key={i} style={{ position: 'relative', overflow: 'hidden', background: '#e8e0d4', gridColumn: i === 0 ? 'span 2' : i === 3 ? 'span 2' : 'span 1', gridRow: i === 0 ? 'span 2' : 'span 1' }}>
-            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${p.img}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+            <div role="img" aria-label={p.label + " - Young Entrepreneur Landscaping Cincinnati OH"} style={{ position: 'absolute', inset: 0, backgroundImage: `url('${p.img}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
             <div style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
               <span style={{ fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#ffffff', background: 'rgba(42,37,32,0.65)', padding: '6px 14px', borderRadius: '2px' }}>{p.label}</span>
             </div>

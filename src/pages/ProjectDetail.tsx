@@ -90,7 +90,7 @@ export default function ProjectDetail() {
             </Link>
           </div>
           <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
-            <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + project.heroImage + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
+            <div role="img" aria-label={project.title + " " + project.subtitle + " - " + project.location + " landscaping by Young Entrepreneur Landscaping"} style={{ position: "absolute", inset: 0, backgroundImage: "url('" + project.heroImage + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
           </div>
         </section>
       )}
@@ -126,7 +126,7 @@ export default function ProjectDetail() {
                   />
                 ) : (
                   <div style={{ position: "relative", height: "440px", overflow: "hidden", borderRadius: "3px" }}>
-                    <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + section.image + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
+                    <div role="img" aria-label={section.text.slice(0,80) + " - Young Entrepreneur Landscaping"} style={{ position: "absolute", inset: 0, backgroundImage: "url('" + section.image + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
                   </div>
                 )}
               </div>

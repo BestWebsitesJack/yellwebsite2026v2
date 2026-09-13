@@ -32,7 +32,7 @@ export default function About() {
           </Link>
         </div>
         <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
-          <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "4a9df538-dd8c-494e-98bb-43f1bd7ac573/IMG_1425.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+          <div role="img" aria-label="Barrett Weckel and Nathan Record - Founders of Young Entrepreneur Landscaping Cincinnati OH" style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "4a9df538-dd8c-494e-98bb-43f1bd7ac573/IMG_1425.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
         </div>
       </section>
 
@@ -93,7 +93,7 @@ export default function About() {
               </p>
             </div>
             <div className="rv d2" style={{ position: "relative", height: "480px", overflow: "hidden", borderRadius: "3px" }}>
-              <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "5f6420ba-2ddb-4c58-be07-4b433cb5b869/Young_Barrett.jpg\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+              <div role="img" aria-label="Young Barrett Weckel - Founder of Young Entrepreneur Landscaping started at age 14 in Cincinnati OH" style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "5f6420ba-2ddb-4c58-be07-4b433cb5b869/Young_Barrett.jpg\')", backgroundSize: "cover", backgroundPosition: "center" }} />
             </div>
           </div>
         </div>

@@ -35,7 +35,7 @@ export default function Showcase() {
           <div className="showcase-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
             {projects.map((p, i) => (
               <Link key={p.id} to={p.url} className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ position: "relative", height: "420px", overflow: "hidden", borderRadius: "3px", background: "#e8e0d4", textDecoration: "none", display: "block" }}>
-                <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + p.image + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+                <div role="img" aria-label={p.name + " - " + p.location + " landscaping by Young Entrepreneur Landscaping"} style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + p.image + "\')", backgroundSize: "cover", backgroundPosition: "center" }} />
                 <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(42,37,32,0.88) 0%, rgba(42,37,32,0.2) 50%, transparent 100%)" }} />
                 <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "36px" }}>
                   <div style={{ fontSize: "0.6rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "8px" }}>{p.location}</div>
