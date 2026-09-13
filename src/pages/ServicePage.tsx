@@ -77,6 +77,46 @@ export default function ServicePage() {
   return (
     <>
       <SEO title={service.metaTitle} description={service.metaDescription} path={"/services/" + service.slug} />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          "name": service.h1,
+          "description": service.metaDescription,
+          "provider": {
+            "@type": "LandscapeService",
+            "name": "Young Entrepreneur Landscaping LLC",
+            "url": "https://www.yelandscaping.com",
+            "telephone": "+15134986879"
+          },
+          "areaServed": [
+            "Cincinnati, OH", "Anderson Township, OH", "Hyde Park, OH",
+            "Mariemont, OH", "Indian Hill, OH", "Blue Ash, OH",
+            "Montgomery, OH", "Mason, OH", "Madeira, OH", "West Chester, OH",
+            "Covington, KY", "Florence, KY", "Fort Thomas, KY",
+            "Newport, KY", "Highland Heights, KY", "Cold Spring, KY",
+            "Union, KY", "Northern Kentucky"
+          ],
+          "url": "https://www.yelandscaping.com/services/" + service.slug
+        })}</script>
+      </Helmet>
+
+      {pageFaqs.length > 0 && (
+        <Helmet>
+          <script type="application/ld+json">{JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": pageFaqs.map(faq => ({
+              "@type": "Question",
+              "name": faq.q,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.a
+              }
+            }))
+          })}</script>
+        </Helmet>
+      )}
       {/* HERO — split layout matching homepage */}
       <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>

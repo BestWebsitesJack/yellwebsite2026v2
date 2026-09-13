@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom"
 import { useEffect } from "react"
 import { projectDetails } from "../data/projectDetails"
 import SEO from "../components/SEO"
+import { Helmet } from "react-helmet-async"
 import BeforeAfterSlider from "../components/BeforeAfterSlider"
 
 export default function ProjectDetail() {
@@ -32,6 +33,17 @@ export default function ProjectDetail() {
         description={project.intro.slice(0, 155)}
         path={"/showcase/" + project.slug}
       />
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yelandscaping.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Showcase", "item": "https://www.yelandscaping.com/showcase"},
+            {"@type": "ListItem", "position": 3, "name": project.title + " " + project.subtitle, "item": "https://www.yelandscaping.com/showcase/" + project.slug}
+          ]
+        })}</script>
+      </Helmet>
       {/* HERO */}
       {project.slug === "norwood-living-garden" ? (
         /* Norwood: full-width vertical video hero */
