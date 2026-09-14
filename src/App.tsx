@@ -12,6 +12,7 @@ import About from './pages/About'
 import Contact from './pages/Contact'
 import FAQ from './pages/FAQ'
 import Careers from './pages/Careers'
+import NotFound from './pages/NotFound'
 import ProjectDetail from './pages/ProjectDetail'
 
 function ScrollToTop() {
@@ -37,7 +38,7 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/careers" element={<Careers />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
       <Footer />
