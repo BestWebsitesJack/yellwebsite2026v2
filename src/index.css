@@ -58,3 +58,142 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
     columns: 1 !important;
   }
 }
+
+/* ── INTERIOR PAGE HERO MOBILE ── */
+@media (max-width: 1024px) {
+  .hero-split {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+    margin-top: 80px !important;
+  }
+  .hero-split > div:last-child {
+    min-height: 280px !important;
+    height: 55vw !important;
+  }
+  .hero-split > div:first-child {
+    padding: 40px 24px !important;
+  }
+  .hero-split > div:first-child h1 {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+  .hero-split > div:first-child h2 {
+    font-size: clamp(1.1rem, 4vw, 1.5rem) !important;
+  }
+  .hero-split > div:first-child p {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ── SHOWCASE PAGE MOBILE ── */
+@media (max-width: 768px) {
+  .showcase-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .showcase-grid > a {
+    height: 260px !important;
+  }
+}
+
+/* ── SERVICES GRID MOBILE ── */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── STORY SECTIONS MOBILE ── */
+@media (max-width: 768px) {
+  .story-grid {
+    grid-template-columns: 1fr !important;
+    direction: ltr !important;
+    gap: 20px !important;
+  }
+  .story-grid > div {
+    direction: ltr !important;
+  }
+  .story-grid > div > div {
+    height: 260px !important;
+  }
+}
+
+/* ── GALLERY COLUMNS MOBILE ── */
+@media (max-width: 768px) {
+  .gallery-columns {
+    columns: 1 !important;
+  }
+}
+
+/* ── FOOTER MOBILE ── */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+  }
+  .footer-brand {
+    grid-column: 1 / -1 !important;
+  }
+}
+
+/* ── STATS MOBILE ── */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* ── PROCESS GRID MOBILE ── */
+@media (max-width: 768px) {
+  .process-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 24px !important;
+  }
+}
+
+/* ── AREAS GRID MOBILE ── */
+@media (max-width: 768px) {
+  .areas-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── CTA SPLIT MOBILE ── */
+@media (max-width: 768px) {
+  .cta-split {
+    grid-template-columns: 1fr !important;
+  }
+  .cta-split > div {
+    padding: 48px 24px !important;
+  }
+}
+
+/* ── BIOS GRID MOBILE ── */
+@media (max-width: 768px) {
+  .bios-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── CONTACT GRID MOBILE ── */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── HOMEPAGE HERO MOBILE ── */
+@media (max-width: 1024px) {
+  .hero-split.homepage-hero {
+    margin-top: 80px !important;
+  }
+}
+
+/* ── PREVENT HORIZONTAL OVERFLOW ── */
+@media (max-width: 1024px) {
+  body, html {
+    overflow-x: hidden !important;
+  }
+  * {
+    max-width: 100vw;
+  }
+}

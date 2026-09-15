@@ -14,8 +14,8 @@ export default function Showcase() {
     <>
       <SEO title="Real Project Showcase | Cincinnati Landscaping Portfolio | YEL" description="Browse real landscaping and hardscape projects completed by Young Entrepreneur Landscaping across Cincinnati and Northern Kentucky. No AI images, no stock photography." path="/showcase" />
       {/* HERO */}
-      <section style={{ background: "#2d4a26", paddingTop: "168px", paddingBottom: "112px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+      <section style={{ background: "#2d4a26", paddingTop: "120px", paddingBottom: "64px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
             <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
             Our Portfolio
