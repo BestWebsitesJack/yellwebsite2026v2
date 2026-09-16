@@ -40,8 +40,8 @@ export default function Nav() {
     aboutTimeoutRef.current = setTimeout(() => setAboutOpen(false), 150)
   }
 
-  const navHeight = isMobile ? "80px" : "140px"
-  const logoHeight = isMobile ? "60px" : "114px"
+  const navHeight = isMobile ? "110px" : "140px"
+  const logoHeight = isMobile ? "90px" : "114px"
 
   const linkStyle = {
     fontSize: "0.88rem", fontWeight: 600, letterSpacing: "0.12em",

@@ -238,8 +238,8 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
 /* ── HOMEPAGE HERO MOBILE MARGIN ── */
 @media (max-width: 1024px) {
   #homepage-hero {
-    margin-top: 80px !important;
-    min-height: calc(100vh - 80px) !important;
+    margin-top: 110px !important;
+    min-height: calc(100vh - 110px) !important;
   }
 }
 
@@ -252,5 +252,27 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
   }
   .stats-grid > div:last-child {
     border-bottom: none !important;
+  }
+}
+
+/* ── HERO BUTTONS MOBILE SPACING ── */
+@media (max-width: 768px) {
+  .hero-btns {
+    flex-direction: column !important;
+    gap: 12px !important;
+    padding-bottom: 16px !important;
+  }
+  .hero-btns a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+  }
+}
+
+/* ── INTERIOR PAGE HERO MARGIN MOBILE ── */
+@media (max-width: 1024px) {
+  .hero-split {
+    margin-top: 110px !important;
   }
 }
