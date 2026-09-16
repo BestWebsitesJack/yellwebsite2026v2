@@ -83,8 +83,8 @@ export default function Home() {
       <div style={{ background: '#ffffff', borderBottom: '2px solid #e8e0d4' }}>
         <div className="stats-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }} className="max-sm:!grid-cols-2">
           {stats.map((s, i) => (
-            <div key={s.n} className={`rv ${i > 0 ? `d${i}` : ''}`} style={{ padding: '52px 0', borderRight: i < 3 ? '1px solid #e8e0d4' : 'none', paddingLeft: i === 0 ? 0 : '40px' }}>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3.2rem', fontWeight: 300, color: '#2d4a26', lineHeight: 1, marginBottom: '10px' }}>{s.n}</div>
+            <div key={s.n} className={`rv stat-item ${i > 0 ? `d${i}` : ''}`} style={{ padding: '40px 20px', textAlign: 'center' }}>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1, marginBottom: '10px' }}>{s.n}</div>
               <div style={{ fontSize: '0.65rem', fontWeight: 500, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#3d362e' }}>{s.l}</div>
             </div>
           ))}
@@ -95,8 +95,8 @@ export default function Home() {
       <Reviews />
 
       {/* ── ABOUT ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '660px' }} className="max-lg:!grid-cols-1">
-        <div style={{ position: 'relative', overflow: 'hidden' }} className="max-lg:h-72">
+      <div className="hero-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '660px' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', minHeight: '300px' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${BASE}403b6a5a-d4e3-4d88-935f-07d7ea87f68e/IMG_1455.JPG')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div style={{ position: 'absolute', bottom: 0, right: 0, background: '#2d4a26', padding: '32px 36px', textAlign: 'center' }}>
             <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '2.8rem', fontWeight: 300, color: '#ffffff', lineHeight: 1 }}>2010</div>

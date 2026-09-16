@@ -2,15 +2,30 @@ import { useEffect } from "react"
 
 export default function InstagramFeed() {
   useEffect(() => {
-    const existing = document.querySelector("script[src=\"https://elfsightcdn.com/platform.js\"]")
-    if (!existing) {
-      const script = document.createElement("script")
-      script.src = "https://elfsightcdn.com/platform.js"
-      script.async = true
-      document.body.appendChild(script)
-    } else {
+    const initElfsight = () => {
       const w = window as any
-      w.eapps?.reinitialize?.()
+      if (w.eapps) {
+        w.eapps.reinitialize?.()
+      } else {
+        const script = document.querySelector("script[src=\"https://elfsightcdn.com/platform.js\"]")
+        if (!script) {
+          const s = document.createElement("script")
+          s.src = "https://elfsightcdn.com/platform.js"
+          s.async = true
+          document.body.appendChild(s)
+        }
+      }
+    }
+
+    initElfsight()
+    const t1 = setTimeout(initElfsight, 500)
+    const t2 = setTimeout(initElfsight, 1500)
+    const t3 = setTimeout(initElfsight, 3000)
+
+    return () => {
+      clearTimeout(t1)
+      clearTimeout(t2)
+      clearTimeout(t3)
     }
   }, [])
 
@@ -27,7 +42,11 @@ export default function InstagramFeed() {
           </p>
         </div>
         <div className="rv" style={{ display: "flex", justifyContent: "center", width: "100%" }}>
-          <div className="elfsight-app-6e6afb3a-3e41-466b-974a-265a91d61545" data-elfsight-app-lazy style={{ width: "100%", maxWidth: "1100px" }} />
+          <div
+            className="elfsight-app-6e6afb3a-3e41-466b-974a-265a91d61545"
+            data-elfsight-app-lazy
+            style={{ width: "100%", maxWidth: "1100px" }}
+          />
         </div>
       </div>
     </section>

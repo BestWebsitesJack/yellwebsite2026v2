@@ -1,11 +1,28 @@
-import { useEffect } from 'react'
+import { useEffect } from "react"
 
 export default function Reviews() {
   useEffect(() => {
-    // Re-trigger Elfsight if it loaded before this component mounted
-    const w = window as any
-    if (w.eapps) {
-      w.eapps.reinitialize?.()
+    const initElfsight = () => {
+      const w = window as any
+      if (w.eapps?.applications?.length > 0) {
+        w.eapps.reinitialize?.()
+      } else if (w.eapps) {
+        w.eapps.reinitialize?.()
+      }
+    }
+
+    // Try immediately
+    initElfsight()
+
+    // Retry after delays to catch lazy load
+    const t1 = setTimeout(initElfsight, 500)
+    const t2 = setTimeout(initElfsight, 1500)
+    const t3 = setTimeout(initElfsight, 3000)
+
+    return () => {
+      clearTimeout(t1)
+      clearTimeout(t2)
+      clearTimeout(t3)
     }
   }, [])
 
@@ -17,7 +34,11 @@ export default function Reviews() {
           Real Reviews. <em style={{ color: "#b8832a" }}>Real Clients.</em>
         </h2>
         <div className="rv" style={{ width: "100%", display: "flex", justifyContent: "center" }}>
-          <div className="elfsight-app-80ac392a-86dc-4761-88ce-aade40ab1f18" data-elfsight-app-lazy style={{ width: "100%" }} />
+          <div
+            className="elfsight-app-80ac392a-86dc-4761-88ce-aade40ab1f18"
+            data-elfsight-app-lazy
+            style={{ width: "100%", maxWidth: "1100px" }}
+          />
         </div>
       </div>
     </section>

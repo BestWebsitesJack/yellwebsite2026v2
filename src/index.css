@@ -197,3 +197,40 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
     max-width: 100vw;
   }
 }
+
+/* ── STATS BAR MOBILE ── */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .stat-item {
+    border-right: none !important;
+    border-bottom: 1px solid #e8e0d4;
+    padding: 28px 16px !important;
+  }
+}
+
+/* ── FEATURE SECTION MOBILE ── */
+@media (max-width: 768px) {
+  .feature-inner {
+    padding: 0 24px !important;
+  }
+}
+
+/* ── HOMEPAGE HERO BUTTONS MOBILE ── */
+@media (max-width: 640px) {
+  .hero-btns {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .hero-btns a {
+    width: 100% !important;
+    text-align: center !important;
+    display: block !important;
+    box-sizing: border-box !important;
+  }
+}
