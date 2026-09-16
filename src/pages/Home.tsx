@@ -39,7 +39,7 @@ export default function Home() {
     <>
       <SEO title="Young Entrepreneur Landscaping | Cincinnati Landscaping and Hardscaping" description="Cincinnati's premier custom landscaping company since 2010. Residential and commercial landscape design, hardscaping, paver patios, outdoor living and lawn care. Serving Greater Cincinnati and Northern KY." path="/" />
       {/* ── HERO (Option D split) ── */}
-      <section className="hero-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 'calc(100vh - 112px)', marginTop: '112px' }}>
+      <section className="hero-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 'calc(100vh - 112px)', marginTop: '112px' }} id="homepage-hero">
         <div className="hero-photo" style={{ position: 'relative', overflow: 'hidden', minHeight: '600px' }}>
           <div role="img" aria-label="Young Entrepreneur Landscaping Cincinnati OH - Custom landscape design, hardscaping and outdoor living since 2010" className="hero-zoom" style={{ position: 'absolute', inset: 0, backgroundImage: `url('${HERO}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
         </div>
@@ -54,7 +54,7 @@ export default function Home() {
           <p className="fade-up-3" style={{ fontSize: '1.05rem', fontWeight: 300, lineHeight: 1.88, color: '#3d362e', maxWidth: '460px', marginBottom: '52px' }}>
             Custom landscape design, hardscaping and outdoor living crafted as art for residential and commercial properties across Greater Cincinnati and Northern Kentucky since 2010.
           </p>
-          <div className="fade-up-4" className="hero-btns" style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
+          <div className="fade-up-4 hero-btns" style={{ display: 'flex', alignItems: 'center', gap: '16px', flexWrap: 'wrap' }}>
             <Link to="/contact" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#ffffff', background: '#2d4a26', padding: '18px 48px', textDecoration: 'none', borderRadius: '2px', transition: 'background 0.3s' }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.background = '#3d6334'}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.background = '#2d4a26'}
@@ -81,7 +81,7 @@ export default function Home() {
 
       {/* ── STATS ── */}
       <div style={{ background: '#ffffff', borderBottom: '2px solid #e8e0d4' }}>
-        <div className="stats-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }} className="max-sm:!grid-cols-2">
+        <div className="stats-grid" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 20px', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)' }}>
           {stats.map((s, i) => (
             <div key={s.n} className={`rv stat-item ${i > 0 ? `d${i}` : ''}`} style={{ padding: '40px 20px', textAlign: 'center' }}>
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2rem, 5vw, 3.2rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1, marginBottom: '10px' }}>{s.n}</div>

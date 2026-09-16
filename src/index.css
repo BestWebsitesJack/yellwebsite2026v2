@@ -234,3 +234,23 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
     box-sizing: border-box !important;
   }
 }
+
+/* ── HOMEPAGE HERO MOBILE MARGIN ── */
+@media (max-width: 1024px) {
+  #homepage-hero {
+    margin-top: 80px !important;
+    min-height: calc(100vh - 80px) !important;
+  }
+}
+
+/* ── STATS BAR BORDER FIX MOBILE ── */
+@media (max-width: 768px) {
+  .stats-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid #e8e0d4 !important;
+    padding: 28px 16px !important;
+  }
+  .stats-grid > div:last-child {
+    border-bottom: none !important;
+  }
+}
