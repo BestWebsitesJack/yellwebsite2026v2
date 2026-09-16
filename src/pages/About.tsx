@@ -15,7 +15,7 @@ export default function About() {
     <>
       <SEO title="About Us | Barrett Weckel and Nathan Record | Young Entrepreneur Landscaping" description="Meet the team behind Young Entrepreneur Landscaping. Founded in Cincinnati, OH, serving Greater Cincinnati and Northern Kentucky since 2010 with custom landscape design and construction." path="/about" />
       {/* HERO — split, matching services pages */}
-      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
+      <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
             <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
@@ -38,7 +38,7 @@ export default function About() {
 
       {/* AUTH STRIP */}
       <div style={{ background: "#faf8f4", padding: "20px 0", borderBottom: "1px solid #e8e0d4", borderTop: "1px solid #e8e0d4" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center" }}>
           <div style={{ width: "5px", height: "5px", background: "#b8832a", borderRadius: "50%", flexShrink: 0 }} />
           <span style={{ fontSize: "0.7rem", fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: "#3d362e" }}>
             Every image on this site is a <strong style={{ color: "#2d4a26", fontWeight: 700 }}>real project by our team.</strong> No AI-generated images. No stock photography.
@@ -49,7 +49,7 @@ export default function About() {
 
       {/* TEAM BIOS */}
       <section style={{ background: "#ffffff", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="eyebrow rv">Owners</div>
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,3.8vw,3.4rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "56px", lineHeight: 1.15, maxWidth: "800px" }}>
             Nathan Record <em style={{ color: "#b8832a" }}>and Barrett Weckel</em>
@@ -75,8 +75,8 @@ export default function About() {
 
       {/* HISTORY */}
       <section style={{ background: "#faf8f4", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
+          <div className="story-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }}>
             <div>
               <div className="eyebrow rv">Our History</div>
               <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem,3.6vw,3rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "28px", lineHeight: 1.15 }}>
@@ -101,7 +101,7 @@ export default function About() {
 
       {/* TESTIMONIAL */}
       <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
-        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <p className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(1.5rem,2.6vw,2.2rem)", fontWeight: 300, fontStyle: "italic", lineHeight: 1.6, color: "#ffffff" }}>
             "I have been using Barrett and his crew for several years now. They always are friendly, knowledgeable, and polite. The work done is always of high quality. I would not hesitate to refer them to anyone needing landscape services of any kind."
           </p>
@@ -110,7 +110,7 @@ export default function About() {
 
       {/* CTA */}
       <div style={{ background: "#ffffff", padding: "100px 0", textAlign: "center" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "20px" }}>
             Get a <em style={{ color: "#b8832a" }}>Quick Estimate</em>
           </h2>

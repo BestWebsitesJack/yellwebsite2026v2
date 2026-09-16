@@ -20,7 +20,7 @@ export default function Contact() {
     <>
       <SEO title="Contact Us | Young Entrepreneur Landscaping | Cincinnati OH" description="Get in touch with Young Entrepreneur Landscaping for a free landscape consultation. Serving Greater Cincinnati and Northern Kentucky since 2010. Call (513) 498-6879." path="/contact" />
       {/* HERO */}
-      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
+      <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
             <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
@@ -43,7 +43,7 @@ export default function Contact() {
 
       {/* AUTH STRIP */}
       <div style={{ background: "#faf8f4", padding: "20px 0", borderBottom: "1px solid #e8e0d4", borderTop: "1px solid #e8e0d4" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center" }}>
           <div style={{ width: "5px", height: "5px", background: "#b8832a", borderRadius: "50%", flexShrink: 0 }} />
           <span style={{ fontSize: "0.7rem", fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: "#3d362e" }}>
             Every image on this site is a <strong style={{ color: "#2d4a26", fontWeight: 700 }}>real project by our team.</strong> No AI-generated images. No stock photography.
@@ -54,7 +54,7 @@ export default function Contact() {
 
       {/* CONTACT INFO + FORM */}
       <section style={{ background: "#ffffff", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="contact-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1.2fr", gap: "64px" }}>
 
             {/* LEFT: Info */}
@@ -129,7 +129,7 @@ export default function Contact() {
 
       {/* MAP */}
       <section style={{ background: "#faf8f4", padding: "0 0 120px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="eyebrow rv" style={{ justifyContent: "center" }}>Find Us</div>
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem,3.6vw,2.8rem)", fontWeight: 300, color: "#2d4a26", lineHeight: 1.15, marginBottom: "32px", textAlign: "center" }}>
             Visit Us in <em style={{ color: "#b8832a" }}>Newtown, Ohio</em>

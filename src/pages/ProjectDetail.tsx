@@ -48,7 +48,7 @@ export default function ProjectDetail() {
       {project.slug === "norwood-living-garden" ? (
         /* Norwood: full-width vertical video hero */
         <section style={{ marginTop: "140px", background: "#2d4a26" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
+          <div className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr" }}>
             <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
                 <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
@@ -97,7 +97,7 @@ export default function ProjectDetail() {
 
       {/* AUTH STRIP */}
       <div style={{ background: "#faf8f4", padding: "20px 0", borderBottom: "1px solid #e8e0d4", borderTop: "1px solid #e8e0d4" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center" }}>
           <div style={{ width: "5px", height: "5px", background: "#b8832a", borderRadius: "50%", flexShrink: 0 }} />
           <span style={{ fontSize: "0.7rem", fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: "#3d362e" }}>
             Every image on this site is a <strong style={{ color: "#2d4a26", fontWeight: 700 }}>real project by our team.</strong> No AI-generated images. No stock photography.
@@ -109,7 +109,7 @@ export default function ProjectDetail() {
       {/* STORY SECTIONS */}
       {project.sections.map((section, i) => (
         <section key={i} style={{ background: i % 2 === 0 ? "#ffffff" : "#faf8f4", padding: "100px 0" }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
             <div className="story-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", direction: i % 2 === 0 ? "ltr" : "rtl" }}>
               <div style={{ direction: "ltr" }}>
                 <p className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ fontSize: "1rem", fontWeight: 300, lineHeight: 1.92, color: "#3d362e" }}>
@@ -138,7 +138,7 @@ export default function ProjectDetail() {
       {/* EXTRA PHOTOS GALLERY */}
       {project.extraPhotos && project.extraPhotos.length > 0 && (
         <section style={{ background: "#faf8f4", padding: "80px 0 100px" }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
             <div className="eyebrow rv" style={{ justifyContent: "center" }}>More From This Project</div>
             <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem,3.6vw,3rem)", fontWeight: 300, color: "#2d4a26", lineHeight: 1.15, marginBottom: "48px", textAlign: "center" }}>
               Additional <em style={{ color: "#b8832a" }}>Project Photos</em>
@@ -158,7 +158,7 @@ export default function ProjectDetail() {
 
       {/* CTA */}
       <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#ffffff", marginBottom: "20px" }}>
             Inspired by <em style={{ color: "#f5e8cc" }}>This Project?</em>
           </h2>

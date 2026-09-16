@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function Footer() {
   return (
     <footer style={{ background: "#ffffff", paddingTop: "80px", paddingBottom: "40px", borderTop: "1px solid #e8e0d4" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
         <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "64px", marginBottom: "64px" }}>
           <div className="footer-brand">
             <img src="/YellLogo.png" alt="Young Entrepreneur Landscaping" style={{ height: "64px", width: "auto", marginBottom: "24px" }} />

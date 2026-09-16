@@ -15,7 +15,7 @@ export default function Showcase() {
       <SEO title="Real Project Showcase | Cincinnati Landscaping Portfolio | YEL" description="Browse real landscaping and hardscape projects completed by Young Entrepreneur Landscaping across Cincinnati and Northern Kentucky. No AI images, no stock photography." path="/showcase" />
       {/* HERO */}
       <section style={{ background: "#2d4a26", paddingTop: "120px", paddingBottom: "64px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 24px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(16px, 3vw, 24px)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
             <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
             Our Portfolio
@@ -31,7 +31,7 @@ export default function Showcase() {
 
       {/* PROJECTS GRID */}
       <section style={{ background: "#faf8f4", padding: "80px 0 120px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="showcase-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
             {projects.map((p, i) => (
               <Link key={p.id} to={p.url} className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ position: "relative", height: "420px", overflow: "hidden", borderRadius: "3px", background: "#e8e0d4", textDecoration: "none", display: "block" }}>

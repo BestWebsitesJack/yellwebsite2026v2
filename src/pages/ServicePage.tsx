@@ -142,7 +142,7 @@ export default function ServicePage() {
 
       {/* AUTHENTICITY STRIP */}
       <div style={{ background: "#faf8f4", padding: "20px 0", borderBottom: "1px solid #e8e0d4", borderTop: "1px solid #e8e0d4" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center" }}>
           <div style={{ width: "5px", height: "5px", background: "#b8832a", borderRadius: "50%", flexShrink: 0 }} />
           <span style={{ fontSize: "0.7rem", fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: "#3d362e" }}>
             Every image on this site is a <strong style={{ color: "#2d4a26", fontWeight: 700 }}>real project by our team.</strong> No AI-generated images. No stock photography.
@@ -153,7 +153,7 @@ export default function ServicePage() {
 
       {/* ABOUT THIS SERVICE */}
       <section style={{ background: "#ffffff", padding: "120px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="eyebrow rv">About This Service</div>
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,3.8vw,3.4rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "56px", lineHeight: 1.15, maxWidth: "800px" }}>
             {service.name} in <em style={{ color: "#b8832a" }}>Cincinnati and Northern Kentucky</em>
@@ -182,12 +182,12 @@ export default function ServicePage() {
       {/* PHOTO GALLERY */}
       {service.photos && service.photos.length > 0 && (
         <section style={{ background: "#faf8f4", padding: "80px 0 100px" }}>
-          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
             <div className="eyebrow rv" style={{ justifyContent: "center" }}>Our Work</div>
             <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem,3.6vw,3rem)", fontWeight: 300, color: "#2d4a26", lineHeight: 1.15, marginBottom: "48px", textAlign: "center" }}>
               Real Projects. <em style={{ color: "#b8832a" }}>Real Results.</em>
             </h2>
-            <div style={{ columns: "3", columnGap: "16px" }} className="gallery-columns">
+            <div className="gallery-columns" style={{ columns: "3", columnGap: "16px" }}>
               {service.photos.map((photo, i) => (
                 <div key={i} className={"rv " + (i > 0 ? ("d" + Math.min(i % 4, 4)) : "")} style={{ breakInside: "avoid", marginBottom: "16px", overflow: "hidden", borderRadius: "3px" }}>
                   <div style={{ width: "100%", paddingBottom: "75%", position: "relative", overflow: "hidden" }}>
@@ -203,7 +203,7 @@ export default function ServicePage() {
       {/* FAQ */}
       {pageFaqs.length > 0 && (
         <section style={{ background: "#faf8f4", padding: "120px 0" }}>
-          <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 48px" }}>
+          <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
             <div className="eyebrow rv">FAQ</div>
             <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,3.8vw,3.4rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "56px", lineHeight: 1.15 }}>
               Common Questions About <em style={{ color: "#b8832a" }}>{service.name}</em>
@@ -225,7 +225,7 @@ export default function ServicePage() {
 
       {/* CTA */}
       <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#ffffff", marginBottom: "20px" }}>
             Ready to Start Your <em style={{ color: "#f5e8cc" }}>Cincinnati Project?</em>
           </h2>
@@ -240,7 +240,7 @@ export default function ServicePage() {
 
       {/* OTHER SERVICES */}
       <section style={{ background: "#ffffff", padding: "100px 0" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="eyebrow rv">Explore More</div>
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(1.8rem,3.2vw,2.6rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "48px" }}>Other Services</h2>
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>

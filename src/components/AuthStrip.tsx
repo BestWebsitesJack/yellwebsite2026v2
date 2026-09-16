@@ -1,12 +1,12 @@
 export default function AuthStrip() {
   return (
-    <div className="bg-[#2d4a26] py-5 px-8">
-      <div className="max-w-7xl mx-auto flex items-center justify-center gap-4 max-lg:flex-col max-lg:text-center">
-        <div className="w-1.5 h-1.5 bg-white/50 rounded-full flex-shrink-0" />
-        <span className="text-[.72rem] font-light tracking-[.08em] uppercase text-white/75">
-          Every image on this site is a <strong className="text-white font-semibold">real project by our team.</strong> No AI-generated images. No stock photography. This is our work — our art.
+    <div style={{ background: "#2d4a26", padding: "20px clamp(20px, 4vw, 48px)" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "center", gap: "16px", textAlign: "center", flexWrap: "wrap" }}>
+        <div style={{ width: "5px", height: "5px", background: "#f5e8cc", borderRadius: "50%", flexShrink: 0 }} />
+        <span style={{ fontSize: "0.7rem", fontWeight: 400, letterSpacing: "0.08em", textTransform: "uppercase", color: "rgba(255,255,255,0.8)" }}>
+          Every image on this site is a <strong style={{ color: "#f5e8cc", fontWeight: 700 }}>real project by our team.</strong> No AI-generated images. No stock photography.
         </span>
-        <div className="w-1.5 h-1.5 bg-white/50 rounded-full flex-shrink-0" />
+        <div style={{ width: "5px", height: "5px", background: "#f5e8cc", borderRadius: "50%", flexShrink: 0 }} />
       </div>
     </div>
   )

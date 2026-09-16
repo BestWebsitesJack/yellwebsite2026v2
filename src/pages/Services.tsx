@@ -15,7 +15,7 @@ export default function Services() {
       <SEO title="Landscaping Services Cincinnati OH | Young Entrepreneur Landscaping" description="Explore all six of our core landscaping services in Cincinnati and Northern Kentucky: design and build, hardscape, lawn care, carpentry, water management, and maintenance." path="/services" />
 
       <section style={{ background: "#2d4a26", paddingTop: "168px", paddingBottom: "112px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
             <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
             What We Do
@@ -30,7 +30,7 @@ export default function Services() {
       </section>
 
       <section style={{ background: "#faf8f4", padding: "80px 0 120px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="services-grid" style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: "20px" }}>
             {services.map((s, i) => (
               <Link key={s.slug} to={"/services/" + s.slug} className={"rv " + (i > 0 ? ("d" + Math.min(i, 4)) : "")} style={{ padding: "48px 44px", background: "#ffffff", textDecoration: "none", display: "block", borderRadius: "3px", position: "relative", overflow: "hidden", transition: "background 0.3s", border: "1.5px solid transparent" }}
@@ -55,7 +55,7 @@ export default function Services() {
       </section>
 
       <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#ffffff", marginBottom: "20px" }}>
             Ready to Start Your <em style={{ color: "#f5e8cc" }}>Project?</em>
           </h2>

@@ -104,7 +104,7 @@ export default function Home() {
           </div>
         </div>
         <div style={{ background: '#faf8f4', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ maxWidth: '520px', padding: '80px 80px 80px 72px' }} className="max-lg:!p-8">
+          <div style={{ maxWidth: '520px', padding: 'clamp(24px, 5vw, 80px)' }}>
             <div className="eyebrow rv">Our Story</div>
             <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem,3.8vw,3.4rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.15, marginBottom: '28px' }}>
               If you can <em style={{ color: '#b8832a' }}>dream it,</em> we can build it
@@ -128,11 +128,11 @@ export default function Home() {
 
 
       {/* ── FEATURE ── */}
-      <div style={{ position: 'relative', height: '78vh', minHeight: '580px', overflow: 'hidden' }}>
+      <div className="feature-section" style={{ position: 'relative', height: '78vh', minHeight: '480px', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${BASE}bdd88e9d-fe9e-4762-b36f-7cf4395ddcc7/IMG_4909.jpg')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
         <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(10,12,8,0.92) 0%, rgba(10,12,8,0.55) 50%, rgba(10,12,8,0.12) 100%)' }} />
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center' }}>
-          <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '0 48px' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto', width: '100%', padding: '0 clamp(20px, 4vw, 48px)' }}>
             <div style={{ maxWidth: '560px' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '0.62rem', fontWeight: 600, letterSpacing: '0.24em', textTransform: 'uppercase', color: '#f5e8cc', marginBottom: '20px' }}>
                 <span style={{ width: '24px', height: '1.5px', background: '#f5e8cc', display: 'inline-block' }} />Featured Project
@@ -159,7 +159,7 @@ export default function Home() {
 
       {/* ── PROCESS ── */}
       <section style={{ background: '#faf8f4', padding: '120px 0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 clamp(20px, 4vw, 48px)' }}>
           <div className="eyebrow rv">How It Works</div>
           <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1, marginBottom: '80px' }}>
             Our <em style={{ color: '#b8832a' }}>Design and Build Process</em>
@@ -198,7 +198,7 @@ export default function Home() {
 
       {/* ── AREAS ── */}
       <section style={{ background: '#ffffff', padding: '120px 0' }}>
-        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 clamp(20px, 4vw, 48px)' }}>
           <div className="eyebrow rv">Where We Work</div>
           <h2 className="rv" style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,4vw,3.8rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.1, marginBottom: '56px' }}>
             Proudly Serving <em style={{ color: '#b8832a' }}>Cincinnati and Northern Kentucky</em>
@@ -227,7 +227,7 @@ export default function Home() {
       {/* ── CTA ── */}
       <div className="cta-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
         <div style={{ background: '#f2ede4', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ maxWidth: '520px', padding: '100px 80px' }} className="max-lg:!p-8">
+          <div style={{ maxWidth: '520px', padding: 'clamp(32px, 6vw, 100px) clamp(24px, 5vw, 80px)' }}>
             <div className="eyebrow">Get In Touch</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem,3.8vw,3.4rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.15, marginBottom: '20px' }}>
               Let's Build <em style={{ color: '#b8832a' }}>Something Beautiful</em>
@@ -244,7 +244,7 @@ export default function Home() {
           </div>
         </div>
         <div style={{ background: '#2d4a26', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ maxWidth: '520px', padding: '100px 80px' }} className="max-lg:!p-8">
+          <div style={{ maxWidth: '520px', padding: 'clamp(32px, 6vw, 100px) clamp(24px, 5vw, 80px)' }}>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3rem', fontWeight: 300, color: '#ffffff', lineHeight: 1.12, marginBottom: '16px' }}>
               Free <em style={{ color: '#f5e8cc' }}>Consultation</em>
             </h2>

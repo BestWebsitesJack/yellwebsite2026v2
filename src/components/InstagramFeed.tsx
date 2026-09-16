@@ -31,7 +31,7 @@ export default function InstagramFeed() {
 
   return (
     <section style={{ background: "#faf8f4", padding: "100px 0", borderTop: "1px solid #e8e0d4" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 48px" }}>
+      <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
         <div style={{ textAlign: "center", maxWidth: "700px", margin: "0 auto 48px" }}>
           <div className="eyebrow rv" style={{ justifyContent: "center" }}>Follow Along</div>
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.5rem)", fontWeight: 300, color: "#2d4a26", lineHeight: 1.1, marginBottom: "16px" }}>

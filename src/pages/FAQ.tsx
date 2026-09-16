@@ -30,7 +30,7 @@ export default function FAQ() {
       <Helmet><script type="application/ld+json">{`{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do we get started?", "acceptedAnswer": {"@type": "Answer", "text": "Simple! Call, email, or fill out our contact form to schedule a free consultation to discuss your landscape. We aim to respond within 24 hours."}}, {"@type": "Question", "name": "What if I am unsure of my budget?", "acceptedAnswer": {"@type": "Answer", "text": "No problem! During the consultation, we will define ballpark costs to help set parameters for the project."}}, {"@type": "Question", "name": "What if I do not have a vision for my landscape?", "acceptedAnswer": {"@type": "Answer", "text": "No worries! During the consultation, we will figure out your goals for your outdoor space."}}, {"@type": "Question", "name": "What does a design cost?", "acceptedAnswer": {"@type": "Answer", "text": "It depends on the complexity of your project. In some cases no design fee is charged. For complex projects we charge a design fee communicated during the consultation."}}, {"@type": "Question", "name": "What landscaping services do you offer?", "acceptedAnswer": {"@type": "Answer", "text": "We offer landscape design, hardscaping, lawn care, carpentry, lighting, water management, and landscape maintenance serving Greater Cincinnati and Northern Kentucky."}}, {"@type": "Question", "name": "Do you serve Northern Kentucky?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we serve all of Greater Cincinnati and Northern Kentucky including Covington, Florence, Fort Thomas, Newport, Highland Heights, Cold Spring, Union, Villa Hills, and surrounding areas."}}, {"@type": "Question", "name": "Do you work with commercial properties?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, we serve both residential homeowners and commercial clients including office parks, HOAs, and commercial properties throughout Cincinnati and Northern Kentucky."}}, {"@type": "Question", "name": "How much does a paver patio cost?", "acceptedAnswer": {"@type": "Answer", "text": "Paver patio costs in Cincinnati typically range from $8,000 to $30,000 or more depending on size, materials, and design complexity. We provide free detailed estimates for every project."}}]}`}</script></Helmet>
       <SEO title="Frequently Asked Questions | Young Entrepreneur Landscaping" description="Answers to common questions about landscape design, budgets, project timelines, and services offered by Young Entrepreneur Landscaping in Cincinnati and Northern Kentucky." path="/faq" />
       {/* HERO */}
-      <section style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
+      <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
             <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
@@ -53,7 +53,7 @@ export default function FAQ() {
 
       {/* FAQ LIST */}
       <section style={{ background: "#faf8f4", padding: "120px 0" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="eyebrow rv">Common Questions</div>
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,3.8vw,3.4rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "56px", lineHeight: 1.15 }}>
             Everything You <em style={{ color: "#b8832a" }}>Need to Know</em>
@@ -79,7 +79,7 @@ export default function FAQ() {
 
       {/* CTA */}
       <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
-        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 48px" }}>
+        <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#ffffff", marginBottom: "20px" }}>
             Still Have <em style={{ color: "#f5e8cc" }}>Questions?</em>
           </h2>
