@@ -18,7 +18,7 @@ const heroImages: Record<string, string> = {
 
 const faqs: Record<string, { q: string; a: string }[]> = {
   "design-build": [
-    { q: "What is a landscape design and build company?", a: "A design-build company handles both the design and construction of your outdoor space. YEL manages everything from initial consultation and CAD design to full construction under one roof." },
+    { q: "What is a landscape design and build company?", a: "A design-build company handles both the design and construction of your outdoor space. Young Entrepreneur Landscaping manages everything from initial consultation and CAD design to full construction under one roof." },
     { q: "Do I need a design before starting my landscaping project?", a: "Not always. For smaller projects we can work directly from a consultation. For larger transformations we recommend a scaled CAD design with 3-D elevations so you can visualize the finished space first." },
     { q: "How long does a landscape project take in Cincinnati?", a: "Timeline varies by scope. A paver patio may take 1 to 2 weeks while a full outdoor living renovation can take 4 to 8 weeks. We provide a clear schedule after the design approval phase." },
     { q: "Do you serve Northern Kentucky?", a: "Yes, we serve all of Greater Cincinnati and Northern Kentucky including Covington, Florence, Fort Thomas, Newport, Highland Heights, Cold Spring, Union, and surrounding areas." },
@@ -31,7 +31,7 @@ const faqs: Record<string, { q: string; a: string }[]> = {
   ],
   "lawn-landscape": [
     { q: "Do you offer lawn care in Northern Kentucky?", a: "Yes, we provide lawn care, maintenance, and landscape services throughout Northern Kentucky including Covington, Florence, Fort Thomas, and surrounding communities." },
-    { q: "What lawn care services does YEL offer?", a: "We offer full lawn and landscape services including mowing, fertilization, mulching, planting beds, garden design, sod installation, seasonal cleanups, and ongoing maintenance programs." },
+    { q: "What lawn care services do you offer?", a: "We offer full lawn and landscape services including mowing, fertilization, mulching, planting beds, garden design, sod installation, seasonal cleanups, and ongoing maintenance programs." },
     { q: "Do you do garden design in Cincinnati?", a: "Yes, garden design is one of our specialties. We create custom planting plans that complement your hardscape and home using native and low-maintenance plants suited to the Cincinnati climate." },
   ],
   "carpentry-lighting": [
@@ -46,7 +46,7 @@ const faqs: Record<string, { q: string; a: string }[]> = {
   ],
   "landscape-maintenance": [
     { q: "Do you offer year-round landscape maintenance?", a: "Yes, we offer seasonal and year-round landscape maintenance programs for both residential and commercial properties in Cincinnati and Northern Kentucky." },
-    { q: "Does YEL offer snow removal in Cincinnati?", a: "Yes, we offer residential snow removal services in the Greater Cincinnati area. Contact us to discuss seasonal snow management for your property." },
+    { q: "Do you offer snow removal in Cincinnati?", a: "Yes, we offer residential snow removal services in the Greater Cincinnati area. Contact us to discuss seasonal snow management for your property." },
     { q: "Do you offer commercial landscape maintenance?", a: "Yes, we maintain commercial properties including office parks, HOAs, and commercial buildings throughout Greater Cincinnati and Northern Kentucky." },
   ],
 }
@@ -169,7 +169,7 @@ export default function ServicePage() {
               </p>
             </div>
             <div className="rv d2" style={{ background: "#e8f0e4", padding: "44px", borderRadius: "3px" }}>
-              <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.6rem", fontWeight: 400, color: "#2d4a26", marginBottom: "24px" }}>Why Choose YEL</h3>
+              <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.6rem", fontWeight: 400, color: "#2d4a26", marginBottom: "24px" }}>Why Choose Young Entrepreneur Landscaping</h3>
               {["Serving Cincinnati since 2010","All work performed in-house","Barrett or Nathan on every project","Residential and commercial","Serving Cincinnati and Northern KY","Free on-site consultation"].map(item => (
                 <div key={item} style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "16px", fontSize: "0.9rem", color: "#3d362e" }}>
                   <span style={{ width: "6px", height: "6px", borderRadius: "50%", background: "#2d4a26", flexShrink: 0 }} />{item}

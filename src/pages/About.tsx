@@ -86,7 +86,7 @@ export default function About() {
                 We are a client-driven business, measuring our success by the number of satisfied customers. Our goal is to make the landscape construction process easy and stress-free.
               </p>
               <p className="rv d1" style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.9, color: "#3d362e", marginBottom: "20px" }}>
-                YEL prides itself on its work ethic and reliability. All employees are hardworking, driven, and respectful. Careful oversight of every job site by Barrett and Nathan, coupled with talented employees, ensures high-quality work in a timely manner.
+                Young Entrepreneur Landscaping prides itself on its work ethic and reliability. All employees are hardworking, driven, and respectful. Careful oversight of every job site by Barrett and Nathan, coupled with talented employees, ensures high-quality work in a timely manner.
               </p>
               <p className="rv d2" style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.9, color: "#3d362e" }}>
                 Both Barrett and Nathan are college-educated with a combined 32 years of experience in the industry, driving the same entrepreneurial spirit that founded the company at the heart of every project today.
