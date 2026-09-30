@@ -10,9 +10,9 @@ export default function Footer() {
             <p style={{ fontSize: "0.82rem", fontWeight: 300, lineHeight: 1.85, color: "#2a2520", marginBottom: "20px" }}>
               Cincinnati's premier custom landscaping, hardscaping, and outdoor living company since 2010. Serving Greater Cincinnati and Northern Kentucky.
             </p>
-            {["(513) 498-6879","bweckel@yelandscaping.com","4178 Round Bottom Rd, Newtown OH 45244"].map(t => (
-              <p key={t} style={{ fontSize: "0.8rem", color: "#2a2520", marginBottom: "6px" }}>{t}</p>
-            ))}
+            <a href="tel:5134986879" style={{ display: "block", fontSize: "0.8rem", color: "#2a2520", marginBottom: "6px", textDecoration: "none" }}>(513) 498-6879</a>
+            <a href="mailto:bweckel@yelandscaping.com" style={{ display: "block", fontSize: "0.8rem", color: "#2a2520", marginBottom: "6px", textDecoration: "none" }}>bweckel@yelandscaping.com</a>
+            <p style={{ fontSize: "0.8rem", color: "#2a2520", marginBottom: "6px" }}>4178 Round Bottom Rd, Newtown OH 45244</p>
           </div>
           {[
             { h: "Services", links: [["Design | Build","/services/design-build"],["Hardscape & Masonry","/services/hardscape-masonry"],["Lawn & Landscape","/services/lawn-landscape"],["Carpentry & Lighting","/services/carpentry-lighting"],["Water Management","/services/water-management"],["Landscape Maintenance","/services/landscape-maintenance"]] },
