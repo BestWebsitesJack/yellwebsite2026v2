@@ -225,48 +225,32 @@ export default function Home() {
       </section>
 
       {/* ── CTA ── */}
-      <div className="cta-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
-        <div style={{ background: '#f2ede4', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ maxWidth: '520px', padding: 'clamp(32px, 6vw, 100px) clamp(24px, 5vw, 80px)' }}>
-            <div className="eyebrow">Get In Touch</div>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.2rem,3.8vw,3.4rem)', fontWeight: 300, color: '#2d4a26', lineHeight: 1.15, marginBottom: '20px' }}>
-              Let's Build <em style={{ color: '#b8832a' }}>Something Beautiful</em>
-            </h2>
-            <p style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.92, color: '#3d362e', marginBottom: '40px' }}>
-              Ready to transform your outdoor space? Contact us for a free on-site consultation, no obligation, just great ideas for your property.
-            </p>
+      <div style={{ background: '#2d4a26', padding: '100px 0', textAlign: 'center' }}>
+        <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 clamp(20px, 4vw, 48px)' }}>
+          <div className="eyebrow rv" style={{ justifyContent: 'center', color: '#f5e8cc' }}>
+            <span style={{ background: '#f5e8cc' }} />Get In Touch
+          </div>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(2.4rem,5vw,4rem)', fontWeight: 300, color: '#ffffff', lineHeight: 1.1, marginBottom: '24px' }}>
+            Let's Build <em style={{ color: '#f5e8cc' }}>Something Beautiful</em>
+          </h2>
+          <p style={{ fontSize: '1rem', fontWeight: 300, lineHeight: 1.88, color: 'rgba(255,255,255,0.7)', marginBottom: '48px', maxWidth: '600px', margin: '0 auto 48px' }}>
+            Ready to transform your outdoor space? Contact us for a free on-site consultation across Greater Cincinnati and Northern Kentucky. No obligation, just great ideas.
+          </p>
+          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' }}>
+            <Link to="/contact" style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#2d4a26', background: '#ffffff', padding: '18px 48px', textDecoration: 'none', borderRadius: '2px' }}>
+              Get a Free Quote
+            </Link>
+            <a href="tel:5134986879" style={{ fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#ffffff', border: '1.5px solid rgba(255,255,255,0.4)', padding: '18px 48px', textDecoration: 'none', borderRadius: '2px' }}>
+              Call (513) 498-6879
+            </a>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '48px', flexWrap: 'wrap' }}>
             {[['Phone','(513) 498-6879','tel:5134986879'],['Email','bweckel@yelandscaping.com','mailto:bweckel@yelandscaping.com'],['Instagram','@youngentrepreneur_landscaping','https://www.instagram.com/youngentrepreneur_landscaping/']].map(([l,v,href]) => (
-              <div key={l} style={{ display: 'flex', alignItems: 'center', gap: '20px', marginBottom: '18px' }}>
-                <span style={{ fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#2d4a26', minWidth: '72px' }}>{l}</span>
-                <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" style={{ fontSize: '0.88rem', color: '#2a2520', textDecoration: 'none' }}>{v}</a>
+              <div key={l} style={{ textAlign: 'center' }}>
+                <div style={{ fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#f5e8cc', marginBottom: '6px' }}>{l}</div>
+                <a href={href} target={href.startsWith('http') ? '_blank' : undefined} rel="noreferrer" style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.8)', textDecoration: 'none' }}>{v}</a>
               </div>
             ))}
-          </div>
-        </div>
-        <div style={{ background: '#2d4a26', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ maxWidth: '520px', padding: 'clamp(32px, 6vw, 100px) clamp(24px, 5vw, 80px)' }}>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '3rem', fontWeight: 300, color: '#ffffff', lineHeight: 1.12, marginBottom: '16px' }}>
-              Free <em style={{ color: '#f5e8cc' }}>Consultation</em>
-            </h2>
-            <p style={{ fontSize: '0.95rem', fontWeight: 300, lineHeight: 1.88, color: 'rgba(255,255,255,0.6)', marginBottom: '32px' }}>
-              Tell us about your project and we will schedule a free on-site visit. Serving Greater Cincinnati and Northern Kentucky since 2010.
-            </p>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-              {['Your Name','Email Address','Phone Number'].map(ph => (
-                <input key={ph} type="text" placeholder={ph} style={{ width: '100%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.18)', color: '#ffffff', padding: '16px 20px', fontSize: '0.9rem', borderRadius: '2px', outline: 'none' }} />
-              ))}
-              <select style={{ width: '100%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.18)', color: 'rgba(255,255,255,0.55)', padding: '16px 20px', fontSize: '0.9rem', borderRadius: '2px', outline: 'none' }}>
-                <option value="">Select a Service</option>
-                <option>Design | Build</option>
-                <option>Hardscape &amp; Masonry</option>
-                <option>Lawn &amp; Landscape</option>
-                <option>Carpentry &amp; Lighting</option>
-                <option>Water Management</option>
-                <option>Landscape Maintenance</option>
-              </select>
-              <textarea placeholder="Tell us about your project..." rows={4} style={{ width: '100%', background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.18)', color: '#ffffff', padding: '16px 20px', fontSize: '0.9rem', borderRadius: '2px', outline: 'none', resize: 'none' }} />
-              <button style={{ width: '100%', fontSize: '0.74rem', fontWeight: 600, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#2d4a26', background: '#ffffff', padding: '18px', borderRadius: '2px', border: 'none', cursor: 'pointer', marginTop: '8px' }}>Request a Free Quote</button>
-            </div>
           </div>
         </div>
       </div>

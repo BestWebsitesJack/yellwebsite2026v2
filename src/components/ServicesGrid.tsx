@@ -20,7 +20,7 @@ export default function ServicesGrid() {
               onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#e8f0e4'; (e.currentTarget as HTMLElement).style.borderColor = '#2d4a26' }}
               onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#faf8f4'; (e.currentTarget as HTMLElement).style.borderColor = 'transparent' }}
             >
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '4rem', fontWeight: 300, color: 'rgba(45,74,38,0.08)', lineHeight: 1, marginBottom: '20px' }}>{s.number}</div>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '4rem', fontWeight: 300, color: 'rgba(45,74,38,0.25)', lineHeight: 1, marginBottom: '20px' }}>{s.number}</div>
               <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.55rem', fontWeight: 300, color: '#2d4a26', marginBottom: '14px', lineHeight: 1.25 }}>{s.name}</h3>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '16px' }}>
                 {s.keywords.map(k => <span key={k} style={{ fontSize: '0.56rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#7a9468', border: '1px solid rgba(122,148,104,0.3)', padding: '4px 10px', borderRadius: '2px' }}>{k}</span>)}
