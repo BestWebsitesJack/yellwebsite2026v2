@@ -95,7 +95,7 @@ export default function Home() {
       <Reviews />
 
       {/* ── ABOUT ── */}
-      <div className="hero-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '660px' }}>
+      <div className="hero-split about-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: '660px' }}>
         <div style={{ position: 'relative', overflow: 'hidden', minHeight: '300px' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${BASE}403b6a5a-d4e3-4d88-935f-07d7ea87f68e/IMG_1455.JPG')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
           <div style={{ position: 'absolute', bottom: 0, right: 0, background: '#2d4a26', padding: '32px 36px', textAlign: 'center' }}>

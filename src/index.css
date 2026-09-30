@@ -276,3 +276,79 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
     margin-top: 110px !important;
   }
 }
+
+/* ── HOMEPAGE HERO MOBILE SPECIFIC ── */
+@media (max-width: 1024px) {
+  #homepage-hero {
+    margin-top: 110px !important;
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  #homepage-hero .hero-photo {
+    order: -1;
+    height: 60vw !important;
+    min-height: 260px !important;
+    max-height: 380px !important;
+  }
+  #homepage-hero .hero-text {
+    padding: 36px 20px 48px !important;
+    order: 1;
+  }
+  #homepage-hero .hero-text h1 {
+    font-size: clamp(2.6rem, 9vw, 4rem) !important;
+    margin-bottom: 20px !important;
+  }
+  #homepage-hero .hero-text p {
+    font-size: 0.9rem !important;
+    margin-bottom: 28px !important;
+  }
+  #homepage-hero .hero-btns {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  #homepage-hero .hero-btns a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+  }
+}
+
+/* ── ABOUT SECTION MOBILE ── */
+@media (max-width: 1024px) {
+  .about-split {
+    grid-template-columns: 1fr !important;
+    min-height: auto !important;
+  }
+  .about-split > div:first-child {
+    height: 280px !important;
+    min-height: 280px !important;
+  }
+  .about-split > div:last-child {
+    padding: 36px 20px !important;
+  }
+}
+
+/* ── STATS BAR MOBILE COMPLETE FIX ── */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    padding: 0 !important;
+  }
+  .stats-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid #e8e0d4 !important;
+    padding: 24px 16px !important;
+    text-align: center !important;
+    padding-left: 0 !important;
+  }
+  .stats-grid > div:nth-child(odd) {
+    border-right: 1px solid #e8e0d4 !important;
+  }
+  .stats-grid > div:nth-last-child(-n+2) {
+    border-bottom: none !important;
+  }
+  .stat-number {
+    font-size: 2rem !important;
+  }
+}
