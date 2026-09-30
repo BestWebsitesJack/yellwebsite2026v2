@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { services } from '../data/services'
 import AuthStrip from '../components/AuthStrip'
 import SEO from '../components/SEO'
+import { Helmet } from 'react-helmet-async'
 
 const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
 
