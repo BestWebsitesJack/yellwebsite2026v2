@@ -48,21 +48,21 @@ export default function About() {
       </div>
 
       {/* TEAM BIOS */}
-      <section style={{ background: "#ffffff", padding: "120px 0" }}>
+      <section style={{ background: "#ffffff", padding: "clamp(48px, 8vw, 120px) 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="eyebrow rv">Owners</div>
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,3.8vw,3.4rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "56px", lineHeight: 1.15, maxWidth: "800px" }}>
             Nathan Record <em style={{ color: "#b8832a" }}>and Barrett Weckel</em>
           </h2>
           <div className="bios-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "48px" }}>
-            <div className="rv" style={{ background: "#faf8f4", padding: "44px", borderRadius: "3px" }}>
+            <div className="rv" style={{ background: "#faf8f4", padding: "clamp(20px, 4vw, 44px)", borderRadius: "3px" }}>
               <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.8rem", fontWeight: 400, color: "#2d4a26", marginBottom: "16px" }}>Nathan Record</h3>
               <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.9, color: "#3d362e", marginBottom: "20px" }}>
                 Nathan is a current co-owner and operator of Young Entrepreneur Landscaping. He is the head of project design and sales, as well as direct project management. Nathan received a Bachelor of Science in Economics, with a minor in Fine Arts, from Centre College.
               </p>
               <a href="mailto:nrecord@yelandscaping.com?subject=General Inquiry" style={{ fontSize: "0.78rem", fontWeight: 600, color: "#b8832a", textDecoration: "none" }}>Email Nathan &rarr;</a>
             </div>
-            <div className="rv d1" style={{ background: "#faf8f4", padding: "44px", borderRadius: "3px" }}>
+            <div className="rv d1" style={{ background: "#faf8f4", padding: "clamp(20px, 4vw, 44px)", borderRadius: "3px" }}>
               <h3 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "1.8rem", fontWeight: 400, color: "#2d4a26", marginBottom: "16px" }}>Barrett Weckel</h3>
               <p style={{ fontSize: "0.95rem", fontWeight: 300, lineHeight: 1.9, color: "#3d362e", marginBottom: "20px" }}>
                 Barrett is the founder and current owner and operator of Young Entrepreneur Landscaping. He manages general operations and sales, as well as helping oversee project construction. Barrett graduated with a Bachelor's degree in Entrepreneurial Studies from the Williams College of Business at Xavier University.
@@ -74,7 +74,7 @@ export default function About() {
       </section>
 
       {/* HISTORY */}
-      <section style={{ background: "#faf8f4", padding: "120px 0" }}>
+      <section style={{ background: "#faf8f4", padding: "clamp(48px, 8vw, 120px) 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="story-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center" }}>
             <div>
@@ -92,7 +92,7 @@ export default function About() {
                 Both Barrett and Nathan are college-educated with a combined 32 years of experience in the industry, driving the same entrepreneurial spirit that founded the company at the heart of every project today.
               </p>
             </div>
-            <div className="rv d2" style={{ position: "relative", height: "480px", overflow: "hidden", borderRadius: "3px" }}>
+            <div className="rv d2" style={{ position: "relative", height: "clamp(220px, 50vw, 480px)", overflow: "hidden", borderRadius: "3px" }}>
               <div role="img" aria-label="Young Barrett Weckel - Founder of Young Entrepreneur Landscaping started at age 14 in Cincinnati OH" style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "5f6420ba-2ddb-4c58-be07-4b433cb5b869/Young_Barrett.jpg\')", backgroundSize: "cover", backgroundPosition: "center" }} />
             </div>
           </div>
@@ -100,7 +100,7 @@ export default function About() {
       </section>
 
       {/* TESTIMONIAL */}
-      <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
+      <div style={{ background: "#2d4a26", padding: "clamp(48px, 8vw, 100px) 0", textAlign: "center" }}>
         <div style={{ maxWidth: "800px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <p className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(1.5rem,2.6vw,2.2rem)", fontWeight: 300, fontStyle: "italic", lineHeight: 1.6, color: "#ffffff" }}>
             "I have been using Barrett and his crew for several years now. They always are friendly, knowledgeable, and polite. The work done is always of high quality. I would not hesitate to refer them to anyone needing landscape services of any kind."
@@ -109,7 +109,7 @@ export default function About() {
       </div>
 
       {/* CTA */}
-      <div style={{ background: "#ffffff", padding: "100px 0", textAlign: "center" }}>
+      <div style={{ background: "#ffffff", padding: "clamp(48px, 8vw, 100px) 0", textAlign: "center" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "20px" }}>
             Get a <em style={{ color: "#b8832a" }}>Quick Estimate</em>

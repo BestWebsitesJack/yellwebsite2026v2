@@ -52,7 +52,7 @@ export default function FAQ() {
       </section>
 
       {/* FAQ LIST */}
-      <section style={{ background: "#faf8f4", padding: "120px 0" }}>
+      <section style={{ background: "#faf8f4", padding: "clamp(48px, 8vw, 120px) 0" }}>
         <div style={{ maxWidth: "900px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="eyebrow rv">Common Questions</div>
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,3.8vw,3.4rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "56px", lineHeight: 1.15 }}>
@@ -78,7 +78,7 @@ export default function FAQ() {
       </section>
 
       {/* CTA */}
-      <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
+      <div style={{ background: "#2d4a26", padding: "clamp(48px, 8vw, 100px) 0", textAlign: "center" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#ffffff", marginBottom: "20px" }}>
             Still Have <em style={{ color: "#f5e8cc" }}>Questions?</em>

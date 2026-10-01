@@ -47,7 +47,7 @@ export default function Careers() {
       </div>
 
       {/* WHY WORK HERE */}
-      <section style={{ background: "#ffffff", padding: "120px 0" }}>
+      <section style={{ background: "#ffffff", padding: "clamp(48px, 8vw, 120px) 0" }}>
         <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <div className="eyebrow rv">Why Work With Us</div>
           <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,3.8vw,3.4rem)", fontWeight: 300, color: "#2d4a26", marginBottom: "56px", lineHeight: 1.15, maxWidth: "800px" }}>
@@ -69,7 +69,7 @@ export default function Careers() {
       </section>
 
       {/* CTA */}
-      <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
+      <div style={{ background: "#2d4a26", padding: "clamp(48px, 8vw, 100px) 0", textAlign: "center" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#ffffff", marginBottom: "20px" }}>
             Ready to <em style={{ color: "#f5e8cc" }}>Join the Team?</em>

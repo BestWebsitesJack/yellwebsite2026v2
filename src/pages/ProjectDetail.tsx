@@ -108,7 +108,7 @@ export default function ProjectDetail() {
 
       {/* STORY SECTIONS */}
       {project.sections.map((section, i) => (
-        <section key={i} style={{ background: i % 2 === 0 ? "#ffffff" : "#faf8f4", padding: "100px 0" }}>
+        <section key={i} style={{ background: i % 2 === 0 ? "#ffffff" : "#faf8f4", padding: "clamp(48px, 8vw, 100px) 0" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
             <div className="story-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "64px", alignItems: "center", direction: i % 2 === 0 ? "ltr" : "rtl" }}>
               <div style={{ direction: "ltr" }}>
@@ -125,7 +125,7 @@ export default function ProjectDetail() {
                     afterLabel="After"
                   />
                 ) : (
-                  <div style={{ position: "relative", height: "440px", overflow: "hidden", borderRadius: "3px" }}>
+                  <div style={{ position: "relative", height: "clamp(200px, 45vw, 440px)", overflow: "hidden", borderRadius: "3px" }}>
                     <div role="img" aria-label={section.text.slice(0,80) + " - Young Entrepreneur Landscaping"} style={{ position: "absolute", inset: 0, backgroundImage: "url('" + section.image + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
                   </div>
                 )}
@@ -137,7 +137,7 @@ export default function ProjectDetail() {
 
       {/* EXTRA PHOTOS GALLERY */}
       {project.extraPhotos && project.extraPhotos.length > 0 && (
-        <section style={{ background: "#faf8f4", padding: "80px 0 100px" }}>
+        <section style={{ background: "#faf8f4", padding: "clamp(40px, 6vw, 80px) 0 clamp(48px, 8vw, 100px)" }}>
           <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
             <div className="eyebrow rv" style={{ justifyContent: "center" }}>More From This Project</div>
             <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem,3.6vw,3rem)", fontWeight: 300, color: "#2d4a26", lineHeight: 1.15, marginBottom: "48px", textAlign: "center" }}>
@@ -157,7 +157,7 @@ export default function ProjectDetail() {
       )}
 
       {/* CTA */}
-      <div style={{ background: "#2d4a26", padding: "100px 0", textAlign: "center" }}>
+      <div style={{ background: "#2d4a26", padding: "clamp(48px, 8vw, 100px) 0", textAlign: "center" }}>
         <div style={{ maxWidth: "700px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
           <h2 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2.2rem,4vw,3.2rem)", fontWeight: 300, color: "#ffffff", marginBottom: "20px" }}>
             Inspired by <em style={{ color: "#f5e8cc" }}>This Project?</em>
