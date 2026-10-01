@@ -395,3 +395,31 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
     box-sizing: border-box !important;
   }
 }
+
+/* ── FOOTER MOBILE TIGHTENED ── */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+  }
+  .footer-brand {
+    grid-column: 1 / -1 !important;
+    margin-bottom: 8px !important;
+  }
+  .footer-brand img {
+    height: 60px !important;
+  }
+  .footer-brand p {
+    font-size: 0.75rem !important;
+    line-height: 1.6 !important;
+  }
+  .footer-col-header {
+    font-size: 0.58rem !important;
+    margin-bottom: 8px !important;
+  }
+  .footer-link {
+    font-size: 0.78rem !important;
+    padding: 3px 0 !important;
+    margin-bottom: 2px !important;
+  }
+}

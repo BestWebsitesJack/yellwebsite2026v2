@@ -6,7 +6,7 @@ export default function Footer() {
       <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
         <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: "64px", marginBottom: "64px" }}>
           <div className="footer-brand">
-            <img src="/YellLogo.png" alt="Young Entrepreneur Landscaping" style={{ height: "64px", width: "auto", marginBottom: "24px" }} />
+            <img src="/YellLogo.png" alt="Young Entrepreneur Landscaping" style={{ height: "clamp(48px, 8vw, 64px)", width: "auto", marginBottom: "16px" }} />
             <p style={{ fontSize: "0.82rem", fontWeight: 300, lineHeight: 1.85, color: "#2a2520", marginBottom: "20px" }}>
               Cincinnati's premier custom landscaping, hardscaping, and outdoor living company since 2010. Serving Greater Cincinnati and Northern Kentucky.
             </p>
