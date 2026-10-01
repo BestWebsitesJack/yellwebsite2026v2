@@ -39,11 +39,11 @@ export default function Home() {
     <>
       <SEO title="Young Entrepreneur Landscaping | Cincinnati Landscaping and Hardscaping" description="Cincinnati's premier custom landscaping company since 2010. Residential and commercial landscape design, hardscaping, paver patios, outdoor living and lawn care. Serving Greater Cincinnati and Northern KY." path="/" />
       {/* ── HERO (Option D split) ── */}
-      <section className="hero-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', minHeight: 'calc(100vh - 112px)', marginTop: '112px' }} id="homepage-hero">
-        <div className="hero-photo" style={{ position: 'relative', overflow: 'hidden', minHeight: '600px' }}>
+      <section id="homepage-hero" style={{ display: 'flex', flexDirection: 'column', marginTop: '110px' }}>
+        <div className="hero-photo" style={{ position: 'relative', overflow: 'hidden', minHeight: '320px', flex: '0 0 auto' }}>
           <div role="img" aria-label="Young Entrepreneur Landscaping Cincinnati OH - Custom landscape design, hardscaping and outdoor living since 2010" className="hero-zoom" style={{ position: 'absolute', inset: 0, backgroundImage: `url('${HERO}')`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
         </div>
-        <div className="hero-text" style={{ background: '#faf8f4', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '80px 72px' }}>
+        <div className="hero-text" style={{ background: '#faf8f4', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: 'clamp(32px, 5vw, 80px) clamp(20px, 5vw, 72px)', flex: '0 0 auto' }}>
           <div className="fade-up-1" style={{ display: 'flex', alignItems: 'center', gap: '14px', fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.28em', textTransform: 'uppercase', color: '#2d4a26', marginBottom: '28px' }}>
             <span style={{ width: '32px', height: '1.5px', background: '#2d4a26', display: 'inline-block', flexShrink: 0 }} />
             Cincinnati's Premier Landscape Company

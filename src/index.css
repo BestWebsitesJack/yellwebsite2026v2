@@ -352,3 +352,46 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
     font-size: 2rem !important;
   }
 }
+
+/* ── HOMEPAGE HERO DESKTOP 2-COL ── */
+@media (min-width: 1025px) {
+  #homepage-hero {
+    flex-direction: row !important;
+    min-height: calc(100vh - 140px) !important;
+    margin-top: 140px !important;
+  }
+  #homepage-hero .hero-photo {
+    flex: 1 !important;
+    min-height: 600px !important;
+    max-height: none !important;
+  }
+  #homepage-hero .hero-text {
+    flex: 1 !important;
+    padding: 80px 72px !important;
+  }
+}
+
+/* ── HOMEPAGE HERO MOBILE ── */
+@media (max-width: 1024px) {
+  #homepage-hero {
+    margin-top: 110px !important;
+  }
+  #homepage-hero .hero-photo {
+    height: 65vw !important;
+    min-height: 280px !important;
+  }
+  #homepage-hero .hero-text {
+    padding: 36px 20px 40px !important;
+  }
+  #homepage-hero .hero-btns {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  #homepage-hero .hero-btns a {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    display: flex !important;
+    box-sizing: border-box !important;
+  }
+}
