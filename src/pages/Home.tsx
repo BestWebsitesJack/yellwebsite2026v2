@@ -224,6 +224,8 @@ export default function Home() {
         </div>
       </section>
 
+      <InstagramFeed />
+
       {/* ── CTA ── */}
       <div style={{ background: '#2d4a26', padding: '100px 0', textAlign: 'center' }}>
         <div style={{ maxWidth: '800px', margin: '0 auto', padding: '0 clamp(20px, 4vw, 48px)' }}>
@@ -255,7 +257,6 @@ export default function Home() {
         </div>
       </div>
 
-      <InstagramFeed />
     </>
   )
 }
