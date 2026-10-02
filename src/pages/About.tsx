@@ -15,7 +15,7 @@ export default function About() {
     <>
       <SEO title="About Us | Barrett Weckel and Nathan Record | Young Entrepreneur Landscaping" description="Meet the team behind Young Entrepreneur Landscaping. Founded in Cincinnati, OH, serving Greater Cincinnati and Northern Kentucky since 2010 with custom landscape design and construction." path="/about" />
       {/* HERO — split, matching services pages */}
-      <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
+      <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }} id="about-hero">
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
             <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />
@@ -31,7 +31,7 @@ export default function About() {
             Get a Free Quote
           </Link>
         </div>
-        <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
+        <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }} className="hero-photo-panel">
           <div role="img" aria-label="Barrett Weckel and Nathan Record - Founders of Young Entrepreneur Landscaping Cincinnati OH" style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "4a9df538-dd8c-494e-98bb-43f1bd7ac573/IMG_1425.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
         </div>
       </section>
