@@ -469,3 +469,22 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
     padding: 36px 20px !important;
   }
 }
+
+/* ── ABOUT HERO DESKTOP ── */
+@media (min-width: 1025px) {
+  #about-hero {
+    flex-direction: row !important;
+    min-height: calc(100vh - 140px) !important;
+    margin-top: 140px !important;
+  }
+  #about-hero > div:first-child {
+    flex: 1 !important;
+    order: 1 !important;
+  }
+  #about-hero > div:last-child {
+    flex: 1 !important;
+    height: auto !important;
+    max-height: none !important;
+    order: 2 !important;
+  }
+}
