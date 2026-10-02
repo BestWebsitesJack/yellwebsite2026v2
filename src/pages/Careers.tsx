@@ -14,7 +14,7 @@ export default function Careers() {
     <>
       <SEO title="Careers | Join Young Entrepreneur Landscaping in Cincinnati" description="Build your career in the green industry with Young Entrepreneur Landscaping. We are a fast-growing landscaping company serving Cincinnati and Northern Kentucky." path="/careers" />
       {/* HERO */}
-      <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "112px" }}>
+      <section className="hero-split" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", minHeight: "calc(100vh - 112px)", marginTop: "110px" }}>
         <div style={{ background: "#2d4a26", display: "flex", flexDirection: "column", justifyContent: "center", padding: "80px 72px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "14px", fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.26em", textTransform: "uppercase", color: "#f5e8cc", marginBottom: "24px" }}>
             <span style={{ width: "28px", height: "1.5px", background: "#f5e8cc", display: "inline-block" }} />

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export default function NotFound() {
   return (
-    <div style={{ minHeight: "100vh", background: "#faf8f4", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "48px 24px", marginTop: "112px" }}>
+    <div style={{ minHeight: "100vh", background: "#faf8f4", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", textAlign: "center", padding: "48px 24px", marginTop: "110px" }}>
       <div style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "8rem", fontWeight: 300, color: "#2d4a26", lineHeight: 1, marginBottom: "16px" }}>404</div>
       <h1 style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(1.8rem,3vw,2.6rem)", fontWeight: 300, color: "#2a2520", marginBottom: "16px" }}>
         Page Not <em style={{ color: "#b8832a" }}>Found</em>

@@ -64,7 +64,7 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
   .hero-split {
     grid-template-columns: 1fr !important;
     min-height: auto !important;
-    margin-top: 80px !important;
+    margin-top: 110px !important;
   }
   .hero-split > div:last-child {
     min-height: 280px !important;
@@ -184,7 +184,7 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
 /* ── HOMEPAGE HERO MOBILE ── */
 @media (max-width: 1024px) {
   .hero-split.homepage-hero {
-    margin-top: 80px !important;
+    margin-top: 110px !important;
   }
 }
 
