@@ -134,7 +134,7 @@ export default function Contact() {
               {submitted ? (
                 <div style={{ textAlign: "center", padding: "48px 0" }}>
                   <div style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "2rem", fontWeight: 300, color: "#ffffff", marginBottom: "12px" }}>Thank You!</div>
-                  <p style={{ fontSize: "0.92rem", color: "rgba(255,255,255,0.7)" }}>We will be in touch within 24 hours.</p>
+                  <p style={{ fontSize: "0.92rem", color: "rgba(255,255,255,0.7)" }}>Have a wonderful day. We will be in touch soon!</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
