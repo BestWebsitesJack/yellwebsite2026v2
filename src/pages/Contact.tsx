@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import SEO from "../components/SEO"
 
 const BASE = "https://images.squarespace-cdn.com/content/v1/6557ac866ae3484563fdf5dd/"
@@ -10,6 +10,34 @@ const hours = [
 ]
 
 export default function Contact() {
+  const [submitting, setSubmitting] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setSubmitting(true)
+    setError("")
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData)
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(data)
+      })
+      const json = await res.json()
+      if (json.success) {
+        setSubmitted(true)
+      } else {
+        setError("Something went wrong. Please try again or call us directly.")
+      }
+    } catch {
+      setError("Something went wrong. Please try again or call us directly.")
+    }
+    setSubmitting(false)
+  }
+
   useEffect(() => {
     const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("on") }), { threshold: 0.08 })
     document.querySelectorAll(".rv").forEach(el => obs.observe(el))
@@ -103,49 +131,53 @@ export default function Contact() {
               <p style={{ fontSize: "0.88rem", fontWeight: 300, color: "rgba(255,255,255,0.6)", marginBottom: "32px" }}>
                 Tell us about your project and we will be in touch within 24 hours.
               </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-                {["Your Name","Email Address","Phone Number"].map(ph => (
-                  <input key={ph} type="text" placeholder={ph} style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }} />
-                ))}
-                <select style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.65)", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }}>
-                  <option value="">Select a Service</option>
-                  <option>Design | Build</option>
-                  <option>Hardscape &amp; Masonry</option>
-                  <option>Lawn &amp; Landscape</option>
-                  <option>Carpentry &amp; Lighting</option>
-                  <option>Water Management</option>
-                  <option>Landscape Maintenance</option>
-                </select>
-                <textarea placeholder="Tell us about your project..." rows={5} style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none", resize: "none", fontFamily: "DM Sans, sans-serif" }} />
-                <button style={{ width: "100%", fontSize: "0.76rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#2d4a26", background: "#ffffff", padding: "18px", borderRadius: "2px", border: "none", cursor: "pointer", marginTop: "8px" }}>
-                  Request a Free Quote
-                </button>
-              </div>
+              {submitted ? (
+                <div style={{ textAlign: "center", padding: "48px 0" }}>
+                  <div style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "2rem", fontWeight: 300, color: "#ffffff", marginBottom: "12px" }}>Thank You!</div>
+                  <p style={{ fontSize: "0.92rem", color: "rgba(255,255,255,0.7)" }}>We will be in touch within 24 hours.</p>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+                  <input type="hidden" name="access_key" value="d148178d-6d8d-4df8-bf6e-b1c5053ce8be" />
+                  <input type="hidden" name="subject" value="New Quote Request - Young Entrepreneur Landscaping" />
+                  <input type="hidden" name="from_name" value="YEL Website" />
+                  <input type="checkbox" name="botcheck" style={{ display: "none" }} />
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                    <input required name="first_name" type="text" placeholder="First Name *" style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }} />
+                    <input required name="last_name" type="text" placeholder="Last Name *" style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }} />
+                  </div>
+                  <input required name="email" type="email" placeholder="Email Address *" style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }} />
+                  <input required name="phone" type="tel" placeholder="Phone Number *" style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }} />
+                  <input required name="address" type="text" placeholder="Property Address *" style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }} />
+                  <select name="service" style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.65)", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }}>
+                    <option value="">Select a Service</option>
+                    <option>Design | Build</option>
+                    <option>Hardscape &amp; Masonry</option>
+                    <option>Lawn &amp; Landscape</option>
+                    <option>Carpentry &amp; Lighting</option>
+                    <option>Water Management</option>
+                    <option>Landscape Maintenance</option>
+                  </select>
+                  <select required name="referral" style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "rgba(255,255,255,0.65)", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none" }}>
+                    <option value="">How did you hear about us? *</option>
+                    <option>Google Search</option>
+                    <option>Google Maps</option>
+                    <option>Instagram</option>
+                    <option>Friend or Family Referral</option>
+                    <option>Neighbor or Saw Our Work</option>
+                    <option>Houzz</option>
+                    <option>Angi</option>
+                    <option>Other</option>
+                  </select>
+                  <textarea required name="message" placeholder="Tell us about your project... *" rows={5} style={{ width: "100%", background: "rgba(255,255,255,0.1)", border: "1px solid rgba(255,255,255,0.18)", color: "#ffffff", padding: "16px 20px", fontSize: "0.92rem", borderRadius: "2px", outline: "none", resize: "none", fontFamily: "DM Sans, sans-serif" }} />
+                  <button type="submit" disabled={submitting} style={{ width: "100%", fontSize: "0.76rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#2d4a26", background: "#ffffff", padding: "18px", borderRadius: "2px", border: "none", cursor: submitting ? "not-allowed" : "pointer", marginTop: "8px", opacity: submitting ? 0.7 : 1 }}>
+                    {submitting ? "Sending..." : "Request a Free Quote"}
+                  </button>
+                  {error && <p style={{ color: "#ffcccc", fontSize: "0.82rem", textAlign: "center", marginTop: "8px" }}>{error}</p>}
+                </form>
+              )}
             </div>
 
-          </div>
-        </div>
-      </section>
-
-      {/* MAP */}
-      <section style={{ background: "#faf8f4", padding: "0 0 120px" }}>
-        <div style={{ maxWidth: "1200px", margin: "0 auto", padding: "0 clamp(20px, 4vw, 48px)" }}>
-          <div className="eyebrow rv" style={{ justifyContent: "center" }}>Find Us</div>
-          <h2 className="rv" style={{ fontFamily: "Cormorant Garamond, serif", fontSize: "clamp(2rem,3.6vw,2.8rem)", fontWeight: 300, color: "#2d4a26", lineHeight: 1.15, marginBottom: "32px", textAlign: "center" }}>
-            Visit Us in <em style={{ color: "#b8832a" }}>Newtown, Ohio</em>
-          </h2>
-          <div className="rv" style={{ width: "100%", height: "450px", borderRadius: "3px", overflow: "hidden", border: "1.5px solid #e8e0d4" }}>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3094.4641727007715!2d-84.33016959999999!3d39.141422999999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8841ac74327fd425%3A0x8843d80145e7f0e6!2sYoung%20Entrepreneur%20Landscaping%20LLC!5e0!3m2!1sen!2sus!4v1782417636507!5m2!1sen!2sus"
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-              title="Young Entrepreneur Landscaping Location"
-            />
-          </div>
         </div>
       </section>
     </>
