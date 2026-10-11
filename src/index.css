@@ -488,3 +488,33 @@ body.hov #cur-r { width: 54px; height: 54px; border-color: #b8832a; }
     order: 2 !important;
   }
 }
+
+/* ── HOMEPAGE ABOUT SECTION ── */
+#about-section {
+  min-height: 500px;
+}
+@media (min-width: 1025px) {
+  #about-section {
+    flex-direction: row !important;
+    min-height: 660px !important;
+  }
+  #about-section > div:first-child {
+    flex: 1 !important;
+  }
+  #about-section > div:last-child {
+    flex: 1 !important;
+  }
+}
+@media (max-width: 1024px) {
+  #about-section > div:first-child {
+    height: 60vw !important;
+    min-height: 260px !important;
+    max-height: 380px !important;
+  }
+  #about-section > div:last-child {
+    padding: clamp(24px, 4vw, 80px) clamp(20px, 4vw, 72px) !important;
+  }
+  #about-section .eyebrow {
+    margin-top: 0 !important;
+  }
+}

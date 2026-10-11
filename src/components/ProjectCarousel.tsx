@@ -28,7 +28,7 @@ export default function ProjectCarousel() {
   const stopDrag = useCallback(() => setIsDown(false), [])
 
   return (
-    <section style={{ background: '#f2ede4', paddingTop: '100px', paddingBottom: 0 }}>
+    <section style={{ background: '#f2ede4', paddingTop: 'clamp(48px, 8vw, 100px)', paddingBottom: 0 }}>
       <div className="wrap" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', paddingBottom: '48px', flexWrap: 'wrap', gap: '20px' }}>
         <div>
           <div className="eyebrow rv">Our Portfolio</div>
