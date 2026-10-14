@@ -47,7 +47,7 @@ export default function FAQ() {
           </Link>
         </div>
         <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
-          <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "7a31a00b-07c1-4fcb-b824-ff1753631e30/background.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+          <div role="img" aria-label="Young Entrepreneur Landscaping FAQ - Cincinnati Landscaping" style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "7a31a00b-07c1-4fcb-b824-ff1753631e30/background.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
         </div>
       </section>
 

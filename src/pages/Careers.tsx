@@ -31,7 +31,7 @@ export default function Careers() {
           </a>
         </div>
         <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
-          <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "093d1f76-e633-4c74-944f-2310b6e0c1e4/background.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+          <div role="img" aria-label="Careers at Young Entrepreneur Landscaping Cincinnati OH" style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "093d1f76-e633-4c74-944f-2310b6e0c1e4/background.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
         </div>
       </section>
 

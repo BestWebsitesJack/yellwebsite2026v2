@@ -65,7 +65,7 @@ export default function Contact() {
           </a>
         </div>
         <div style={{ position: "relative", overflow: "hidden", minHeight: "500px" }}>
-          <div style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "b4551ce8-5d6f-495f-aa7c-20b28df00bcf/IMG_1258.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
+          <div role="img" aria-label="Young Entrepreneur Landscaping Cincinnati OH - Contact Us" style={{ position: "absolute", inset: 0, backgroundImage: "url(\'" + BASE + "b4551ce8-5d6f-495f-aa7c-20b28df00bcf/IMG_1258.JPG\')", backgroundSize: "cover", backgroundPosition: "center" }} />
         </div>
       </section>
 

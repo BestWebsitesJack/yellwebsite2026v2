@@ -46,14 +46,14 @@ export default function BeforeAfterSlider({ before, after, beforeLabel = "Before
       onTouchMove={onTouchMove}
     >
       {/* After image (full width underneath) */}
-      <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + after + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
+      <div role="img" aria-label="After photo" style={{ position: "absolute", inset: 0, backgroundImage: "url('" + after + "')", backgroundSize: "cover", backgroundPosition: "center" }} />
 
       {/* After label */}
       <div style={{ position: "absolute", top: "16px", right: "16px", fontSize: "0.65rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#ffffff", background: "#2d4a26", padding: "6px 14px", borderRadius: "2px", zIndex: 2 }}>{afterLabel}</div>
 
       {/* Before image (clipped to left of slider) */}
       <div style={{ position: "absolute", inset: 0, width: position + "%", overflow: "hidden" }}>
-        <div style={{ position: "absolute", inset: 0, backgroundImage: "url('" + before + "')", backgroundSize: "cover", backgroundPosition: "center", width: (100 / position * 100) + "%" }} />
+        <div role="img" aria-label="Before photo" style={{ position: "absolute", inset: 0, backgroundImage: "url('" + before + "')", backgroundSize: "cover", backgroundPosition: "center", width: (100 / position * 100) + "%" }} />
       </div>
 
       {/* Before label */}
