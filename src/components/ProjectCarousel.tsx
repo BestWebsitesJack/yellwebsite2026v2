@@ -53,7 +53,7 @@ export default function ProjectCarousel() {
           <Link key={p.id} to={p.url} style={{ flexShrink: 0, width: i === 0 ? '640px' : '420px', height: '580px', position: 'relative', overflow: 'hidden', background: '#e8e0d4', display: 'block', textDecoration: 'none' }}
             className="group"
           >
-            <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('${p.image}')`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'transform 0.7s ease' }}
+            <div role="img" aria-label={p.name + " - " + p.location + " landscaping by Young Entrepreneur Landscaping"} style={{ position: 'absolute', inset: 0, backgroundImage: `url('${p.image}')`, backgroundSize: 'cover', backgroundPosition: 'center', transition: 'transform 0.7s ease' }}
               onMouseEnter={e => (e.currentTarget as HTMLElement).style.transform = 'scale(1.05)'}
               onMouseLeave={e => (e.currentTarget as HTMLElement).style.transform = 'scale(1)'}
             />
