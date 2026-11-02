@@ -28,6 +28,7 @@ export default function Contact() {
       })
       const json = await res.json()
       if (json.success) {
+        const w = window as any; if (w.gtag) { w.gtag("event", "generate_lead", { form_name: "contact_quote_request" }) }
         setSubmitted(true)
       } else {
         setError("Something went wrong. Please try again or call us directly.")
