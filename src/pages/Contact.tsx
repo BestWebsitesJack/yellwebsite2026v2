@@ -101,10 +101,10 @@ export default function Contact() {
               <div className="rv d1" style={{ marginBottom: "36px" }}>
                 <div style={{ fontSize: "0.62rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "#b8832a", marginBottom: "10px" }}>Email</div>
                 <p style={{ fontSize: "0.95rem", color: "#3d362e", marginBottom: "4px" }}>
-                  Barrett \u2014 <a href="mailto:bweckel@yelandscaping.com?subject=Email from Website" style={{ color: "#2d4a26", textDecoration: "none" }}>bweckel@yelandscaping.com</a>
+                  <a href="mailto:bweckel@yelandscaping.com?subject=Email from Website" style={{ color: "#2d4a26", textDecoration: "none" }}>bweckel@yelandscaping.com</a>
                 </p>
                 <p style={{ fontSize: "0.95rem", color: "#3d362e" }}>
-                  Nathan \u2014 <a href="mailto:nrecord@yelandscaping.com?subject=Email from Website" style={{ color: "#2d4a26", textDecoration: "none" }}>nrecord@yelandscaping.com</a>
+                  <a href="mailto:nrecord@yelandscaping.com?subject=Email from Website" style={{ color: "#2d4a26", textDecoration: "none" }}>nrecord@yelandscaping.com</a>
                 </p>
               </div>
 
